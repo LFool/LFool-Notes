@@ -1,8 +1,10 @@
 # LFool's Notes
 
-> 更新时间：2022-01-24 23:09:57
+> 更新时间：2022-01-28 00:23:06
 >
 > 记录本人总结！！！
+>
+> <font color='red'>不同主题表达了本人不同时期的喜好 嘿嘿</font>
 
 ## 算法
 
@@ -12,7 +14,7 @@
 - [数据流中位数](./algorithm/数据流中位数.html)
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
 - [前缀和数组](./algorithm/前缀和数组.html)
-- 
+- [位运算技巧](./algorithm/位运算技巧.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### 数组/链表
 
@@ -24,12 +26,12 @@
 ### 树 😊😊
 
 - [二叉树汇总](./algorithm/二叉树.html)
-- [二叉树遍历](./algorithm/二叉树遍历.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [二叉树遍历](./algorithm/二叉树遍历.html)
 - [二叉搜索树(BST)](./algorithm/BST.html)
 - [二叉树序列化 & 反序列化](./algorithm/二叉树序列化&反序列化.html)
 - [二叉树关于行的相关操作技巧](./algorithm/二叉树关于行的相关操作技巧.html)
-- [二叉树路径相关技巧](./algorithm/二叉树路径相关技巧.html)
-- [二叉树祖先问题](./algorithm/二叉树祖先问题.html)  <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [二叉树路径相关技巧](./algorithm/二叉树路径相关技巧.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [二叉树祖先问题](./algorithm/二叉树祖先问题.html)
 
 ### 图 😊😊
 
