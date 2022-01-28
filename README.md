@@ -1,6 +1,6 @@
 # LFool's Notes
 
-> 更新时间：2022-01-28 00:23:06
+> 更新时间：2022-01-29 02:48:39
 >
 > 记录本人总结！！！
 >
@@ -14,7 +14,7 @@
 - [数据流中位数](./algorithm/数据流中位数.html)
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
 - [前缀和数组](./algorithm/前缀和数组.html)
-- [位运算技巧](./algorithm/位运算技巧.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [位运算技巧](./algorithm/位运算技巧.html)
 
 ### 数组/链表
 
@@ -30,7 +30,7 @@
 - [二叉搜索树(BST)](./algorithm/BST.html)
 - [二叉树序列化 & 反序列化](./algorithm/二叉树序列化&反序列化.html)
 - [二叉树关于行的相关操作技巧](./algorithm/二叉树关于行的相关操作技巧.html)
-- [二叉树路径相关技巧](./algorithm/二叉树路径相关技巧.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [二叉树路径相关技巧](./algorithm/二叉树路径相关技巧.html)
 - [二叉树祖先问题](./algorithm/二叉树祖先问题.html)
 
 ### 图 😊😊
@@ -51,7 +51,8 @@
 ## 综合
 
 - [Git 总结](./git/Git总结.html)
-- 
+- [Shell 总结](./Linux/Shell.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [Linux硬链接和软连接的区别与总结](./Linux/Linux硬链接和软连接的区别与总结.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ---
 
