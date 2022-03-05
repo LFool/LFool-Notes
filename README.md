@@ -70,7 +70,7 @@
 
 - [网络安全最终总结](./other/网络安全最终总结.html)
 - [网络安全问答题总结](./other/网络安全问答题总结.html)
-- [图论](./other/图论.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 67%;" />
+- [图论](./other/图论.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
 - 
 
 
