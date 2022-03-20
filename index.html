@@ -20,7 +20,7 @@ a:active, a:hover { outline: 0px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
 .typora-export .task-list-item input { pointer-events: none; }
-@media screen and (max-width: 500px) { 
+@media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
   .CodeMirror-sizer { margin-left: 0px !important; }
@@ -47,7 +47,7 @@ h6 { font-size: 1rem; }
 .hidden { display: none; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
 a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
@@ -86,10 +86,10 @@ blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
-@media print { 
+@media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
@@ -110,7 +110,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
 .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
 .math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
 .md-toc-content::after, .md-toc::after { display: none; }
 .md-toc-item { display: block; color: rgb(65, 131, 196); }
@@ -123,7 +123,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 .md-toc-h4 .md-toc-inner { margin-left: 6em; }
 .md-toc-h5 .md-toc-inner { margin-left: 8em; }
 .md-toc-h6 .md-toc-inner { margin-left: 10em; }
-@media screen and (max-width: 48em) { 
+@media screen and (max-width: 48em) {
   .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
   .md-toc-h4 .md-toc-inner { margin-left: 5em; }
   .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
@@ -134,7 +134,7 @@ a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; 
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
 .md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
 code { text-align: left; }
 a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
@@ -150,7 +150,7 @@ mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 .md-expand mark .md-meta { opacity: 0.3 !important; }
 mark .md-meta { color: rgb(0, 0, 0); }
-@media print { 
+@media print {
   .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
 }
 .md-diagram-panel .messageText { stroke: none !important; }
@@ -163,10 +163,10 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
 .typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
 .typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
-@media screen and (max-width: 1024px) { 
+@media screen and (max-width: 1024px) {
   .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
 }
-@media screen and (max-width: 800px) { 
+@media screen and (max-width: 800px) {
   .typora-export-sidebar { display: none; }
 }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
@@ -1293,6 +1293,6 @@ a.ty-link {
 </style><title>LFool's Notes</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='lfools-notes'><span>LFool&#39;s Notes</span></h1><blockquote><p><span>更新时间：2022-03-12 21:39:40</span></p><p><span>记录本人总结！！！</span></p><p><font color='red'><span>不同主题表达了本人不同时期的喜好 嘿嘿</span></font></p><p><font color='red'><span>好久没更新了，惭愧！！！！！</span></font></p><p><span>呜呜呜！！图论好难，数学好难！！</span></p></blockquote><h2 id='算法'><span>算法</span></h2><h3 id='特殊板块😝～'><span>特殊板块😝～</span></h3><ul><li><a href='./algorithm/记录自己傻逼时刻.html'><span>记录自己傻逼时刻 🤮</span></a></li><li><a href='./algorithm/数据流中位数.html'><span>数据流中位数</span></a></li><li><a href='./algorithm/秒杀所有岛屿题目(DFS).html'><span>秒杀所有岛屿题目(DFS)</span></a></li><li><a href='./algorithm/前缀和数组.html'><span>前缀和数组</span></a></li><li><a href='./algorithm/位运算技巧.html'><span>位运算技巧</span></a></li></ul><h3 id='数组链表'><span>数组/链表</span></h3><ul><li><a href='./algorithm/链表.html'><span>链表</span></a></li><li><a href='./algorithm/单链表的六大解题套路.html'><span>单链表的六大解题套路</span></a></li><li><a href='./algorithm/双指针技巧秒杀四道数组-链表题目.html'><span>双指针技巧秒杀四道数组/链表题目</span></a></li><li></li></ul><h3 id='树-😊😊'><span>树 😊😊</span></h3><ul><li><a href='./algorithm/二叉树.html'><span>二叉树汇总</span></a></li><li><a href='./algorithm/二叉树遍历.html'><span>二叉树遍历</span></a></li><li><a href='./algorithm/BST.html'><span>二叉搜索树(BST)</span></a></li><li><a href='./algorithm/二叉树序列化&amp;反序列化.html'><span>二叉树序列化 &amp; 反序列化</span></a></li><li><a href='./algorithm/二叉树关于行的相关操作技巧.html'><span>二叉树关于行的相关操作技巧</span></a></li><li><a href='./algorithm/二叉树路径相关技巧.html'><span>二叉树路径相关技巧</span></a></li><li><a href='./algorithm/二叉树祖先问题.html'><span>二叉树祖先问题</span></a></li><li></li></ul><h3 id='图-😊😊'><span>图 😊😊</span></h3><ul><li><a href='./other/图论.html'><span>图论</span></a><span> </span><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" /></li><li><a href='./algorithm/图的遍历.html'><span>图的遍历</span></a><span> </span><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/></li><li><a href='./algorithm/最短路径.html'><span>最短路径</span></a><span> </span><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/></li><li><a href='./algorithm/二分图.html'><span>二分图</span></a><span> </span><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/></li><li></li></ul><p>&nbsp;</p><hr /><h2 id='计网'><span>计网</span></h2><ul><li><a href='./network/计算机网络--自顶向下.html'><span>计算机网络 -- 自顶向下</span></a><span> </span></li><li></li></ul><p>&nbsp;</p><hr /><h2 id='综合'><span>综合</span></h2><ul><li><a href='./git/Git总结.html'><span>Git 总结</span></a></li><li><a href='./Linux/Shell.html'><span>Shell 总结</span></a></li><li><a href='./Linux/Linux硬链接和软连接的区别与总结.html'><span>Linux硬链接和软连接的区别与总结</span></a></li></ul><hr /><h2 id='杂文'><span>杂文</span></h2><ul><li><a href='./other/网络安全最终总结.html'><span>网络安全最终总结</span></a></li><li><a href='./other/网络安全问答题总结.html'><span>网络安全问答题总结</span></a></li><li></li></ul><p><span>未完待续...</span></p></div></div>
+<div id='write'  class=''><h1 id='lfools-notes'><span>LFool&#39;s Notes</span></h1><blockquote><p><span>更新时间：2022-03-20 15:11:30</span></p><p><span>记录本人总结！！！</span></p><p><font color='red'><span>不同主题表达了本人不同时期的喜好 嘿嘿</span></font></p><p><font color='red'><span>好久没更新了，惭愧！！！！！</span></font></p><p><span>呜呜呜！！图论好难，数学好难！！</span></p><p><span>整理吐了！！！！！！！！！</span></p></blockquote><h2 id='算法'><span>算法</span></h2><h3 id='特殊板块😝～'><span>特殊板块😝～</span></h3><ul><li><a href='./algorithm/记录自己傻逼时刻.html'><span>记录自己傻逼时刻 🤮</span></a></li><li><a href='./algorithm/数据流中位数.html'><span>数据流中位数</span></a></li><li><a href='./algorithm/秒杀所有岛屿题目(DFS).html'><span>秒杀所有岛屿题目(DFS)</span></a></li><li><a href='./algorithm/前缀和数组.html'><span>前缀和数组</span></a></li><li><a href='./algorithm/位运算技巧.html'><span>位运算技巧</span></a></li></ul><h3 id='数组链表'><span>数组/链表</span></h3><ul><li><a href='./algorithm/链表.html'><span>链表</span></a></li><li><a href='./algorithm/单链表的六大解题套路.html'><span>单链表的六大解题套路</span></a></li><li><a href='./algorithm/双指针技巧秒杀四道数组-链表题目.html'><span>双指针技巧秒杀四道数组/链表题目</span></a></li><li></li></ul><h3 id='树-😊😊'><span>树 😊😊</span></h3><ul><li><a href='./algorithm/二叉树.html'><span>二叉树汇总</span></a></li><li><a href='./algorithm/二叉树遍历.html'><span>二叉树遍历</span></a></li><li><a href='./algorithm/BST.html'><span>二叉搜索树(BST)</span></a></li><li><a href='./algorithm/二叉树序列化&amp;反序列化.html'><span>二叉树序列化 &amp; 反序列化</span></a></li><li><a href='./algorithm/二叉树关于行的相关操作技巧.html'><span>二叉树关于行的相关操作技巧</span></a></li><li><a href='./algorithm/二叉树路径相关技巧.html'><span>二叉树路径相关技巧</span></a></li><li><a href='./algorithm/二叉树祖先问题.html'><span>二叉树祖先问题</span></a></li><li></li></ul><h3 id='图-😊😊'><span>图 😊😊</span></h3><ul><li><a href='./other/图论.html'><span>图论</span></a><span> </span><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" /></li><li><a href='./algorithm/图的遍历.html'><span>图的遍历</span></a><span> </span><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/></li><li><a href='./algorithm/最短路径.html'><span>最短路径</span></a><span> </span><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/></li><li><a href='./algorithm/二分图.html'><span>二分图</span></a><span> </span><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/></li><li></li></ul><p>&nbsp;</p><hr /><h2 id='计网'><span>计网</span></h2><ul><li><a href='./network/计算机网络--自顶向下.html'><span>计算机网络 -- 自顶向下</span></a><span> </span></li><li></li></ul><p>&nbsp;</p><hr /><h2 id='综合'><span>综合</span></h2><ul><li><a href='./git/Git总结.html'><span>Git 总结</span></a></li><li><a href='./Linux/Shell.html'><span>Shell 总结</span></a></li><li><a href='./Linux/Linux硬链接和软连接的区别与总结.html'><span>Linux硬链接和软连接的区别与总结</span></a></li></ul><hr /><h2 id='杂文'><span>杂文</span></h2><ul><li><a href='./other/网络安全最终总结.html'><span>网络安全最终总结</span></a></li><li><a href='./other/网络安全问答题总结.html'><span>网络安全问答题总结</span></a></li><li></li></ul><p><span>未完待续...</span></p></div></div>
 </body>
 </html>
