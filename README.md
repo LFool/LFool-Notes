@@ -1,6 +1,6 @@
 # LFool's Notes
 
-> 更新时间：2022-03-31 16:26:25
+> 更新时间：2022-04-01 21:59:22
 >
 > $\downarrow$ 记录本人总结！！！
 >
@@ -13,6 +13,8 @@
 > $\downarrow$ 整理吐了！！！！！！！！！
 >
 > $\downarrow$ 🤮 心累！！！！！！
+>
+> $\downarrow$ 😭 终于补了一个坑了，太不容易了！！！！！！
 
 ## 算法
 
@@ -23,6 +25,7 @@
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
 - [前缀和数组](./algorithm/前缀和数组.html)
 - [位运算技巧](./algorithm/位运算技巧.html)
+- 
 
 ### 数组/链表
 
@@ -45,10 +48,11 @@
 ### 图 😊😊
 
 - [图论](./other/图论.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
-- [图的遍历](./algorithm/图的遍历.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
-- [最短路径](./algorithm/最短路径.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
+- [图的遍历](./algorithm/图的遍历.html) 
+- [最短路径](./algorithm/最短路径.html) 
 - [二分图](./algorithm/二分图.html)
 - [环检测 & 拓扑排序](./algorithm/环检测-拓扑排序.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [并查集 (Union-Find)](./algorithm/并查集(Union-Find).html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - 
 
 
@@ -67,7 +71,7 @@
 ## 综合
 
 - [Git 总结](./git/Git总结.html)
-- [Shell 总结](./Linux/Shell.html)
+- [Shell 总结](./Linux/Shell.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
 - [Linux硬链接和软连接的区别与总结](./Linux/Linux硬链接和软连接的区别与总结.html)
 
 ---
