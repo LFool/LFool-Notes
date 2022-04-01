@@ -52,7 +52,7 @@
 - [最短路径](./algorithm/最短路径.html) 
 - [二分图](./algorithm/二分图.html)
 - [环检测 & 拓扑排序](./algorithm/环检测-拓扑排序.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [并查集 (Union-Find)](./algorithm/并查集(Union-Find).html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [并查集 (Union-Find)](./algorithm/并查集-Union-Find.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - 
 
 
