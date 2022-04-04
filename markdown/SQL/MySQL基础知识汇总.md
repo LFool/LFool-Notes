@@ -17,7 +17,7 @@
 
 表是一种结构化的文件，可用来存储某种特定类型的数据
 
-⚠️ **注意：**数据库中的每个表都有一个名字来标识自己。这个名字是唯一的，即数据库中没有其他表具有相同的名字
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16383116458647111645864711846QFpeHP.png" alt="image-20220226163831741" style="zoom:15%;" /> **<font color=#F6C843>注意：</font>**数据库中的每个表都有一个名字来标识自己。这个名字是唯一的，即数据库中没有其他表具有相同的名字
 
 - 使表名成为唯一的，实际上是数据库名和表名等的组合。在同一个数据库中不能存在两个名字相同的表，但在不同的数据库中，是可以存在两个名字相同的表
 
@@ -103,9 +103,9 @@ SELECT cust_id FROM Customers;
 
 **<font color='red'>ORDER BY 子句：</font>**取一个或多个列的名字，据此对输出进行排序
 
-⚠️ **注意：**在指定一条 ORDER BY 子句时，应该保证它是 SELECT 语句中最后一条子句
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16383116458647111645864711846QFpeHP.png" alt="image-20220226163831741" style="zoom:15%;" /> **<font color=#F6C843>注意：</font>**在指定一条 ORDER BY 子句时，应该保证它是 SELECT 语句中最后一条子句
 
-⚠️ **注意：**如果不指定排序的顺序 (默认升序 ASC)，降序 DESC (只应用到直接位于其前面的列名，如果想在多个列上进行降序排序,必须对每一列指定 DESC 关键字)
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16383116458647111645864711846QFpeHP.png" alt="image-20220226163831741" style="zoom:15%;" /> **<font color=#F6C843>注意：</font>**如果不指定排序的顺序 (默认升序 ASC)，降序 DESC (只应用到直接位于其前面的列名，如果想在多个列上进行降序排序,必须对每一列指定 DESC 关键字)
 
 ```mysql
 -- 按单个列排序 (根据 prod_name 排序)
@@ -140,15 +140,15 @@ SELECT quantity, item_price FROM OrderItems ORDER BY quantity DESC, item_price D
 
 **<font color='red'>WHERE 子句：</font>**数据根据 WHERE 子句中指定的搜索条件进行过滤
 
-⚠️ **注意：**WHERE 子句在表名 (FROM 子句) 之后给出
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16383116458647111645864711846QFpeHP.png" alt="image-20220226163831741" style="zoom:15%;" /> **<font color=#F6C843>注意：</font>**WHERE 子句在表名 (FROM 子句) 之后给出
 
 <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16402516458648251645864825235pN5IJY.png" alt="image-20220226164025008" style="zoom:18%;" /> **总结：**ORDER BY 放最后；WHERE 放 FROM table 后
 
 **<font color='red'>WHERE 子句操作符</font>**
 
-⚠️ **注意：** `NULL = no value`，与字段包含 0，空字符串，仅仅包含空格不同
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16383116458647111645864711846QFpeHP.png" alt="image-20220226163831741" style="zoom:15%;" /> **<font color=#F6C843>注意：</font>** `NULL = no value`，与字段包含 0，空字符串，仅仅包含空格不同
 
-⚠️ **注意：**通过过滤选择不包含指定值的所有行时, 无法返回含 NULL 值的行
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16383116458647111645864711846QFpeHP.png" alt="image-20220226163831741" style="zoom:15%;" /> **<font color=#F6C843>注意：</font>**通过过滤选择不包含指定值的所有行时, 无法返回含 NULL 值的行
 
 |      操作符       |        说明        |
 | :---------------: | :----------------: |
@@ -199,7 +199,7 @@ SELECT prod_id, prod_price, prod_name FROM Products WHERE vend_id = 'DLL01' AND 
 SELECT prod_id, prod_price, prod_name FROM Products WHERE vend_id = 'DLL01' OR vend_id = 'BRS01';
 ```
 
-⚠️ **注意：**在处理 OR 操作符前，优先处理 AND 操作符
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16383116458647111645864711846QFpeHP.png" alt="image-20220226163831741" style="zoom:15%;" /> **<font color=#F6C843>注意：</font>**在处理 OR 操作符前，优先处理 AND 操作符
 
 ```mysql
 SELECT prod_name, prod_price FROM Products WHERE vend_id = 'DLL01' OR vend_id = 'BRS01' AND prod_price >= 10;
@@ -262,11 +262,11 @@ SELECT prod_name, prod_price FROM products WHERE prod_price >= 3 AND prod_price 
 
 **<font color='red'>方括号 ([]) 通配符：</font>**指定一个字符集，它必须匹配指定位置 (通配符的位置) 的一个字符 (Mysql 不支持)
 
-⚠️ **注意：**根据不同的配置，搜索可以是区分大小写的
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16383116458647111645864711846QFpeHP.png" alt="image-20220226163831741" style="zoom:15%;" /> **<font color=#F6C843>注意：</font>**根据不同的配置，搜索可以是区分大小写的
 
-⚠️ **注意：**`WHERE prod_name LIKE '%'`不会匹配产品名称为 NULL 的行
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16383116458647111645864711846QFpeHP.png" alt="image-20220226163831741" style="zoom:15%;" /> **<font color=#F6C843>注意：</font>**`WHERE prod_name LIKE '%'`不会匹配产品名称为 NULL 的行
 
-⚠️ **注意：**有些 DBMS 用空格来填补字段的内容。例如某列有 50 个字符，但是只存储了 (Fish bean bag toy) 17 个字符的内容，则剩余 33 个字符用「空格」填充。如果此时需要用`F%y`来匹配 Fish bean bag toy，则会失败，因为字符后面空格，结尾并不是 y。可以修改匹配规则为`F%y%`
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16383116458647111645864711846QFpeHP.png" alt="image-20220226163831741" style="zoom:15%;" /> **<font color=#F6C843>注意：</font>**有些 DBMS 用空格来填补字段的内容。例如某列有 50 个字符，但是只存储了 (Fish bean bag toy) 17 个字符的内容，则剩余 33 个字符用「空格」填充。如果此时需要用`F%y`来匹配 Fish bean bag toy，则会失败，因为字符后面空格，结尾并不是 y。可以修改匹配规则为`F%y%`
 
 ```mysql
 -- % 通配符
