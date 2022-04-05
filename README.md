@@ -1,6 +1,6 @@
 # LFool's Notes
 
-> 更新时间：2022-04-04 21:14:49
+> 更新时间：2022-04-05 15:33:21
 >
 > $\downarrow$ 记录本人总结！！！
 >
@@ -33,7 +33,7 @@
 ### 数组/链表
 
 - [链表](./algorithm/链表.html)
-- [单链表的六大解题套路](./algorithm/单链表的六大解题套路.html)
+- [单链表的六大解题套路](./algorithm/单链表的六大解题套路.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [双指针技巧秒杀四道数组/链表题目](./algorithm/双指针技巧秒杀四道数组-链表题目.html)
 - 
 
