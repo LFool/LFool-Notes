@@ -237,3 +237,15 @@ brew install --cask zulu-jdk8
 # miniforge
 brew install --cask miniforge
 ```
+
+## 禁止生成 .DS_Store 文件
+
+```bash
+# 禁止生成 .DS_Store 文件
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+# 恢复生成 .DS_Store 文件
+defaults delete com.apple.desktopservices DSDontWriteNetworkStores
+```
+
+
+
