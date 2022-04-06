@@ -32,7 +32,7 @@
 
 ### 数组/链表
 
-- [链表](./algorithm/链表.html)
+- [反转链表](./algorithm/反转链表.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [单链表的六大解题套路](./algorithm/单链表的六大解题套路.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [双指针技巧秒杀四道数组/链表题目](./algorithm/双指针技巧秒杀四道数组-链表题目.html)
 - 
