@@ -1,6 +1,6 @@
 # LFool's Notes
 
-> 更新时间：2022-04-05 15:33:21
+> 更新时间：2022-04-07 11:22:02
 >
 > $\downarrow$ 记录本人总结！！！
 >
@@ -17,6 +17,8 @@
 > $\downarrow$ 😭 终于补了一个坑了，太不容易了！！！！！！
 >
 > $\downarrow$ 终于把图论相关的算法过了一遍 耶耶耶耶
+>
+> $\downarrow$ 加油 呜呼！！！
 
 ## 算法
 
@@ -26,6 +28,7 @@
 - [数据流中位数](./algorithm/数据流中位数.html)
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
 - [前缀和数组](./algorithm/前缀和数组.html)
+- [差分数组](./algorithm/差分数组技巧.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [位运算技巧](./algorithm/位运算技巧.html)
 - [排列 / 组合 / 子集 问题](./algorithm/排列-组合-子集问题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - 
