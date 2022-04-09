@@ -1,6 +1,6 @@
 # LFool's Notes
 
-> 更新时间：2022-04-08 21:53:28
+> 更新时间：2022-04-09 20:41:40
 >
 > $\downarrow$ 记录本人总结！！！
 >
@@ -31,6 +31,7 @@
 - [记录自己傻逼时刻 🤮](./algorithm/记录自己傻逼时刻.html)
 - [位运算技巧](./algorithm/位运算技巧.html)
 - [数据流中位数](./algorithm/数据流中位数.html)
+- [滑动窗口技巧](./algorithm/滑动窗口.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [排列/组合/子集 问题](./algorithm/排列-组合-子集问题.html)
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
 - 
