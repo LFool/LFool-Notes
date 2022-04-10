@@ -1,6 +1,6 @@
 # LFool's Notes
 
-> 更新时间：2022-04-09 20:41:40
+> 更新时间：2022-04-10 18:04:41
 >
 > $\downarrow$ 记录本人总结！！！
 >
@@ -39,8 +39,9 @@
 ### 数组/链表
 
 - [反转链表](./algorithm/反转链表.html)
-- [前缀和数组](./algorithm/前缀和数组.html)
+- [二分搜索](./algorithm/二分搜索.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [差分数组](./algorithm/差分数组技巧.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [前缀和数组](./algorithm/前缀和数组.html)
 - [单链表的六大解题套路](./algorithm/单链表的六大解题套路.html)
 - [二维数组的花式遍历技巧](./algorithm/二维数组的花式遍历技巧.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [双指针技巧秒杀四道数组/链表题目](./algorithm/双指针技巧秒杀四道数组-链表题目.html)
