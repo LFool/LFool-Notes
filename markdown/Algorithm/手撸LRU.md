@@ -181,3 +181,47 @@ public class LRUCache {
 }
 ```
 
+
+
+上面都是纯手动实现的 API，下面给出借助`LinkedListHashMap`实现的代码
+
+```java
+class LRUCache {
+
+    private int capacity;
+    private LinkedHashMap<Integer, Integer> cache;
+
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
+        cache = new LinkedHashMap<>();
+    }
+
+    public int get(int key) {
+        if (!cache.containsKey(key)) {
+            return -1;
+        }
+        makeRecently(key);
+        return cache.get(key);
+    }
+
+    public void put(int key, int value) {
+        if (cache.containsKey(key)) {
+            cache.put(key, value);
+            makeRecently(key);
+            return ;
+        }
+        if (cache.size() >= capacity) {
+            int leastUsed = cache.keySet().iterator().next();
+            cache.remove(leastUsed);
+        }
+        cache.put(key, value);
+    }
+
+    private void makeRecently(int key) {
+        int val = cache.get(key);
+        cache.remove(key);
+        cache.put(key, val);
+    }
+}
+```
+
