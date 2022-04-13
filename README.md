@@ -1,6 +1,6 @@
 # LFool's Notes
 
-> 更新时间：2022-04-12 15:15:02
+> 更新时间：2022-04-13 20:40:19
 >
 > $\downarrow$ 记录本人总结！！！
 >
@@ -29,6 +29,7 @@
 ### 特殊板块😝～
 
 - [记录自己傻逼时刻 🤮](./algorithm/记录自己傻逼时刻.html)
+- [手撸 LRU](./algorithm/手撸LRU.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [位运算技巧](./algorithm/位运算技巧.html)
 - [数据流中位数](./algorithm/数据流中位数.html)
 - [滑动窗口技巧](./algorithm/滑动窗口.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
