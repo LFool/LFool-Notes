@@ -53,6 +53,7 @@ public TreeNode deleteNode(TreeNode root, int key) {
         // root 有两个孩子节点
         // 1. 找到左子树最大值和 root 交换 | 2. 找到右子树最小值和 root 交换
         TreeNode minNode = getMinNode(root.right);
+        // 注意：下面两行的顺序不能颠倒
         minNode.right = deleteNode(root.right, minNode.val);
         minNode.left = root.left;
         return minNode;
@@ -85,8 +86,6 @@ public TreeNode searchBST(TreeNode root, int val) {
     else return searchBST(root.right, val);
 }
 ```
-
-
 
 ## 典型题目
 
@@ -332,8 +331,6 @@ private List<TreeNode> generateTreesHelper(int lo, int hi) {
 }
 ```
 
-
-
 ### [BST 第k小元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/submissions/)
 
 > 扩展：无序时，求第k 小/大 元素
@@ -425,8 +422,3 @@ public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
     return left == null ? right : left;   
 }
 ```
-
-
-
-
-

@@ -1,6 +1,6 @@
 # LFool's Notes
 
-> 更新时间：2022-04-15 21:16:26
+> 更新时间：2022-04-16 12:45:10
 >
 > $\downarrow$ 记录本人总结！！！
 >
@@ -57,7 +57,7 @@
 - [二叉树遍历](./algorithm/二叉树遍历.html)
 - [二叉树--纲领篇](./algorithm/二叉树--纲领篇.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [二叉树「遍历」And「分解」](./algorithm/二叉树-遍历-分解.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [二叉搜索树(BST)](./algorithm/BST.html)
+- [二叉搜索树(BST)](./algorithm/BST.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
 - [二叉树祖先问题](./algorithm/二叉树祖先问题.html)
 - [二叉树路径相关技巧](./algorithm/二叉树路径相关技巧.html)
 - [二叉树序列化 & 反序列化](./algorithm/二叉树序列化&反序列化.html)
