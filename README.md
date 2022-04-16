@@ -1,6 +1,6 @@
 # LFool's Notes
 
-> 更新时间：2022-04-16 19:28:04
+> 更新时间：2022-04-16 21:41:46
 >
 > $\downarrow$ 记录本人总结！！！
 >
@@ -25,17 +25,21 @@
 > $\downarrow$ 调整了一波目录顺序！！
 >
 > $\downarrow$ 图论杀了我叭 渡劫归来！！！
+>
+> $\downarrow$ 疯狂输出！！！
 
 ## 算法
 
 ### 特殊板块😝～
 
 - [记录自己傻逼时刻 🤮](./algorithm/记录自己傻逼时刻.html)
-- [手撸 LRU](./algorithm/手撸LRU.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [nSum](./algorithm/nSum.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [手撸 LRU](./algorithm/手撸LRU.html)
 - [单调队列](./algorithm/单调队列.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [最小栈 & 最大栈](./algorithm/最小栈-最大栈.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [位运算技巧](./algorithm/位运算技巧.html)
 - [数据流中位数](./algorithm/数据流中位数.html)
-- [滑动窗口技巧](./algorithm/滑动窗口.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [滑动窗口技巧](./algorithm/滑动窗口.html)
 - [排列/组合/子集 问题](./algorithm/排列-组合-子集问题.html)
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
 - 
@@ -43,11 +47,11 @@
 ### 数组/链表
 
 - [反转链表](./algorithm/反转链表.html)
-- [二分搜索](./algorithm/二分搜索.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [差分数组](./algorithm/差分数组技巧.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [二分搜索](./algorithm/二分搜索.html)
+- [差分数组](./algorithm/差分数组技巧.html)
 - [前缀和数组](./algorithm/前缀和数组.html)
 - [单链表的六大解题套路](./algorithm/单链表的六大解题套路.html)
-- [二维数组的花式遍历技巧](./algorithm/二维数组的花式遍历技巧.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [二维数组的花式遍历技巧](./algorithm/二维数组的花式遍历技巧.html)
 - [双指针技巧秒杀四道数组/链表题目](./algorithm/双指针技巧秒杀四道数组-链表题目.html)
 - [常数时间删除-查找数组中的任意元素](./algorithm/常数时间删除-查找数组中的任意元素.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - 
@@ -58,11 +62,11 @@
 - [二叉树遍历](./algorithm/二叉树遍历.html)
 - [二叉树--纲领篇](./algorithm/二叉树--纲领篇.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [二叉树「遍历」And「分解」](./algorithm/二叉树-遍历-分解.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [二叉搜索树(BST)](./algorithm/BST.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
+- [二叉搜索树(BST)](./algorithm/BST.html)
 - [二叉树祖先问题](./algorithm/二叉树祖先问题.html)
 - [二叉树路径相关技巧](./algorithm/二叉树路径相关技巧.html)
 - [二叉树序列化 & 反序列化](./algorithm/二叉树序列化&反序列化.html)
-- [二叉树关于行的相关操作技巧](./algorithm/二叉树关于行的相关操作技巧.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
+- [二叉树关于行的相关操作技巧](./algorithm/二叉树关于行的相关操作技巧.html)
 - 
 
 ### 图 😊😊
