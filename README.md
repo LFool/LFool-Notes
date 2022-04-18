@@ -1,6 +1,6 @@
 # LFool's Notes
 
-> 更新时间：2022-04-16 21:41:46
+> 更新时间：2022-04-18 21:59:01
 >
 > $\downarrow$ 记录本人总结！！！
 >
@@ -27,6 +27,8 @@
 > $\downarrow$ 图论杀了我叭 渡劫归来！！！
 >
 > $\downarrow$ 疯狂输出！！！
+>
+> $\downarrow$ 终于把 DFS && BFS 的坑补上了。。。
 
 ## 算法
 
@@ -34,6 +36,8 @@
 
 - [记录自己傻逼时刻 🤮](./algorithm/记录自己傻逼时刻.html)
 - [nSum](./algorithm/nSum.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [DFS 算法框架](./algorithm/DFS.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [BFS 算法框架](./algorithm/BFS.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [手撸 LRU](./algorithm/手撸LRU.html)
 - [单调队列](./algorithm/单调队列.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [最小栈 & 最大栈](./algorithm/最小栈-最大栈.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
