@@ -1,34 +1,18 @@
+<p align="center">
+<a href="https://lfool.github.io/LFool-Notes/"><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220108/01012216415748821641574882653Cdc3fw.ico" alt="" width="150" /></a>
+</p>
+
 # LFool's Notes
 
+<p align="center">
+<a href="https://github.com/LFool"><img src="https://img.shields.io/badge/%E4%BD%9C%E8%80%85-@LFool-000000.svg?style=flat-square&logo=GitHub"/></a> <a href="https://blog.csdn.net/qq_41599548" target="_blank"><img src="https://img.shields.io/badge/CSDN-@LFool-000000.svg?style=flat-square&logo=csdn"></a> <a href="https://leetcode-cn.com/u/lfool/" target="_blank"><img src="https://img.shields.io/badge/LeetCode-@LFool-000000.svg?style=flat-square&logo=LeetCode"></a>
+</p>
+
+
+
+> 记录本人总结！！！
+>
 > 更新时间：2022-04-18 21:59:01
->
-> $\downarrow$ 记录本人总结！！！
->
-> $\downarrow$ <font color='red'>不同主题表达了本人不同时期的喜好 嘿嘿</font>
->
-> $\downarrow$ <font color='red'>好久没更新了，惭愧！！！！！</font>
->
-> $\downarrow$ 呜呜呜！！图论好难，数学好难！！
->
-> $\downarrow$ 整理吐了！！！！！！！！！
->
-> $\downarrow$ 🤮 心累！！！！！！
->
-> $\downarrow$ 😭 终于补了一个坑了，太不容易了！！！！！！
->
-> $\downarrow$ 终于把图论相关的算法过了一遍 耶耶耶耶
->
-> $\downarrow$ 加油 呜呼！！！
->
-> $\downarrow$ 图论简直要死了！！！！！
->
-> $\downarrow$ 调整了一波目录顺序！！
->
-> $\downarrow$ 图论杀了我叭 渡劫归来！！！
->
-> $\downarrow$ 疯狂输出！！！
->
-> $\downarrow$ 终于把 DFS && BFS 的坑补上了。。。
 
 ## 算法
 
@@ -46,6 +30,11 @@
 - [滑动窗口技巧](./algorithm/滑动窗口.html)
 - [排列/组合/子集 问题](./algorithm/排列-组合-子集问题.html)
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
+- 
+
+### 动态规划
+
+- 
 - 
 
 ### 数组/链表
@@ -123,3 +112,13 @@
 
 未完待续...
 
+## Donate
+
+<font color='red'>如果本总结对你有帮助，可以请作者喝杯速溶咖啡！！！</font>
+
+![2](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220420/1540281650440428oY7cvU2.svg)
+
+<details>
+    <summary>㊙️</summary>
+    <iframe src="./other/Secret.html" height="400" frameborder="0" scrolling="no"></iframe>
+</details>
