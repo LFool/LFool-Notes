@@ -110,15 +110,21 @@
 - [Mac 设置整理](./other/Mac设置整理.html)
 - 
 
-未完待续...
+---
 
 ## Donate
 
 <font color='red'>如果本总结对你有帮助，可以请作者喝杯速溶咖啡！！！</font>
 
-![2](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220420/1540281650440428oY7cvU2.svg)
+<details>
+    <summary>Click Here!!!</summary>
+    <iframe src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220420/1540281650440428oY7cvU2.svg" height="400" frameborder="0" scrolling="no"></iframe>
+</details>
 
 <details>
     <summary>㊙️</summary>
     <iframe src="./other/Secret.html" height="400" frameborder="0" scrolling="no"></iframe>
 </details>
+
+
+未完待续...
