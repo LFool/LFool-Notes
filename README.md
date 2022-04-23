@@ -10,7 +10,7 @@
 
 
 
-> 更新时间：2022-04-22 21:59:04
+> 更新时间：2022-04-23 16:58:25
 >
 > 记录本人总结！！！
 
@@ -19,7 +19,7 @@
 ### 特殊板块😝～
 
 - [记录自己傻逼时刻 🤮](./algorithm/记录自己傻逼时刻.html)
-- [nSum](./algorithm/nSum.html)
+- [nSum](./algorithm/nSum.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 - [回溯 (DFS) 算法框架](./algorithm/回溯(DFS).html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [经典回溯算法：集合划分问题](./algorithm/经典回溯算法：集合划分问题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/> <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 - [BFS 算法框架](./algorithm/BFS.html)
@@ -36,7 +36,7 @@
 ### 动态规划
 
 - [动态规划解题套路框架](./algorithm/动态规划解题套路框架.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/> <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
-- 
+- [动态规划设计：最长递增子序列](./algorithm/动态规划设计：最长递增子序列.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/> <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 
 ### 数组/链表
 
