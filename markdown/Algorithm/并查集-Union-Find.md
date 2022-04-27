@@ -271,7 +271,7 @@ public void solve(char[][] board) {
         if (board[m - 1][j] == 'O') uf.union(dummy, (m - 1) * n + j);
     }
     // 将内圈的所有相邻的 'O' 全部连起来 
-    int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+    int[][] dirs = new int[][]{{1, 0}, {0, 1}, {0, -1}, {-1, 0}};
     for (int i = 1; i < m - 1; i++) {
         for (int j = 1; j < n - 1; j++) {
             if (board[i][j] == 'O') {
