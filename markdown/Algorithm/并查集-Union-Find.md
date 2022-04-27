@@ -104,7 +104,7 @@ public boolean connected(int p, int q) {
 
 `count()`需要维护一个全局变量，来记录图的连通分量的数量
 
-另外，我们需要明确的是：只有在调用`union()`方法时，才可能改变连通分量的数量
+另外，我们需要明确的是：**<font color='red'>只有在调用`union()`方法时，才可能改变连通分量的数量</font>**
 
 ```java
 public void union(int p, int q) {
@@ -125,8 +125,6 @@ public int count() {
 行文至此，已经把并查集的所有接口实现。但这远远不够，因为此时的代码还不完美，时间复杂度可能会很高
 
 分析上述实现的方法，`find()`是决定并查集时间复杂度的重要因素。抛开`find()`因素，其他方法的时间复杂度均可视为`O(1)`。所以如果要优化算法的时间复杂度，需要用`find()`入手
-
-
 
 对于有 n 个节点 1 个连通分量的并查集来说，最坏的时间复杂度为 `O(n)`，最好的时间复杂度为`O(1)`
 
@@ -225,6 +223,7 @@ class UF {
             parent[rootQ] = rootP;
             size[rootP] += size[rootQ];
         }
+        this.count--;
     }
     public boolean conneted(int p, int q) {
         int rootP = find(p);
