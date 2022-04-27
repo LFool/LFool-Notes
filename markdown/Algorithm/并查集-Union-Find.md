@@ -191,9 +191,9 @@ private int find(int x) {
 
 **<font color='red'>注意：</font>**
 
-- 当使用了路径压缩优化后，平衡性优化可不使用
 - 路径压缩优化比平衡性优化更为常用
-- 但是可在某些题目中借鉴平衡性优化的思想，如 [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)
+- 当使用了路径压缩优化后，平衡性优化可以不使用
+- 但是可以在某些题目中使用「平衡性优化」的思想，如 [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)
 
 ### <font color=#1FA774>完整模版</font>
 
