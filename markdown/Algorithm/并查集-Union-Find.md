@@ -1,10 +1,10 @@
-[toc]
-
 # 并查集（Union-Find）
 
 [990. 等式方程的可满足性](https://leetcode-cn.com/problems/satisfiability-of-equality-equations/)
 
 [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/)
+
+[128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)
 
 
 
@@ -246,7 +246,56 @@ class UF {
 
 ### <font color=#1FA774>实战题目</font>
 
-#### [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)
+<font size=2.5>**<font color=#5D21D0>题目 1: 被围绕的区域</font>**</font>
+
+**题目详情可见 [被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/)**
+
+这个题目可以用「DFS」，也可以使用「并查集」去解决，这篇文章给出并查集的解决方法。想要了解「DFS」的方法，**可见 [秒杀所有岛屿题目(DFS)](./秒杀所有岛屿题目(DFS).html)**
+
+![1](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220427/1955451651060545MJSeqJ1.svg)
+
+```java
+public void solve(char[][] board) {
+    int m = board.length;
+    int n = board[0].length;
+    // 多一个节点用来存放 dummy
+    UF uf = new UF(m * n + 1);
+    int dummy = m * n;
+    // 将 dummy 和四条边的所有 'O' 相连
+    for (int i = 0; i < m; i++) {
+        if (board[i][0] == 'O') uf.union(dummy, i * n);
+        if (board[i][n - 1] == 'O') uf.union(dummy, i * n + n - 1);
+    }
+    for (int j = 0; j < n; j++) {
+        if (board[0][j] == 'O') uf.union(dummy, j);
+        if (board[m - 1][j] == 'O') uf.union(dummy, (m - 1) * n + j);
+    }
+    // 将内圈的所有相邻的 'O' 全部连起来 
+    int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+    for (int i = 1; i < m - 1; i++) {
+        for (int j = 1; j < n - 1; j++) {
+            if (board[i][j] == 'O') {
+                for (int[] d : dirs) {
+                    int newI = i + d[0];
+                    int newJ = j + d[1];
+                    if (board[newI][newJ] == 'O') {
+                        uf.union(i * n + j, newI * n + newJ);
+                    }
+                }
+            }
+        }
+    }
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (board[i][j] == 'O' && !uf.connected(dummy, i * n + j)) board[i][j] = 'X';
+        }
+    }
+}
+```
+
+<font size=2.5>**<font color=#5D21D0>题目 2: 最长连续序列</font>**</font>
+
+**题目详情可见 [最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)**
 
 **<font color='red'>注意：size 别写反了！！！！🩸的教训</font>**
 
