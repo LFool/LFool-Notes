@@ -62,7 +62,7 @@ public UF (int n) {
 
 很简单，只需将其中任一一个节点的根节点指向另一个节点的根节点即可
 
-<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220402/2156381648907798FMZz6W1234.jpg" alt="1234" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220501/1538501651390730ccvAeu123.png" alt="123" style="zoom: 67%;" />
 
 ```java
 // 伪代码
@@ -138,7 +138,7 @@ public int count() {
 
 使用额外的一个数组`size[]`记录每个连通分量中的节点数，每次均把节点数少的分量接到节点数多的分量上，如图
 
-<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220402/2156181648907778aOyUAs123.jpg" alt="123" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220501/1539221651390762hJ6tCI1234.png" alt="1234" style="zoom:67%;" />
 
 **<font color='red'>注意：只有每个连通分量的根节点的 size[] 才可以代表该连通分量中的节点数</font>**
 
