@@ -10,9 +10,9 @@
 
 
 
-> 更新时间：2022-05-05 14:59:25
+> 更新时间：2022-05-06 16:20:23
 >
-> 截止目前，文章总数：**<font color='red'>61</font>**
+> 截止目前，文章总数：**<font color='red'>62</font>**
 >
 > 记录本人总结！！！
 
@@ -30,6 +30,7 @@
 - [数据流中位数](./algorithm/数据流中位数.html)
 - [滑动窗口技巧](./algorithm/滑动窗口.html)
 - [秒杀所有括号类问题](./algorithm/秒杀所有括号类问题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [秒杀子数组类题目](./algorithm/秒杀子数组类题目.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - 
 
 ### 动态规划
