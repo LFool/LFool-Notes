@@ -12,7 +12,7 @@
 
 > 更新时间：2022-05-07 15:19:29
 >
-> <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+> <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >     
 >截止目前，文章总数：**<font color='red'>63</font>**
 > 
