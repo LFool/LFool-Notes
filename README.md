@@ -16,6 +16,26 @@
 >
 > 记录本人总结！！！
 
+## 考试专区 (考试周特有分区)
+
+### 图论
+
+- [图论知识汇总](./other/图论.html)
+- [图论作业 1](./other/图论作业-1.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- ...
+
+
+### 网络计算模式
+- 待更新...
+
+### 软件架构
+
+- 待更新...
+
+
+
+----
+
 ## 算法
 
 ### 特殊板块😝～
@@ -87,7 +107,6 @@
 
 ### 图 😊😊
 
-- [图论](./other/图论.html)
 - [图的遍历](./algorithm/图的遍历.html) 
 - [最短路径](./algorithm/最短路径.html) 
 - [二分图](./algorithm/二分图.html)
@@ -128,7 +147,6 @@
 
 ## 杂文
 
-- [图论作业 1](./other/图论作业-1.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [网络安全最终总结](./other/网络安全最终总结.html)
 - [网络安全问答题总结](./other/网络安全问答题总结.html)
 - [Mac 设置整理](./other/Mac设置整理.html)
