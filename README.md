@@ -10,9 +10,9 @@
 
 
 
-> 更新时间：2022-05-06 16:20:23
+> 更新时间：2022-05-07 15:19:29
 >
-> 截止目前，文章总数：**<font color='red'>62</font>**
+> 截止目前，文章总数：**<font color='red'>63</font>**
 >
 > 记录本人总结！！！
 
@@ -49,6 +49,7 @@
 ### 搜索算法 (DFS/回溯/BFS)
 
 - [BFS 算法框架](./algorithm/BFS.html)
+- [浅析：最小基因变化](./algorithm/浅析：最小基因变化.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [排列/组合/子集 问题](./algorithm/排列-组合-子集问题.html)
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
 - [回溯 (DFS) 算法框架](./algorithm/回溯(DFS).html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/> <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
