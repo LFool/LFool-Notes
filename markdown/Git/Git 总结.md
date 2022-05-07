@@ -45,7 +45,7 @@ git reset
 
 
 
-把`stage`中的修改还原到`working dir`中
+**<font color=#5D21D0 size=2.5>把`stage`中的修改还原到`working dir`中</font>**
 
 ```bash
 # 恢复某一个文件
@@ -56,7 +56,7 @@ git checkout .
 
 
 
-把`commit history`区的历史提交还原到`working dir`中
+**<font color=#5D21D0 size=2.5>把`commit history`区的历史提交还原到`working dir`中</font>**
 
 ```bash
 git checkout HEAD .
@@ -64,10 +64,38 @@ git checkout HEAD .
 
 
 
-将`commit history`区的文件还原到`stage`区
+**<font color=#5D21D0 size=2.5>将`commit history`区的文件还原到`stage`区</font>**
 
 ```bash
 git reset [fileName]
 git reset .
+```
+
+
+
+**<font color=#5D21D0 size=2.5>撤销`git commit`</font>**
+
+```bash
+git reset --soft HEAD^
+# 等价
+git reset --soft HEAD~1
+# 撤销两次 git commit
+git reset --soft HEAD~2
+```
+
+下面介绍一下几个参数
+
+`--mixed`：不删除工作空间改动代码，撤销`commit`，并且撤销`git add .`操作
+
+`--soft  `：不删除工作空间改动代码，撤销`commit`，不撤销`git add .`
+
+`--hard` ：删除工作空间改动代码，撤销`commit`，撤销`git add .`
+
+
+
+**<font color=#5D21D0 size=2.5>修改`git commit -m "  "`注释</font>**
+
+```bash
+git commit --amend
 ```
 
