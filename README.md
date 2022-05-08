@@ -10,7 +10,7 @@
 
 
 
-> 更新时间：2022-05-07 15:19:29
+> 更新时间：2022-05-08 17:20:43
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >     
@@ -78,6 +78,7 @@
 - [经典回溯算法：集合划分问题](./algorithm/经典回溯算法：集合划分问题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/> <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 - [回溯算法：括号生成](./algorithm/回溯算法：括号生成.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [回溯算法：删除无效的括号](./algorithm/回溯算法：删除无效的括号.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [浅析：检查是否有合法括号字符串路径](./algorithm/浅析：检查是否有合法括号字符串路径.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [回溯算法：单词拆分](./algorithm/回溯算法：单词拆分.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - 
 
