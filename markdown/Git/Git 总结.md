@@ -81,6 +81,10 @@ git reset --soft HEAD^
 git reset --soft HEAD~1
 # 撤销两次 git commit
 git reset --soft HEAD~2
+
+# 如果此时我们同时需要撤销远程的提交记录
+# -f 表示强制推送到远程
+git push -f
 ```
 
 下面介绍一下几个参数
