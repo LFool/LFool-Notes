@@ -103,3 +103,31 @@ git push -f
 git commit --amend
 ```
 
+
+
+**<font color=#5D21D0 size=2.5>合并相同的`git commit`</font>**
+
+```bash
+# 选择需要合并 git commit 最早的一个 id 的前一个 (因为不包括本 id 的 git commit)
+git rebase -i [git logID]
+```
+
+当前我们只要知道`pick`和`squash`这两个命令即可
+
+- `pick`的意思是要会执行这个 commit
+- `squash`的意思是这个 commit 会被合并到前一个commit
+
+
+
+**<font color=#5D21D0 size=2.5>撤销`git rabase`合并</font>**
+
+```bash
+# 查看本地记录
+git reflog
+
+git reset --hard [id]
+
+# 同时修改远程的提交
+git push -f
+```
+
