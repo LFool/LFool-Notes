@@ -10,11 +10,11 @@
 
 
 
-> 更新时间：2022-05-16 21:22:07
+> 更新时间：2022-05-20 21:50:19
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >     
->截止目前，文章总数：**<font color='red'>68</font>**
+>截止目前，文章总数：**<font color='red'>69</font>**
 > 
 >记录本人总结！！！
 
@@ -27,7 +27,8 @@
 - [图论作业 2](./other/图论作业-2.html)
 - [图论作业 3](./other/图论作业-3.html)
 - [图论作业 4](./other/图论作业-4.html)
-- [超级无敌重中之重--不看血亏系列](./other/超级无敌精华汇总.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
+- [超级无敌重中之重--不看血亏系列 1](./other/超级无敌精华汇总.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
+- [超详细证明题总结--不看血亏系列 2](./other/超详细证明题总结.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/> <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 
 
 ### 网络计算模式
