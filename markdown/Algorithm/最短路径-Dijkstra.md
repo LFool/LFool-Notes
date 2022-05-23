@@ -1,4 +1,4 @@
-# 最短路径
+# 最短路径-Dijkstra
 
 [743. 网络延迟时间](https://leetcode-cn.com/problems/network-delay-time)
 
