@@ -38,7 +38,7 @@ class Solution {
     private int[][] graph;
     // 记录所有的树，其三元组为 [h, i, j]
     private List<int[]> tree = new ArrayList<>();
-    private int[][] dirs = new int[][]{{0,1},{0,-1},{1,0},{-1,0}};
+    private int[][] dirs = new int[][]{ {0,1},{0,-1},{1,0},{-1,0} };
     public int cutOffTree(List<List<Integer>> forest) {
         m = forest.size();
         n = forest.get(0).size();

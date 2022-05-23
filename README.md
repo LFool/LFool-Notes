@@ -114,7 +114,7 @@
 
 - [图的遍历](./algorithm/图的遍历.html) 
 - [最短路径-Dijkstra](./algorithm/最短路径-Dijkstra.html)
-- [浅析：无权值最短路径算法（BFS）](./algorithm/浅析：无权值最短路径算法（BFS）.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [浅析：无权值最短路径算法（BFS）](./algorithm/浅析：无权值最短路径算法-BFS.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [二分图](./algorithm/二分图.html)
 - [环检测 & 拓扑排序](./algorithm/环检测-拓扑排序.html)
 - [并查集 (Union-Find)](./algorithm/并查集-Union-Find.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
