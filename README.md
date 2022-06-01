@@ -10,11 +10,11 @@
 
 
 
-> 更新时间：2022-05-26 23:55:59
+> 更新时间：2022-06-01 21:41:39
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >     
->截止目前，文章总数：**<font color='red'>75</font>**
+>截止目前，文章总数：**<font color='red'>76</font>**
 > 
 >记录本人总结！！！
 
@@ -35,6 +35,7 @@
 - [秒杀所有括号类问题](./algorithm/秒杀所有括号类问题.html)
 - [秒杀子数组类题目](./algorithm/秒杀子数组类题目.html)
 - [子数组之滑动窗口篇](./algorithm/子数组之滑动窗口篇.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [关于回文子串的两种方法：「中心扩展」&「动态规划」](./algorithm/回文子串的两种方法-中心扩展-动态规划.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### 动态规划
 
