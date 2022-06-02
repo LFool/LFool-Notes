@@ -10,11 +10,11 @@
 
 
 
-> 更新时间：2022-06-02 20:01:46
+> 更新时间：2022-06-02 22:04:38
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >     
->截止目前，文章总数：**<font color='red'>78</font>**
+>截止目前，文章总数：**<font color='red'>79</font>**
 > 
 >记录本人总结！！！
 
@@ -26,6 +26,7 @@
 - [nSum](./algorithm/nSum.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 - [手撸 LRU](./algorithm/手撸LRU.html)
 - [单调栈](./algorithm/单调栈.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [单调栈之拓展应用](./algorithm/单调栈-拓展应用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [单调队列](./algorithm/单调队列.html)
 - [最小栈 & 最大栈](./algorithm/最小栈-最大栈.html)
 - [队列-栈-互相转换](./algorithm/队列-栈-互相转换.html)
