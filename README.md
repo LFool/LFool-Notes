@@ -125,6 +125,7 @@
 ## Java
 
 - [Java 集合框架](./java/Java集合框架.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [Java 8 Stream sorted()](./java/Java-8-Stream-sorted.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - 
 
 ---
