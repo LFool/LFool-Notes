@@ -5,16 +5,16 @@
 # LFool's Notes
 
 <p align="center">
-<a href="https://github.com/LFool"><img src="https://img.shields.io/badge/%E4%BD%9C%E8%80%85-@LFool-000000.svg?style=flat-square&logo=GitHub"/></a> <a href="https://blog.csdn.net/qq_41599548" target="_blank"><img src="https://img.shields.io/badge/CSDN-@LFool-000000.svg?style=flat-square&logo=csdn"></a> <a href="https://leetcode-cn.com/u/lfool/" target="_blank"><img src="https://img.shields.io/badge/LeetCode-@LFool-000000.svg?style=flat-square&logo=LeetCode"></a>
+<a href="https://github.com/LFool"><img src="https://img.shields.io/badge/%E4%BD%9C%E8%80%85-@LFool-000000.svg?style=flat-square&logo=GitHub"/></a> </a> <a href="https://leetcode-cn.com/u/lfool/" target="_blank"><img src="https://img.shields.io/badge/LeetCode-@LFool-000000.svg?style=flat-square&logo=LeetCode"></a>
 </p>
 
 
 
-> 更新时间：2022-06-02 22:04:38
+> 更新时间：2022-06-04 15:45:21
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >     
->截止目前，文章总数：**<font color='red'>79</font>**
+>截止目前，文章总数：**<font color='red'>81</font>**
 > 
 >记录本人总结！！！
 
@@ -124,6 +124,7 @@
 
 ## Java
 
+- [Java 小技巧总结](./java/Java-小技巧总结.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
 - [Java 集合框架](./java/Java集合框架.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [Java 8 Stream sorted()](./java/Java-8-Stream-sorted.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - 
