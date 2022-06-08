@@ -10,7 +10,7 @@
 
 
 
-> 更新时间：2022-06-07 15:47:57
+> 更新时间：2022-06-08 19:52:40
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >     
@@ -28,7 +28,6 @@
 - [单调栈](./algorithm/单调栈.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [单调栈之拓展应用](./algorithm/单调栈-拓展应用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [单调队列](./algorithm/单调队列.html)
-- [线段树详解](./algorithm/线段树详解.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [最小栈 & 最大栈](./algorithm/最小栈-最大栈.html)
 - [队列-栈-互相转换](./algorithm/队列-栈-互相转换.html)
 - [位运算技巧](./algorithm/位运算技巧.html)
@@ -73,6 +72,7 @@
 - [差分数组](./algorithm/差分数组技巧.html)
 - [前缀和数组](./algorithm/前缀和数组.html)
 - [前缀和之异或篇](./algorithm/前缀和之异或篇.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [线段树详解](./algorithm/线段树详解.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [单链表的六大解题套路](./algorithm/单链表的六大解题套路.html)
 - [二维数组的花式遍历技巧](./algorithm/二维数组的花式遍历技巧.html)
 - [双指针技巧秒杀七道数组/链表题目](./algorithm/双指针技巧秒杀七道数组-链表题目.html)
