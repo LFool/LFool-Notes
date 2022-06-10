@@ -124,9 +124,9 @@ public int count() {
 
 行文至此，已经把并查集的所有接口实现。但这远远不够，因为此时的代码还不完美，时间复杂度可能会很高
 
-分析上述实现的方法，`find()`是决定并查集时间复杂度的重要因素。抛开`find()`因素，其他方法的时间复杂度均可视为`O(1)`。所以如果要优化算法的时间复杂度，需要用`find()`入手
+分析上述实现的方法，`find()`是决定并查集时间复杂度的重要因素。抛开`find()`因素，其他方法的时间复杂度均可视为`O(1)`。所以如果要优化算法的时间复杂度，需要从`find()`入手
 
-对于有 n 个节点 1 个连通分量的并查集来说，最坏的时间复杂度为 `O(n)`，最好的时间复杂度为`O(1)`
+对于有 n 个节点 1 个连通分量的并查集来说，最坏的时间复杂度为`O(n)`，最好的时间复杂度为`O(1)`
 
 - 最坏情况：全部只有左孩子
 
@@ -189,11 +189,24 @@ private int find(int x) {
 }
 ```
 
+上面是用迭代实现的「路径压缩」，下面给出一种用递归实现的「路径压缩」，其效率更高！
+
+```java
+private int find(int x) {
+    if (parent[x] != x) {
+        parent[x] = find(parent[x]);
+    }
+    return parent[x];
+}
+```
+
+递归直接一次性把一棵树拉平了！！**<font color='red'>(强力推荐使用这种方法！！！✨✨✨)</font>**
+
 **<font color='red'>注意：</font>**
 
-- 路径压缩优化比平衡性优化更为常用
-- 当使用了路径压缩优化后，平衡性优化可以不使用
-- 但是可以在某些题目中使用「平衡性优化」的思想，如 [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)
+- 「路径压缩优化」比「平衡性优化」更为常用
+- 当使用了「路径压缩优化」后，「平衡性优化」可以不使用
+- 但是可以在某些题目中使用「平衡性优化」的思想，**如 [最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)**
 
 ### <font color=#1FA774>完整模版</font>
 
@@ -234,12 +247,11 @@ class UF {
         return this.count;
     }
     private int find(int x) {
-        while (x != parent[x]) {
-            // 路径压缩
-            parent[x] = parent[parent[x]];
-            x = parent[x];
+        // 路径压缩
+        if (parent[x] != x) {
+            parent[x] = find(parent[x]);
         }
-        return x;
+        return parent[x];
     }
 }
 ```
@@ -350,11 +362,11 @@ class UF {
     }
     // get root id
     private int find(int x) {
-        while (x != parent[x]) {
-            parent[x] = parent[parent[x]];
-            x = parent[x];
+        // 路径压缩
+        if (parent[x] != x) {
+            parent[x] = find(parent[x]);
         }
-        return x;
+        return parent[x];
     }
     public int getMaxConnectSize() {
         int maxSize = 0;
