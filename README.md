@@ -10,11 +10,11 @@
 
 
 
-> 更新时间：2022-06-09 01:19:41
+> 更新时间：2022-06-12 16:35:20
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >     
->截止目前，文章总数：**<font color='red'>85</font>**
+>截止目前，文章总数：**<font color='red'>86</font>**
 > 
 >记录本人总结！！！
 
@@ -59,6 +59,7 @@
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
 - [回溯 (DFS) 算法框架](./algorithm/回溯(DFS).html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 - [经典回溯算法：集合划分问题](./algorithm/经典回溯算法：集合划分问题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
+- [集合划分变题：未给定具体划分大小](./algorithm/集合划分变题-未给定具体划分大小.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [回溯算法：括号生成](./algorithm/回溯算法：括号生成.html)
 - [回溯算法：删除无效的括号](./algorithm/回溯算法：删除无效的括号.html)
 - [浅析：检查是否有合法括号字符串路径](./algorithm/浅析：检查是否有合法括号字符串路径.html)
