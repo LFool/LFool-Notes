@@ -10,13 +10,17 @@
 
 
 
+> **<font color='red'>如有错误或建议，可联系作者微信 -> <a href="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220624/0209091656007749vMEG08image-20220624020909519.png">LFool_</a></font>** ![wx](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220624/0233091656009189Pbt89Xwx.svg)
+>
+> **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
+>
 > 更新时间：2022-06-18 17:24:56
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
->     
->截止目前，文章总数：**<font color='red'>88</font>**
-> 
->记录本人总结！！！
+>
+> 截止目前，文章总数：**<font color='red'>88</font>**
+>
+> 记录本人总结！！！
 
 ## 算法
 
