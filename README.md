@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-06-26 19:36:51
+> 更新时间：2022-06-27 21:28:03
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>89</font>**
+> 截止目前，文章总数：**<font color='red'>90</font>**
 >
 > 记录本人总结！！！
 
@@ -46,6 +46,7 @@
 
 - [动态规划解题套路框架](./algorithm/动态规划解题套路框架.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 - [动态规划设计：最长递增子序列](./algorithm/动态规划设计：最长递增子序列.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
+- [最长公共子序列 (LCS)：「模版」&「输出」](./algorithm/最长公共子序列-模版-输出.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [经典动态规划：编辑距离](./algorithm/经典动态规划：编辑距离.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 - [浅析：最小路径和](./algorithm/浅析：最小路径和.html)
 - [深度剖析：地下城游戏](./algorithm/深度剖析：地下城游戏.html)
