@@ -38,7 +38,7 @@ public int peopleAwareOfSecret(int n, int delay, int forget) {
 
 **题目详情可见 [网格图中递增路径的数目](https://leetcode.cn/problems/number-of-increasing-paths-in-a-grid/)**
 
-这个题目就是一个「记忆化搜索」，为了避免路径重复，可以求出以某一个点为结尾的所有路径，所有把所有点都遍历一遍即可！
+这个题目就是一个「记忆化搜索」，为了避免路径重复，可以求出以某一个点为结尾的所有路径，所以把所有点都遍历一遍即可！
 
 ```java
 private int m, n;
