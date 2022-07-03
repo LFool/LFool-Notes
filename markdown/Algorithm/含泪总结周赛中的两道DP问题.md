@@ -45,7 +45,7 @@ private int m, n;
 private int[][] grid;
 private int[][] emeo;
 private int mod = (int) 1e9 + 7;
-private int[][] dirs = new int[][] {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+private int[][] dirs = new int[][] { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };
 public int countPaths(int[][] grid) {
     int ans = 0;
     this.grid = grid;
