@@ -10,6 +10,8 @@
 
 [676. 实现一个魔法字典](https://leetcode.cn/problems/implement-magic-dictionary/)
 
+[745. 前缀和后缀搜索](https://leetcode.cn/problems/prefix-and-suffix-search/)
+
 
 
 「前缀树」又叫「字典树」或「单词查找树」，总之它们是一个意思！
@@ -450,6 +452,81 @@ class MagicDictionary {
             return false;
         }
         return search(node.children[i], searchWord, index + 1, changeId);
+    }
+}
+```
+
+#### <font color=#9933FF>前缀和后缀搜索</font>
+
+**题目详情可见 [前缀和后缀搜索](https://leetcode.cn/problems/prefix-and-suffix-search/)**
+
+前面的题目，节点表示的要么是有效性，要么是字符串的权值，而这个题目需要从前缀和后缀同时搜索 🔍
+
+我们的可以采取的思路：同时维护两棵树 -> 「前缀树」和「后缀树」，树的每个节点表示以「从根节点到该节点」为前缀的单词的下标
+
+表述的可能比较抽象，直接看图：(我们还是以`[them, zip, team, the, app, that]`这个样例为基础)
+
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220714/1405181657778718SyyIFz4.svg" alt="4" style="zoom:80%;" />
+
+当我们需要寻找以`t`为前缀，以`m`为后缀的下标最大的字符串
+
+显然我们可以很容易找到图中绿色的两个节点，对应的下标`List`为`[0, 2, 3, 5]`和`[0, 2]`
+
+然后根据有序链表合并的思路，从后往前找到第一个相同的下标，即为最大下标！！
+
+
+```java
+class WordFilter {
+
+    class TrieNode {
+        List<Integer> list = new ArrayList<>();
+        TrieNode[] children = new TrieNode[26];
+    }
+
+    private TrieNode prefix = new TrieNode();
+    private TrieNode suffix = new TrieNode();
+
+    public WordFilter(String[] words) {
+        build(prefix, words, true);
+        build(suffix, words, false);
+    }
+    
+    public int f(String pref, String suff) {
+        List<Integer> prefList = query(prefix, pref, true);
+        List<Integer> suffList = query(suffix, suff, false);
+        int i = prefList.size() - 1, j = suffList.size() - 1;
+        while (i >= 0 && j >= 0) {
+            // 注意：比较 Integer 类变量最好不要直接比较，自动拆箱成 int 后再比较
+            int l1 = prefList.get(i), l2 = suffList.get(j);
+            if (l1 == l2) return l1;
+            else if (l1 > l2) i--;
+            else j--;
+        }
+        return -1;
+    }
+
+    private void build(TrieNode root, String[] words, boolean isPref) {
+        for (int i = 0; i < words.length; i++) {
+            TrieNode p = root;
+            int len = words[i].length();
+            for (int j = isPref ? 0 : len - 1; j >= 0 && j < len; j = isPref ? j + 1 : j - 1) {
+                int cur = words[i].charAt(j) - 'a';
+                if (p.children[cur] == null) p.children[cur] = new TrieNode();
+                p = p.children[cur];
+                p.list.add(i);
+            }
+        }
+    }
+
+    private List<Integer> query(TrieNode root, String s, boolean isPref) {
+        TrieNode p = root;
+        int len = s.length();
+        for (int i = isPref ? 0 : len - 1; i >= 0 && i < len; i = isPref ? i + 1 : i - 1) {
+            int cur = s.charAt(i) - 'a';
+            if (p.children[cur] == null) return new ArrayList<>();
+            p = p.children[cur];
+        }
+        return p.list;
     }
 }
 ```
