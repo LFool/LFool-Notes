@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-07-14 17:01:57
+> 更新时间：2022-07-14 18:33:20
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>97</font>**
+> 截止目前，文章总数：**<font color='red'>98</font>**
 >
 > 记录本人总结！！！
 
@@ -31,6 +31,7 @@
 - [手撸 LRU](./algorithm/手撸LRU.html)
 - [位运算技巧](./algorithm/位运算技巧.html)
 - [数据流中位数](./algorithm/数据流中位数.html)
+- [判定完美矩形](./algorithm/判定完美矩形.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [详解前缀树「TrieTree」](./algorithm/详解前缀树TrieTree.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [详解归并排序及其应用](./algorithm/详解归并排序及其应用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [单调栈](./algorithm/单调栈.html)
