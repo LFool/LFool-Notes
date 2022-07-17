@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-07-17 21:56:13
+> 更新时间：2022-07-17 22:02:58
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>100</font>**
+> 截止目前，文章总数：**<font color='red'>101</font>**
 >
 > 记录本人总结！！！
 
@@ -156,6 +156,7 @@
 
 - [Git 总结](./git/Git总结.html)
 - [Shell 总结](./Linux/Shell.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
+- [Centos 环境配置总结](./Linux/Centos-环境配置总结.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [Linux硬链接和软连接的区别与总结](./Linux/Linux硬链接和软连接的区别与总结.html)
 - 
 
