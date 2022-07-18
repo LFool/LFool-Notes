@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-07-18 17:18:10
+> 更新时间：2022-07-18 18:50:41
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>102</font>**
+> 截止目前，文章总数：**<font color='red'>103</font>**
 >
 > 记录本人总结！！！
 
@@ -69,6 +69,7 @@
 
 - [BFS 算法框架](./algorithm/BFS.html)
 - [浅析：最小基因变化](./algorithm/浅析：最小基因变化.html)
+- [BFS 算法秒杀数字华容道](./algorithm/BFS算法秒杀数字华容道.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [排列/组合/子集 问题](./algorithm/排列-组合-子集问题.html)
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
 - [回溯 (DFS) 算法框架](./algorithm/回溯(DFS).html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
