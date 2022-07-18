@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-07-18 18:50:41
+> 更新时间：2022-07-18 20:43:12
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>103</font>**
+> 截止目前，文章总数：**<font color='red'>104</font>**
 >
 > 记录本人总结！！！
 
@@ -142,6 +142,7 @@
 - [MySQL 基础知识汇总](./SQL/MySQL基础知识汇总.html)
 - [MySQL 容易被忽略的小知识](./SQL/MySQL-容易被忽略的小知识.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [InnoDB 中 row_id 的秘密](./SQL/InnoDB中row_id的秘密.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [深挖 MySQL 记录的二进制表示](./SQL/深挖MySQL记录的二进制表示.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ---
 
