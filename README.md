@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-07-18 20:43:12
+> 更新时间：2022-07-20 20:33:03
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>104</font>**
+> 截止目前，文章总数：**<font color='red'>105</font>**
 >
 > 记录本人总结！！！
 
@@ -111,7 +111,7 @@
 - [二叉树路径相关技巧](./algorithm/二叉树路径相关技巧.html)
 - [二叉树序列化 & 反序列化](./algorithm/二叉树序列化&反序列化.html)
 - [二叉树关于行的相关操作技巧](./algorithm/二叉树关于行的相关操作技巧.html)
-- 
+- [求完全二叉树的节点个数](./algorithm/完全二叉树的节点个数.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### 图 😊😊
 
