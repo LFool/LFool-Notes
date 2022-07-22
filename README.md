@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-07-20 21:10:10
+> 更新时间：2022-07-22 19:56:15
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>106</font>**
+> 截止目前，文章总数：**<font color='red'>107</font>**
 >
 > 记录本人总结！！！
 
@@ -31,8 +31,8 @@
 - [手撸 LRU](./algorithm/手撸LRU.html)
 - [位运算技巧](./algorithm/位运算技巧.html)
 - [数据流中位数](./algorithm/数据流中位数.html)
-- [判定完美矩形](./algorithm/判定完美矩形.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [详解前缀树「TrieTree」](./algorithm/详解前缀树TrieTree.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [判定完美矩形](./algorithm/判定完美矩形.html)
+- [详解前缀树「TrieTree」](./algorithm/详解前缀树TrieTree.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 - [详解归并排序及其应用](./algorithm/详解归并排序及其应用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [单调栈](./algorithm/单调栈.html)
 - [单调栈之拓展应用](./algorithm/单调栈-拓展应用.html)
@@ -81,6 +81,10 @@
 - [浅析：检查是否有合法括号字符串路径](./algorithm/浅析：检查是否有合法括号字符串路径.html)
 - [回溯算法：单词拆分](./algorithm/回溯算法：单词拆分.html)
 - [回溯之博弈论：我能赢吗](./algorithm/回溯之博弈论：我能赢吗.html)
+
+### 贪心 😊
+
+- [贪心之加油站](./algorithm/贪心之加油站.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### 数组/链表
 
