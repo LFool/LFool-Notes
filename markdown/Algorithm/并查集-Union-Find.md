@@ -238,7 +238,7 @@ class UF {
         }
         this.count--;
     }
-    public boolean conneted(int p, int q) {
+    public boolean connected(int p, int q) {
         int rootP = find(p);
         int rootQ = find(q);
         return rootP == rootQ;
