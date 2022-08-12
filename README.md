@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-08-07 12:38:06
+> 更新时间：2022-08-13 00:18:20
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>110</font>**
+> 截止目前，文章总数：**<font color='red'>111</font>**
 >
 > 记录本人总结！！！
 
@@ -160,6 +160,7 @@
 - [Java 集合框架](./java/Java集合框架.html)
 - [Java 8 Stream sorted()](./java/Java-8-Stream-sorted.html)
 - [Random 类](./java/Random.html)
+- [「简单工厂/工厂方法/抽象工厂」模式](./java/简单工厂-工厂方法-抽象工厂-模式.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ---
 
