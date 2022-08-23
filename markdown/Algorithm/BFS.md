@@ -44,7 +44,9 @@ public List<List<Integer>> levelOrder(TreeNode root) {
 
 利用上面的特点我们可以求一些最值问题，如：**[二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)**
 
-<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220418/2027431650284863iHh0Plex_depth.jpg" alt="img" style="zoom:50%;" />
+
+
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220824/0005501661270750NbXWbT9.svg" alt="9" style="zoom:50%;" />
 
 ```java
 public int minDepth(TreeNode root) {

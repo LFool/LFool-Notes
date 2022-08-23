@@ -45,7 +45,7 @@ private void dfs(int[][] grid, int i, int j) {
 
 **<font color='red'>思路：</font>**把与 1 相连的区域进行 FloodFill
 
-<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220108/21010916416468691641646869730ba1HBh.jpeg" alt="1" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220824/0010261661271026Dua0sk10.svg" alt="10" style="zoom:50%;" />
 
 ```java
 public int numIslands(char[][] grid) {
@@ -78,7 +78,7 @@ private void dfs(int[][] grid, int i, int j) {
 
 相似题目：[飞地的数量](https://leetcode-cn.com/problems/number-of-enclaves/)
 
-<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220108/21023616416469561641646956056xHe2ME.png" alt="img" style="zoom: 67%;" />
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220824/00104916612710498Io7EC11.svg" alt="11" style="zoom: 67%;" />
 
 ```java
 public int closedIsland(int[][] grid) {
@@ -152,7 +152,7 @@ private void dfs(int[][] grid, int i, int j) {
 
 **<font color='red'>思路：</font>**如果 B 是岛屿，但 A 不是岛屿，则对 B 进行 FloodFill
 
-![img](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220108/21114216416475021641647502296vX56tU.png)
+![12](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220824/0011001661271060s57t0c12.svg)
 
 ```java
 public int countSubIslands(int[][] grid1, int[][] grid2) {
@@ -189,7 +189,7 @@ private void dfs(int[][] grid, int i, int j) {
 
 **<font color='red'>思路：</font>**首选选择出与岸边相连的岛屿并标记为`F`，然后把内部封闭的岛屿全部置为`X`，最后把`F`置为`O`
 
-<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220427/2047551651063675ybZKJFxogrid.jpg" alt="img" style="zoom: 50%;" />
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220824/0011101661271070vf4ibr13.svg" alt="13" style="zoom:50%;" />
 
 ```java
 public void solve(char[][] board) {
@@ -232,7 +232,7 @@ private void dfs(char[][] board, int i, int j) {
 
 这个题目很有意思，有意思到一开始题目都没看懂！！！麻了！！！
 
-<img src="https://assets.leetcode.com/uploads/2021/06/08/waterflow-grid.jpg" alt="img" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220824/0011451661271105l0g03O14.svg" alt="14" style="zoom:50%;" />
 
 先简单解释一下这个题目的意思：与 Ocean 直接相连的格子中的水可以直接流入 Ocean 中；非直接相连的格子中的水只能流到相邻且比自己矮 (相等也可以) 的格子中
 
