@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-08-22 21:32:52
+> 更新时间：2022-09-03 20:27:21
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>113</font>**
+> 截止目前，文章总数：**<font color='red'>114</font>**
 >
 > 记录本人总结！！！
 
@@ -40,13 +40,13 @@
 - [最小栈 & 最大栈](./algorithm/最小栈-最大栈.html)
 - [队列-栈-互相转换](./algorithm/队列-栈-互相转换.html)
 - [求素数的三种方法](./algorithm/求素数的三种方法.html)
-- [按权重随机选择](./algorithm/按权重随机选择.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [按权重随机选择](./algorithm/按权重随机选择.html)
 - [滑动窗口技巧](./algorithm/滑动窗口.html)
-- [滑动窗口之 RABIN KARP 字符匹配算法](./algorithm/滑动窗口之RABIN-KARP字符匹配算法.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [滑动窗口之 RABIN KARP 字符匹配算法](./algorithm/滑动窗口之RABIN-KARP字符匹配算法.html)
 - [秒杀所有括号类问题](./algorithm/秒杀所有括号类问题.html)
 - [秒杀子数组类题目](./algorithm/秒杀子数组类题目.html)
 - [子数组之滑动窗口篇](./algorithm/子数组之滑动窗口篇.html)
-- [田忌赛马](./algorithm/田忌赛马.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [田忌赛马](./algorithm/田忌赛马.html)
 
 ### 动态规划
 
@@ -67,7 +67,7 @@
 
 - [BFS 算法框架](./algorithm/BFS.html)
 - [浅析：最小基因变化](./algorithm/浅析：最小基因变化.html)
-- [BFS 算法秒杀数字华容道](./algorithm/BFS算法秒杀数字华容道.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [BFS 算法秒杀数字华容道](./algorithm/BFS算法秒杀数字华容道.html)
 - [排列/组合/子集 问题](./algorithm/排列-组合-子集问题.html)
 - [秒杀所有岛屿题目(DFS)](./algorithm/秒杀所有岛屿题目(DFS).html)
 - [回溯 (DFS) 算法框架](./algorithm/回溯(DFS).html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
@@ -81,7 +81,7 @@
 
 ### 贪心 😊
 
-- [贪心之加油站](./algorithm/贪心之加油站.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [贪心之加油站](./algorithm/贪心之加油站.html)
 
 ### 数组/链表
 
@@ -94,13 +94,14 @@
 - [差分数组](./algorithm/差分数组技巧.html)
 - [前缀和数组](./algorithm/前缀和数组.html)
 - [前缀和之异或篇](./algorithm/前缀和之异或篇.html)
+- [前缀和之等价条件](./algorithm/前缀和之等价条件.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [线段树详解](./algorithm/线段树详解.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
 - [单链表的六大解题套路](./algorithm/单链表的六大解题套路.html)
 - [二维数组的花式遍历技巧](./algorithm/二维数组的花式遍历技巧.html)
-- [双指针之接雨水问题](./algorithm/双指针之接雨水问题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [双指针之接雨水问题](./algorithm/双指针之接雨水问题.html)
 - [双指针技巧秒杀七道数组/链表题目](./algorithm/双指针技巧秒杀七道数组-链表题目.html)
 - [常数时间删除-查找数组中的任意元素](./algorithm/常数时间删除-查找数组中的任意元素.html)
-- [原地寻找数组中重复/消失的数字](./algorithm/原地寻找数组中重复-消失的数字.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [原地寻找数组中重复/消失的数字](./algorithm/原地寻找数组中重复-消失的数字.html)
 - [详解快排及其应用](./algorithm/详解快排及其应用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [详解归并排序及其应用](./algorithm/详解归并排序及其应用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - 
@@ -116,7 +117,7 @@
 - [二叉树路径相关技巧](./algorithm/二叉树路径相关技巧.html)
 - [二叉树序列化 & 反序列化](./algorithm/二叉树序列化&反序列化.html)
 - [二叉树关于行的相关操作技巧](./algorithm/二叉树关于行的相关操作技巧.html)
-- [巧求「完全二叉树的节点个数」](./algorithm/完全二叉树的节点个数.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [巧求「完全二叉树的节点个数」](./algorithm/完全二叉树的节点个数.html)
 
 ### 图 😊😊
 
@@ -134,12 +135,12 @@
 
 - [🥹 含泪总结周赛中的三道「DP」问题](./algorithm/含泪总结周赛中的三道DP问题.html)
 - [🥹 含泪总结周赛中的两道「DP」问题](./algorithm/含泪总结周赛中的两道DP问题.html)
-- [🥹 含泪总结周赛中的两道「图」问题](./algorithm/含泪总结周赛中的两道图问题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [🥹 浅浅记录一下周赛「2022-08-07」](./algorithm/浅浅记录一下周赛-2022-08-07.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [🥹 含泪总结周赛中的两道「图」问题](./algorithm/含泪总结周赛中的两道图问题.html)
+- [🥹 浅浅记录一下周赛「2022-08-07」](./algorithm/浅浅记录一下周赛-2022-08-07.html)
 
 ### 笔试 🥹🥹
 
-- [浅浅记录一次字节伪笔试「2022-08-21」](./algorithm/浅浅记录一次字节伪笔试2022-08-21.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [浅浅记录一次字节伪笔试「2022-08-21」](./algorithm/浅浅记录一次字节伪笔试2022-08-21.html)
 
 ---
 
@@ -154,9 +155,9 @@
 ## 数据库
 
 - [MySQL 基础知识汇总](./SQL/MySQL基础知识汇总.html)
-- [MySQL 容易被忽略的小知识](./SQL/MySQL-容易被忽略的小知识.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [InnoDB 中 row_id 的秘密](./SQL/InnoDB中row_id的秘密.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [深挖 MySQL 记录的二进制表示](./SQL/深挖MySQL记录的二进制表示.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [MySQL 容易被忽略的小知识](./SQL/MySQL-容易被忽略的小知识.html)
+- [InnoDB 中 row_id 的秘密](./SQL/InnoDB中row_id的秘密.html)
+- [深挖 MySQL 记录的二进制表示](./SQL/深挖MySQL记录的二进制表示.html)
 
 ---
 
@@ -166,7 +167,7 @@
 - [Java 集合框架](./java/Java集合框架.html)
 - [Java 8 Stream sorted()](./java/Java-8-Stream-sorted.html)
 - [Random 类](./java/Random.html)
-- [「简单工厂/工厂方法/抽象工厂」模式](./java/简单工厂-工厂方法-抽象工厂-模式.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [「简单工厂/工厂方法/抽象工厂」模式](./java/简单工厂-工厂方法-抽象工厂-模式.html)
 
 ---
 
@@ -174,7 +175,7 @@
 
 - [Git 总结](./git/Git总结.html)
 - [Shell 总结](./Linux/Shell.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
-- [Centos 环境配置总结](./Linux/Centos-环境配置总结.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [Centos 环境配置总结](./Linux/Centos-环境配置总结.html)
 - [Linux硬链接和软连接的区别与总结](./Linux/Linux硬链接和软连接的区别与总结.html)
 - 
 
