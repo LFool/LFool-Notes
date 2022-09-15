@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-09-15 00:18:31
+> 更新时间：2022-09-15 22:05:13
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>121</font>**
+> 截止目前，文章总数：**<font color='red'>122</font>**
 >
 > 记录本人总结！！！
 
@@ -145,6 +145,7 @@
 
 - [浅浅记录一次字节伪笔试「2022-08-21」](./algorithm/浅浅记录一次字节伪笔试2022-08-21.html)
 - [浅浅记录一次百度伪笔试「2022-09-13」](./algorithm/浅浅记录一次百度伪笔试2022-09-13.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [浅浅记录一次华为伪笔试「2022-09-14」](./algorithm/浅浅记录一次华为伪笔试2022-09-14.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ---
 
