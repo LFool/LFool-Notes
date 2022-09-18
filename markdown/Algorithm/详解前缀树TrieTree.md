@@ -12,6 +12,8 @@
 
 [745. 前缀和后缀搜索](https://leetcode.cn/problems/prefix-and-suffix-search/)
 
+[6183. 字符串的前缀分数和](https://leetcode.cn/problems/sum-of-prefix-scores-of-strings/)
+
 
 
 「前缀树」又叫「字典树」或「单词查找树」，总之它们是一个意思！
@@ -165,7 +167,7 @@ public String shortestPrefixOf(String word) {
         int i = c - 'a';
         // 首次遇到有效路径，直接返回
         if (p.val) return sb.toString();
-        ans.append(c);
+        sb.append(c);
         // 路径不存在的情况，直接返回 ""
         if (p.children[i] == null) return "";
         p = p.children[i];
@@ -532,6 +534,73 @@ class WordFilter {
         }
         return p.list;
     }
+}
+```
+
+#### <font color=#9933FF>字符串的前缀分数和</font>
+
+**题目详情可见 [前缀和后缀搜索](https://leetcode.cn/problems/sum-of-prefix-scores-of-strings/)**
+
+这个题也是「前缀树」的模版题，只不过每个节点的含义需要重新定义一下：**表示以该路径为前缀的单词数量**
+
+可能表述的有些抽象，以`["abc","ab","bc","b"]`为例，直接看图：
+
+![432](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220918/1139341663472374geem0i432.svg)
+
+构建好了前缀树，如果我们需要查询某个单词的前缀分数和，如`"abc"`，只需要路径`abc`的节点累加即可，2 + 2 + 1 = 5
+
+下面给出代码：
+
+```java
+public int[] sumPrefixScores(String[] words) {
+    for (String word : words) {
+        // 插入所有节点
+        insert(word);
+    }
+    int[] ans = new int[words.length];
+    for (int i = 0; i < words.length; i++) {
+        // 查询所有节点
+        ans[i] = query(words[i]);
+    }
+    return ans;
+}
+
+// ********** 以下是模版 **********
+
+// 前缀树的数据结构
+class TrieNode {
+    int val;
+    TrieNode[] children = new TrieNode[26];
+}
+// 前缀树的根节点
+private TrieNode root = new TrieNode();
+
+// 往前缀树中插入一个新的字符串
+public void insert(String word) {
+    TrieNode p = root;
+    for (char c : word.toCharArray()) {
+        int i = c - 'a';
+        // 初始化孩子节点
+        if (p.children[i] == null) p.children[i] = new TrieNode();
+        
+        // 注意：途经的节点均需要 ➕1
+        p.children[i].val += 1;
+        
+        // 节点下移
+        p = p.children[i];
+    }
+}
+public int query(String word) {
+    TrieNode p = root;
+    int cnt = 0;
+    for (char c : word.toCharArray()) {
+        int i = c - 'a';
+        if (p.children[i] == null) return cnt;
+        p = p.children[i];
+        // 累加节点和
+        cnt += p.val;
+    }
+    return cnt;
 }
 ```
 
