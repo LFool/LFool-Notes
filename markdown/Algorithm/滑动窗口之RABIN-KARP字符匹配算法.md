@@ -87,7 +87,9 @@ public List<String> findRepeatedDnaSequences(String s) {
 }
 ```
 
-时间复杂度为：`O(NL)`
+滑动窗口算法本身的时间复杂度是`O(N)`，再看看窗口滑动的过程中的操作耗时，给`ans`添加子串的过程用到了`substring`方法需要`O(L)`的复杂度，但一般情况下`substring`方法不会调用很多次，只有极端情况 (比如字符串全都是相同的字符) 下才会每次滑动窗口时都调用`substring`方法
+
+所以我们可以说这个算法一般情况下的平均时间复杂度是`O(N)`，极端情况下的时间复杂度会退化成`O(NL)`
 
 
 ### <font color=#1FA774>实现 strStr()</font>
