@@ -40,7 +40,7 @@ public List<List<Integer>> levelOrder(TreeNode root) {
 }
 ```
 
-<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16402516458648251645864825235pN5IJY.png" alt="image-20220226164025008" style="zoom:18%;" /> 注：层次遍历是可以携带层级数据，即可以知道每次处理的是第几层
+![11](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220921/1907101663758430jJwsCc11.svg) 注：层次遍历是可以携带层级数据，即可以知道每次处理的是第几层
 
 利用上面的特点我们可以求一些最值问题，如：**[二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)**
 
@@ -217,4 +217,4 @@ public int openLock(String[] deadends, String target) {
 }
 ```
 
-<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220226/16402516458648251645864825235pN5IJY.png" alt="image-20220226164025008" style="zoom:18%;" /> 注：优化版的「判断节点是否已经访问」以及「加入访问集合中」的顺序有变化
+![11](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220921/1907101663758430jJwsCc11.svg) 注：优化版的「判断节点是否已经访问」以及「加入访问集合中」的顺序有变化
