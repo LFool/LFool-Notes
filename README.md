@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-09-25 17:17:24
+> 更新时间：2022-09-29 00:29:06
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>126</font>**
+> 截止目前，文章总数：**<font color='red'>127</font>**
 >
 > 记录本人总结！！！
 
@@ -28,7 +28,6 @@
 
 - [记录自己傻逼时刻 🤮](./algorithm/记录自己傻逼时刻.html)
 - [nSum](./algorithm/nSum.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220422/1448461650610126FKJEXhhot.svg"/>
-- [手撸 LRU](./algorithm/手撸LRU.html)
 - [位运算技巧](./algorithm/位运算技巧.html)
 - [数据流中位数](./algorithm/数据流中位数.html)
 - [判定完美矩形](./algorithm/判定完美矩形.html)
@@ -38,7 +37,6 @@
 - [不一样的下一个更大元素](./algorithm/不一样的下一个更大元素.html)
 - [单调队列](./algorithm/单调队列.html)
 - [最小栈 & 最大栈](./algorithm/最小栈-最大栈.html)
-- [队列-栈-互相转换](./algorithm/队列-栈-互相转换.html)
 - [求素数的三种方法](./algorithm/求素数的三种方法.html)
 - [按权重随机选择](./algorithm/按权重随机选择.html)
 - [滑动窗口技巧](./algorithm/滑动窗口.html)
@@ -47,6 +45,12 @@
 - [秒杀子数组类题目](./algorithm/秒杀子数组类题目.html)
 - [子数组之滑动窗口篇](./algorithm/子数组之滑动窗口篇.html)
 - [田忌赛马](./algorithm/田忌赛马.html)
+
+### 设计数据结构
+
+- [手撸 LRU](./algorithm/手撸LRU.html)
+- [队列-栈-互相转换](./algorithm/队列-栈-互相转换.html)
+- 
 
 ### 动态规划
 
@@ -63,6 +67,7 @@
 - [下降路径最小和 -「回溯」&「动规」](./algorithm/下降路径最小和-回溯-动规.html)
 - [动态规划之最长回文子序列「dp 空间优化」](./algorithm/动态规划之最长回文子序列.html)
 - [关于回文子串的两种方法：「中心扩展」&「动态规划」](./algorithm/回文子串的两种方法-中心扩展-动态规划.html)
+- [「数位 DP」详解](./algorithm/数位DP.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### 搜索算法 (DFS/回溯/BFS)
 
