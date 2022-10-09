@@ -29,6 +29,8 @@ MESI 表示 Cache Line 的四种状态：
 
 ### <font color=#1FA774>Java 内存模型 (JMM)</font>
 
+**关于「Java 内存模型」更详细的介绍可见 [Java 内存模型](./Java内存模型.html)**
+
 Java 内存模型规定所有的变量都存储在**主内存**中，每个线程都有自己的**工作内存**
 
 线程的工作内存中保存了被该线程使用的变量的**主内存副本**，线程对变量的所有操作「读取、赋值等」都必须在工作内存中进行，而不能直接读写主内存中的数据
@@ -58,9 +60,11 @@ Java 内存模型规定所有的变量都存储在**主内存**中，每个线�
 
 ### <font color=#1FA774>基本概念引入</font>
 
+**关于这些概念更详细的介绍可见 [Java 内存模型](./Java内存模型.html)**
+
 #### <font color=#9933FF>可见性</font>
 
-可见性是指多个线程对同一片内存区域的写入操作是否立即可见
+可见性是指一个线程对一片内存区域执行写入操作，其他线程立即可见该内存区域的改变
 
 由于每个线程都有自己的工作内存，且为线程私有，相互不可见，线程对变量的所有操作「读取、赋值等」都必须在工作内存中进行
 
@@ -68,7 +72,7 @@ Java 内存模型规定所有的变量都存储在**主内存**中，每个线�
 
 #### <font color=#9933FF>指令重排序</font>
 
-除了增加高速缓存外，为了使处理器的运算单元可以被更充分的利用，处理器会对输入代码进行**乱序执行优化**，处理器对乱序执行的结果进行重组，保证该结果与顺序执行的结果是一致的，但并不保证各个执行语句的先后顺序与输入代码的顺序一致，即只保证**「最终一致性」**
+除了增加高速缓存外，为了使处理器的运算单元可以被更充分的利用，处理器会对输入代码进行**乱序执行优化**，处理器对乱序执行的结果进行重组，保证该结果与**单线程下**顺序执行的结果是一致的，但并不保证各个执行语句的先后顺序与输入代码的顺序一致，即只保证**「最终一致性」**
 
 Java 虚拟机的即时编译器中也有指令重排序优化
 
@@ -85,22 +89,276 @@ JVM 根据读、写两种操作提供了四种屏障
 - LoadStore：「Load1 LoadStore Store2」用于保证 Store2 及其之后写出的数据被其他线程看到之前，Load1 读取的数据一定先读入了缓存
 - StoreLoad：「Store1 StoreLoad Load2」用于保证 Store1 写出的数据被其他线程看到后才能读取 Load2 的数据到缓存
 
-### <font color=#1FA774>volatile 的作用</font>
+### <font color=#1FA774>volatile 的特性</font>
 
-铺垫了这么多，现在进入正题！！
+当我们声明共享变量为 volatile 后，对这个变量的读/写将会很特别
 
-#### <font color=#9933FF>volatile 可见性</font>
+理解 volatile 特性的一个好方法是把对 volatile 变量的**单个读/写**，看成是使用同一个锁对这些单个读/写操作做了同步
 
-当一个变量定义为 volatile 后，那么该变量**<font color='red'>对所有线程立即可见</font>**。更具体的：
+下面我们通过具体的示例来说明，请看下面的示例代码：
 
-- 当一个线程修改了这个变量的值，新值对其他 CPU 来说是可以立即得知的
-- 修改 volatile 变量之前的操作在其他 CPU 看到 volatile 的最新值后也一定能被看到
+```java
+class VolatileFeaturesExample {
+    volatile long vl = 0L;            // 使用 volatile 声明 64 位的 long 类型变量
+    public void set(long l) {
+        vl = l;                       // 单个 volatile 变量的写
+    }
+    public void getAndIncrement() {
+        vl++;                         // 复合 volatile 变量的读/写
+    }
+    public long get() {
+        return vl;                    // 单个 volatile 变量的读
+    }
+}
+```
 
-volatile 变量的内存可见性是基于**内存屏障**实现
+假设有多个线程分别调用上面程序的三个方法，这个程序在语义上和下面程序等价：
 
-- 读取 volatile 变量先检查本地缓存是否失效，如果失效就去内存中读取最新值
-- 禁止读 volatile 变量后续操作被重排到读 volatile 变量前面 (如果后续操作重排到前面，说明后续操作读了旧值)
-- 保证写 volatile 变量之前操作优先于写 volatile 变量之前发生
+```java
+class VolatileFeaturesExample {
+    long vl = 0L;                           // 64 位的 long 类型普通变量
+    public synchronized void set(long l) {  // 对单个普通变量的写用同一个锁同步
+        vl = l;
+    }
+    public void getAndIncrement() {         // 普通方法调用
+        long temp = get();                  // 调用已同步的读方法
+        temp += 1L;                         // 普通写操作
+        set(temp);                          // 调用已同步的写方法
+    }
+    public synchronized long get() {        // 对单个普通变量的读用同一个锁同步
+        return vl;
+    }
+}
+```
+
+如上面示例程序所示，对一个 volatile 变量的**单个读/写操作**，与对一个普通变量的读/写操作使用同一个锁来同步，它们之间的执行效果相同
+
+锁的 happens-before 规则保证释放锁和获取锁的两个线程之间的内存可见性
+
+这意味着对一个 volatile 变量的读，总是能看到 (任意线程) 对这个 volatile 变量最后的写入
+
+锁的语义决定了临界区代码的执行具有原子性。这意味着即使是 64 位的 long 类型和 double 类型变量，只要它是 volatile 变量，对该变量的读写就将具有原子性
+
+如果是多个 volatile 操作或类似于 volatile++ 这种复合操作，这些操作整体上不具有原子性
+
+简而言之，volatile 变量自身具有下列特性：
+
+- **<font color='red'>可见性：对一个 volatile 变量的读，总是能看到 (任意线程) 对这个 volatile 变量最后的写入</font>**
+- **<font color='red'>原子性：对任意单个 volatile 变量的读/写具有原子性，但类似于 volatile++ 这种复合操作不具有原子性</font>**
+
+### <font color=#1FA774>volatile 写-读建立的 happens-before 关系</font>
+
+**关于 happens-before 规则更详细的介绍可见 [Java 内存模型](./Java内存模型.html)**
+
+上面讲的是 volatile 变量自身的特性，对程序员来说，volatile 对线程的内存可见性的影响比 volatile 自身的特性更为重要，也更需要我们去关注
+
+从 JSR-133 开始 (即从 JDK5 开始)，volatile 变量的写-读可以实现线程之间的通信
+
+从内存语义的角度来说，volatile 的写-读与锁的释放-获取有相同的内存效果：
+
+- 「volatile 写」和「锁的释放」有相同的内存语义；「volatile 读」与「锁的获取」有相同的内存语义
+- 「volatile 写」和「锁的释放」都把把修改同步到内存；「volatile 读」和「锁的获取」都会从内存中获取最新数据
+
+```java
+// 假设线程 A 执行 writer 方法，线程 B 执行 reader 方法
+public class VolatileExample {
+    int a = 0;
+    volatile boolean flag = false;
+    public void writer() {
+        a = 1;                // 1 线程 A 修改共享变量
+        flag = true;          // 2 线程 A 写 volatile 变量
+    }
+    public void reader() {
+        if (flag) {           // 3 线程 B 读同一个 volatile 变量
+            int i = a;        // 4 线程 B 读共享变量
+            // other
+        }
+    }
+}
+```
+
+根据 happens-before 规则，上面过程会建立 3 类 happends-before 关系：
+
+- 根据程序次序规则：1 happens-before 2 且 3 happens-before 4
+- 根据 volatile 规则：2 happens-before 3
+- 根据 happens-before 的传递性规则：1 happens-before 4
+
+![4](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220909/2048331662727713YHS2Ii4.svg)
+
+这里 A 线程写一个 volatile 变量后，B 线程读同一个 volatile 变量
+
+**<font color='red'>A 线程在写 volatile 变量之前所有可见的共享变量，在 B 线程读同一个 volatile 变量后，将立即变得对 B 线程可见</font>**
+
+### <font color=#1FA774>volatile 写-读的内存语义</font>
+
+**volatile 写的内存语义如下：**
+
+- **<font color='red'>当写一个 volatile 变量时，JMM 会把该线程对应的本地内存中的共享变量值刷新到主内存</font>**
+
+以上面示例程序 VolatileExample 为例，假设线程 A 首先执行`writer()`方法，随后线程 B 执行`reader()`方法，初始时两个线程的本地内存中的`flag`和`a`都是初始状态。下图是线程 A 执行 volatile 写后，共享变量的状态示意图:
+
+![16](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20221008/2147341665236854CxW2Oq16.svg)
+
+如上图所示，线程 A 在写`flag`变量后，本地内存 A 中被线程 A 更新过的两个共享变量的值被刷新到主内存中。此时，本地内存 A 和主内存中的共享变量的值是一致的
+
+**volatile 读的内存语义如下：**
+
+- **<font color='red'>当读一个 volatile 变量时，JMM 会把该线程对应的本地内存置为无效，线程接下来将从主内存中读取共享变量</font>**
+
+下面是线程 B 读同一个 volatile 变量后，共享变量的状态示意图：
+
+![17](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20221008/2148361665236916MswL8W17.svg)
+
+如上图所示，在读`flag`变量后，本地内存 B 包含的值已经被置为无效。此时，线程 B 必须从主内存中读取共享变量。线程 B 的读取操作将导致本地内存 B 与主内存中的共享变量的值也变成一致的了
+
+如果我们把 volatile 写和 volatile 读这两个步骤综合起来看的话，**在读线程 B 读一个 volatile 变量后，写线程 A 在写这个 volatile 变量之前所有可见的共享变量的值都将立即变得对读线程 B 可见**
+
+下面对 volatile 写和 volatile 读的内存语义做个总结：
+
+- 线程 A 写一个 volatile 变量，实质上是线程 A 向接下来将要读这个 volatile 变量的某个线程发出了 (其对共享变量所在修改的) 消息
+- 线程 B 读一个 volatile 变量，实质上是线程 B 接收了之前某个线程发出的 (在写这个 volatile 变量之前对共享变量所做修改的) 消息
+- 线程 A 写一个 volatile 变量，随后线程 B 读这个 volatile 变量，这个过程实质上是线程 A 通过主内存向线程 B 发送消息
+
+### <font color=#1FA774>volatile 内存语义的实现</font>
+
+现在让我们来看看 JMM 如何实现 volatile 写/读的内存语义
+
+在 **[Java 内存模型](./Java内存模型.html)** 中提到过重排序分为编译器重排序和处理器重排序。为了实现 volatile 内存语义，JMM 会分别限制这两种类型的重排序类型。下面是 JMM 针对编译器制定的 volatile 重排序规则表：
+
+|             | 普通读/写 | volatile 读 | volatile 写 |
+| :---------: | :-------: | :---------: | :---------: |
+|  普通读/写  |           |             |     NO      |
+| volatile 读 |    NO     |     NO      |     NO      |
+| volatile 写 |           |     NO      |     NO      |
+
+**注：**NO 表示禁止重排序！
+
+举例来说，第二行最后一个单元格的意思是：在程序顺序中，当第一个操作为普通变量的读或写时，如果第二个操作为 volatile 写，则编译器不能重排序这两个操作
+
+从上表我们可以看出：
+
+- 当第二个操作是 volatile 写时，不管第一个操作时什么，都不能重排序。这个规则**<font color='red'>确保 volatile 写之前的操作不会被编译器重排序到 volatile 写之后</font>**
+- 当第一个操作是 volatile 读时，不管第二个操作是什么，都不能重排序。这个规则**<font color='red'>确保 volatile 读之后的操作不会被编译器重排序到 volatile 读之前</font>**
+- 当第一个操作是 volatile 写，第二个操作是 volatile 读时，不能重排序
+
+为了**实现 volatile 的内存语义**，编译器在生成字节码时，会在指令序列中插入内存屏障来禁止特定类型的处理器重排序。对于编译器来说，发现一个最优布置来最小化插入屏障的总数几乎不可能，为此，JMM 采取**保守策略**。下面是基于保守策略的 JMM 内存屏障插入策略：
+
+- 在每个 volatile 写操作的**前**面插入一个 StoreStore 屏障
+- 在每个 volatile 写操作的**后**面插入一个 StoreLoad 屏障
+- 在每个 volatile 读操作的**后**面插入一个 LoadLoad 屏障
+- 在每个 volatile 读操作的**后**面插入一个 LoadStore 屏障
+
+下面是保守策略下，volatile 写插入内存屏障后生成的指令序列示意图：
+
+![5](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220909/2116501662729410M3Iwe65.svg)
+
+上图中的 StoreStore 屏障可以保证在 volatile 写之前，其前面的所有普通写操作已经对任意处理器可见了。这是因为 StoreStore 屏障将保障上面所有的普通写在 volatile 写之前刷新到主内存
+
+这里比较有意思的是 volatile 写后面的 StoreLoad 屏障。这个屏障的作用是避免 volatile 写与后面可能有的 volatile 读/写操作重排序
+
+因为编译器常常无法准确判断在一个 volatile 写的后面，是否需要插入一个 StoreLoad 屏障 (比如，一个 volatile 写之后方法立即 return)。为了保证能正确实现 volatile 的内存语义，JMM 在这里采取了保守策略：在每个 volatile 写的后面或在每个 volatile 读的前面插入一个 StoreLoad 屏障
+
+从整体执行效率的角度考虑，JMM 选择了在每个 volatile 写的后面插入一个 StoreLoad 屏障。因为 volatile 写-读内存语义的常见使用模式是：**一个写线程写 volatile 变量，多个读线程读同一个 volatile 变量**。当读线程的数量大大超过写线程时，选择在 volatile 写之后插入 StoreLoad 屏障将带来可观的执行效率的提升
+
+从这里我们可以看到 JMM 在实现上的一个特点：**首先确保正确性，然后再去追求执行效率**
+
+**<font color='red'>问题 1：为什么 volatile 写前面不用插入 LoadStore 屏障来禁止和普通读重排序？？</font>**
+
+![22](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20221009/1503111665298991hIgdux22.svg)
+
+在 x86 CPU 中，只允许「Stores can be reordered after loads」。所以在 volatile 写前面没有插入 LoadStore 屏障
+
+但如果在其他 CPU 下，可能就需要加，如：ARM CPU
+
+**<font color='red'>问题 2：为什么要禁止 volatile 写和前面的普通写重排序？？</font>**
+
+```java
+class ReorderExample {
+    int a = 0;
+    volatile boolean flag = false;
+    public void writer() {
+        a = 1;                // 1 (普通写)
+        flag = true;          // 2 (volatile 写)
+    }
+    public void reader() {
+        if (flag) {           // 3
+            int i = a * a;    // 4
+            // other ...
+        }
+    }
+}
+```
+
+这里假设有两个线程 A 和 B，A 首先执行`writer()`方法，随后 B 线程接着执行`reader()`方法
+
+由于操作 1 和操作 2 没有数据依赖关系，编译器和处理器可以对这两个操作重排序，假设不禁止重排序，那么上述程序中的执行顺序可能是：
+
+![8](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20221007/2044001665146640PpJC6i8.svg)
+
+如上图所示，操作 1 和操作 2 做了重排序。程序执行时，线程 A 首先写标记变量`flag`，随后线程 B 读这个变量。由于条件判断为真，线程 B 将读取变量 a。此时，变量 a 还根本没有被线程 A 写入，在这里多线程程序的语义被重排序破坏了！
+
+**<font color='red'>问题 3：为什么要禁止 volatile 读和后面的普通读/写重排序？？</font>**
+
+```java
+class ReorderExample {
+    volatile int v = 10;  // 可以理解为初始化好的某种资源 
+    boolean flag = false; // 用于判断某种操作是否完成
+
+    public void use(){
+        int a = v;        // 1 可以理解为这里是在利用某种资源 (volatile 读)
+        flag = true;      // 2 利用完volatile资源之后，用于判断操作完成 (普通写)
+    }
+
+    public void release() {
+        while (flag) {
+            v = 0;        // 可以理解为释放资源
+        }
+    }
+}
+```
+
+这里假设有两个线程 A 和 B，A 首先执行`use()`方法，随后 B 线程接着执行`release()`方法
+
+由于操作 1 和操作 2 没有数据依赖关系，编译器和处理器可以对这两个操作重排序，假设不禁止重排序，那么上述程序中的执行顺序可能是：
+
+![19](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20221009/1357141665295034igR5nI19.svg)
+
+```java
+class ReorderExample {
+    int a = 0;
+    volatile boolean flag = false;
+    public void writer() {
+        a = 1;                // 1 (普通写)
+        flag = true;          // 2 (volatile 写)
+    }
+    public void reader() {
+        if (flag) {           // 3 (volatile 读)
+            int i = a * a;    // 4 (普通读)
+            // other ...
+        }
+    }
+}
+```
+
+![9](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20221007/20440916651466491iFQwZ9.svg)
+
+在程序中，操作 3 和操作 4 存在控制依赖关系。当代码中存在控制依赖性时，会影响指令序列执行的并行度。为此，编译器和处理器会采用猜测 (Speculation) 执行来克服控制相关性对并行度的影响。以处理器的猜测执行为例，执行线程 B 的处理器可以提前读取并计算`a * a`，然后把计算结果临时保存到一个名为重排序缓冲 (reorder buffer ROB) 的硬件缓存中。当接下来操作 3 的条件判断为真时，就把该计算结果写入变量`i`中
+
+从图中我们可以看出，猜测执行实质上对操作 3 和 4 做了重排序。重排序在这里破坏了多线程程序的语义！
+
+### <font color=#1FA774>JSR-133 为什么要增强 volatile 的内存语义</font>
+
+在 JSR-133 之前的旧 Java 内存模型中，虽然不允许 volatile 变量之间重排序，但旧的 Java 内存模型允许 volatile 变量与普通变量重排序。在旧的内存模型中, VolatileExample 示例程序可能被重排序成下列时序来执行：
+
+![23](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20221009/1519191665299959mg3x0k23.svg)
+
+在旧的内存模型中，当 1 和 2 之间没有数据依赖关系时，1 和 2 之间就可能被重排序 (3 和 4 类似)。其结果就是：读线程 B 执行 4 时，不一定能看到写线程 A 在执行 1 时对共享变量的修改
+
+因此在旧的内存模型中，volatile 的写-读没有锁的释放-获所具有的内存语义。为了提供一种比锁更轻量级的线程之间通信的机制，JSR-133 专家组决定增强 volatile 的内存语义：严格限制编译器和处理器对 volatile 变量与普通变量的重排序，**<font color='red'>确保 volatile 的写-读和锁的释放-获取具有相同的内存语义</font>**。从编译器重排序规则和处理器内存屏障插入策略来看，只要 volatile 变量与普通变量之间的重排序可能会破坏 volatile 的内存语义，这种重排序就会被编译器重排序规则和处理器内存屏障插入策略禁止
+
+由于 volatile 仅仅保证对单个 volatile 变量的读/写具有原子性，而锁的互斥执行的特性可以确保对整个临界区代码的执行具有原子性。**<font color='red'>在功能上，锁比 volatile 更强大；在可伸缩性和执行性能上，volatile 更有优势</font>**
+
+### <font color=#1FA774>实例：双重校验锁</font>
 
 下面给出一段「双重校验锁实现单例模式」的部分汇编代码：
 
@@ -130,66 +388,7 @@ volatile 变量的内存可见性是基于**内存屏障**实现
 
 当处理器发现本地缓存失效后，就会从内存中重新读取该变量数据，即可以获得当前最新值
 
-#### <font color=#9933FF>volatile 的 happens-before 关系</font>
-
-happens-before 规则中有一条是 volatile 变量规则
-
-**<font color='red'>Volatile variable rule. A write to a volatile field happens‐before every subsequent read of that same field.</font>**
-
-**解释：**对 volatile 变量的写入操作必须在对该变量的读操作之前执行
-
-```java
-// 假设线程 A 执行 writer 方法，线程 B 执行 reader 方法
-public class VolatileExample {
-    int a = 0;
-    volatile boolean flag = false;
-    public void writer() {
-        a = 1;                // 1 线程 A 修改共享变量
-        flag = true;          // 2 线程 A 写 volatile 变量
-    }
-    public void reader() {
-        if (flag) {           // 3 线程 B 读同一个 volatile 变量
-            int i = a;        // 4 线程 B 读共享变量
-            // other
-        }
-    }
-}
-```
-
-根据 happens-before 规则，上面过程会建立 3 类 happends-before 关系：
-
-- 根据程序次序规则：1 happens-before 2 且 3 happens-before 4
-- 根据 volatile 规则：2 happens-before 3
-- 根据 happens-before 的传递性规则：1 happens-before 4
-
-![4](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220909/2048331662727713YHS2Ii4.svg)
-
-#### <font color=#9933FF>禁止指令重排序优化</font>
-
-Java 编译器会在生成指令系列时在适当的位置会插入内存屏障指令来禁止特定类型的处理器重排序
-
-JMM 会针对编译器制定 volatile 重排序规则表
-
-|             | 普通读/写 | volatile 读 | volatile 写 |
-| :---------: | :-------: | :---------: | :---------: |
-|  普通读/写  |           |             |     NO      |
-| volatile 读 |    NO     |     NO      |     NO      |
-| volatile 写 |           |     NO      |     NO      |
-
-注：NO 表示禁止重排序！
-
-为了实现 volatile 内存语义时，编译器在生成字节码时，会在指令序列中插入内存屏障来禁止特定类型的处理器重排序
-
-对于编译器来说，发现一个最优布置来最小化插入屏障的总数几乎是不可能的。因此，JMM 采取了保守的策略
-
-- 在每个 volatile 写操作的前面插入一个 StoreStore 屏障
-- 在每个 volatile 写操作的后面插入一个 StoreLoad 屏障
-- 在每个 volatile 读操作的后面插入一个 LoadLoad 屏障
-- 在每个 volatile 读操作的后面插入一个 LoadStore 屏障
-
-![5](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220909/2116501662729410M3Iwe65.svg)
-
-#### <font color=#9933FF>volatile 原子性？？</font>
+### <font color=#1FA774>volatile 原子性？？</font>
 
 volatile 不能保证完全的原子性，只能保证单次的读/写操作具有原子性
 
@@ -222,7 +421,7 @@ public class VolatileTest {
 
 如果按照我们的设想，应该输出 200000，但是很不幸，并不是！！
 
-因为本质上`race++`是读、写两次操作
+因为本质上`race++`是读、写三次操作
 
 - 首先读取 race 的值
 - 然后对 race 加 1
@@ -246,14 +445,10 @@ Java 内存模型要求，变量的读取操作和写入操作都必须是原子
 
 ### <font color=#1FA774>参考文章</font>
 
-- 深入理解 Java 虚拟机
-
 - Java 并发编程实战
-
+- 深入理解 Java 虚拟机
+- 深入理解 Java 内存模型
 - [内存屏障及其在-JVM 内的应用（上）](https://segmentfault.com/a/1190000022497646)
-
 - [内存屏障及其在 JVM 内的应用（下）](https://segmentfault.com/a/1190000022508589)
-
 - [关键字: volatile详解](https://pdai.tech/md/java/thread/java-thread-x-key-volatile.html)
-
 - [The JSR-133 Cookbook for Compiler Writers](https://gee.cs.oswego.edu/dl/jmm/cookbook.html)
