@@ -91,7 +91,7 @@ public TreeNode searchBST(TreeNode root, int val) {
 
 ### 验证/恢复/构建 BST
 
-#### [验证 BST](https://leetcode-cn.com/problems/validate-binary-search-tree/submissions/)
+#### [验证 BST](https://leetcode-cn.com/problems/validate-binary-search-tree)
 
 ```java
 // 当前节点：root
@@ -276,8 +276,6 @@ private TreeNode bstFromPreorderHelper(int[] preorder, int lo, int hi) {
 }
 ```
 
-
-
 #### [不同的 BST](https://leetcode-cn.com/problems/unique-binary-search-trees/)
 
 > 扩展：[不同的 BST II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/)
@@ -331,7 +329,7 @@ private List<TreeNode> generateTreesHelper(int lo, int hi) {
 }
 ```
 
-### [BST 第k小元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/submissions/)
+### [BST 第k小元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst)
 
 > 扩展：无序时，求第k 小/大 元素
 >
