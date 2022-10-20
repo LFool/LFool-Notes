@@ -97,6 +97,16 @@ private int sort(int[] nums, int lo, int hi) {
     if (p > k - 1) return sort(nums, lo, p - 1);
     else if (p < k - 1) return sort(nums, p + 1, hi);
     return nums[p];
+    
+    // ------ 补充一个迭代版本 ------
+    // while (lo <= hi) {
+    //     int p = partition(nums, lo, hi);
+    //     if (p > k - 1) hi = p - 1;
+    //     else if (p < k - 1) lo = p + 1;
+    //     else return nums[p];
+    // }
+    // return 0;
+    // ----------- end -----------
 }
 private int partition(int[] nums, int lo, int hi) {
     int p = r.nextInt(hi - lo + 1) + lo;
