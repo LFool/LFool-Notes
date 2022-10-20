@@ -10,7 +10,7 @@
 
 #### <font color=#9933FF>方法一：堆排序</font>
 
-看到很多人说不能使用 Java 中的 `PriorityQueue`，需要自己手动实现，所以这里使用自己实现的小根堆
+看到很多人说不能使用 Java 中的`PriorityQueue`，需要自己手动实现，所以这里使用自己实现的小根堆
 
 时间复杂度：`O(NlogK)`；空间复杂度：`O(K)`
 
@@ -104,7 +104,7 @@ private int partition(int[] nums, int lo, int hi) {
     int pivot = nums[lo];
     int i = lo + 1, j = hi;
     while (i <= j) {
-        while (i <= hi && nums[i] >= pivot) i++;
+        while (i < hi && nums[i] >= pivot) i++;
         while (j > lo && nums[j] < pivot) j--;
         if (i >= j) break;
         swap(nums, i, j);
