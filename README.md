@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-10-24 16:51:27
+> 更新时间：2022-10-28 20:31:11
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>139</font>**
+> 截止目前，文章总数：**<font color='red'>146</font>**
 >
 > 记录本人总结！！！
 
@@ -187,16 +187,35 @@
 
 ## Java
 
+### 基础 😁
+
 - [Java 小技巧总结](./java/Java-小技巧总结.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
 - [Java 集合框架](./java/Java集合框架.html)
 - [Java 8 Stream sorted()](./java/Java-8-Stream-sorted.html)
 - [Random 类](./java/Random.html)
-- [注解](./java/注解.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [反射机制](./java/反射机制.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [equals && hashCode](./java/equals-hashCode.html)
+- [注解](./java/注解.html)
+- [反射机制](./java/反射机制.html)
+
+### JVM 😭
+
+- [类加载的过程](./java/类加载的过程.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [类加载的时机](./java/类加载的时机.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [类加载器](./java/类加载器.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [剖析 [Bootstrap、Extension、Application] ClassLoader](./java/剖析-Bootstrap-Extension-Application-ClassLoader.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [双亲委派模型](./java/双亲委派模型.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [自定义类加载器](./java/自定义类加载器.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [破坏双亲委派模型](./java/破坏双亲委派模型.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+
+### 并发 😔
+
+- [Java 内存模型](./java/Java内存模型.html)
 - [synchronized 关键字](./java/synchronized关键字.html)
 - [volatile 关键字](./java/volatile关键字.html)
-- [equals && hashCode](./java/equals-hashCode.html)
-- [Java 内存模型](./java/Java内存模型.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+
+
+### 设计模式
+
 - [单例模式](./java/单例模式.html)
 - [「简单工厂/工厂方法/抽象工厂」模式](./java/简单工厂-工厂方法-抽象工厂-模式.html)
 
