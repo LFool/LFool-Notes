@@ -246,5 +246,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 defaults delete com.apple.desktopservices DSDontWriteNetworkStores
 ```
 
+## 解决「已损坏」问题
 
+```bash
+xattr -cr 应用路径
+```
 
