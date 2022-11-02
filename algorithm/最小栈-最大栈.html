@@ -5,15 +5,33 @@
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220108/01012216415748821641574882653Cdc3fw.ico" type="image/x-icon">
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220108/01012216415748821641574882653Cdc3fw.ico" type="image/x-icon">
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-227874201-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-227874201-2');
+</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4LE2XZ6JLM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4LE2XZ6JLM');
+</script>
 <link href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
@@ -24,8 +42,6 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
@@ -53,7 +69,7 @@ sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inh
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
 figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
+thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
@@ -75,6 +91,7 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
 .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
 .CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
 .md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
@@ -89,7 +106,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
   .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
@@ -132,6 +149,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 }
 a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
 .footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
@@ -173,7 +191,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
 .outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
 .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
 .outline-expander:hover::before { content: ""; }
@@ -201,6 +219,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
 .typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
 .md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
 
 
 .CodeMirror { height: auto; }
@@ -258,8 +277,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
 .CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
 .CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
 .CodeMirror-lines { cursor: text; }
-.CodeMirror pre { border-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; }
-.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
 .CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
 .CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
 .CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
@@ -284,13 +303,16 @@ span.cm-strikethrough { text-decoration: line-through; }
 }
 
 
+/*快速自定义配置*/
 :root {
     --monospace: "JetBrains Mono", "Fira Code", "Cascadia Code", Menlo, "Ubuntu Mono", Consolas, HYZhengYuan; /*代码字体*/
     --text-font: var(--monospace); /*正文字体*/
     --title-font: var(--monospace); /*标题字体*/
+    --latex-font: var(--monospace); /*LaTeX字体(不含英语)*/
     --text-line-height: 1.6; /*正文行间距*/
-    --code-block-line-height: 1.6; /*代码块行间距*/
+    --code-line-height: 1.6; /*代码块行间距*/
     --p-spacing: 0.8rem; /*段间距*/
+    --text-size: 12px;
 }/*
  * Copyright (C) 2018 Drake, Inc.
  *
@@ -354,7 +376,7 @@ span.cm-strikethrough { text-decoration: line-through; }
 }
 
 html {
-    font-size: 12px;
+    font-size: var(--text-size);
 }
 
 body {
@@ -381,10 +403,52 @@ p {
     background-color: var(--code-block-bg-color);
     color: var(--code-block-color);
     border: .1em solid #e8eaed;
-    line-height: var(--code-block-line-height);
+    line-height: var(--code-line-height);
+}
+
+/*inline latex*/
+.MathJax {
+    font-size: 120% !important;
+}
+.MathJax text, .MathJax use {
+    font-family: var(--latex-font);
+}
+/*math-block latex*/
+.md-math-block .MathJax {
+    font-size: 130% !important;
 }
 
 /*mermaid*/
+[mermaid-type="journey"] line {
+    stroke: #7a7a7a !important;
+}
+[mermaid-type="journey"] .label {
+    color: #333 !important;
+}
+[id^=mermaidChart] .relationshipLabelBox {
+    fill: var(--bg-color) !important;
+    opacity: 1 !important;
+    background-color: var(--bg-color) !important;
+}
+[id^=mermaidChart] .legend {
+    fill: var(--text-color) !important;
+}
+[id^=mermaidChart] g.label {
+    font-size: 1rem !important;
+}
+[id^=mermaidChart] line.divider {
+    stroke: var(--table-border-color) !important;
+}
+[id^=mermaidChart] span.nodeLabel {
+    color: var(--code-block-color) !important;
+    line-height: 1.8rem;
+}
+tspan {
+    color: var(--text-color)
+}
+[id^=mermaidChart] .entityLabel {
+    fill: var(--code-block-color) !important;
+}
 [id^=mermaidChart] {
     fill: var(--text-color) !important;
 }
@@ -397,7 +461,7 @@ p {
     font-family: var(--text-font) !important;
     font-size: 1rem !important;
 }
-.md-diagram-panel-preview .actor { /*方块*/
+.md-diagram-panel-preview .actor, .md-diagram-panel-preview .entityBox { /*方块*/
     stroke: var(--table-border-color) !important;
     fill: var(--code-block-bg-color) !important;
 }
@@ -466,7 +530,7 @@ pre.md-fences-advanced.md-focus .md-fences-adv-panel {
     fill: var(--code-block-bg-color) !important;
 }
 #write .md-diagram-panel .md-diagram-panel-preview div { /*形状内文字*/
-    color: var(--code-block-color) !important;
+    color: var(--code-block-color);
     font-family: var(--text-font) !important;
     font-size: 1rem !important;
 }
@@ -614,12 +678,15 @@ h1 {
     margin-top: 0;
 }
 
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
 h2 .md-plain {
     padding-bottom: .3rem;
     border-bottom: .2rem solid var(--h2-underline-color);
     line-height: 3rem;
 }
-
 .on-focus-mode h2.md-end-block.md-heading:not(.md-focus):not(.md-focus-container):after {
     background-color: var(--blur-text-color) !important;
 }
@@ -761,8 +828,11 @@ ol:last-child {
     margin-bottom: 0;
 }
 
-table {
-    padding: 0;
+.ty-table-edit {
+    margin-top: -1rem !important;
+}
+#write table {
+    margin-top: 1rem;
     word-break: initial;
     background-color: var(--table-bg-color);
 }
@@ -827,7 +897,6 @@ kbd {
     font-size: .95rem;
     padding: .3em .4em;
     border-radius: .4em;
-    vertical-align: top;
     box-shadow: .1em .1em .2em rgba(0, 0, 0, 0.3);
 }
 
@@ -1384,6 +1453,7 @@ a.ty-link {
 }
 .cm-s-inner .CodeMirror-gutters {
     border-right: 1px solid rgba(120, 120, 120, 0.3);
+    background: var(--code-block-bg-color);
 }
 .cm-s-inner .CodeMirror-linenumber {
     color: #787878;
@@ -1395,9 +1465,9 @@ a.ty-link {
 <body class='typora-export'><div class='typora-export-content'>
 <div id='write'  class=''><h1 id='最小栈--最大栈'><span>最小栈 &amp; 最大栈</span></h1><p><a href='https://leetcode-cn.com/problems/min-stack/'><span>155. 最小栈</span></a></p><p><a href='https://leetcode-cn.com/problems/maximum-frequency-stack/'><span>895. 最大频率栈</span></a></p><h3 id='最小栈'><font color=#1FA774><span>最小栈</span></font></h3><p><strong><font color='red'><span>思路：</span></font></strong><span>维护一个调用</span><code>push()</code><span>每个元素后的最小值栈</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">MinStack</span> {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
 </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Stack</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Integer</span><span class="cm-operator">&gt;</span> <span class="cm-variable">stack</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Stack</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Integer</span><span class="cm-operator">&gt;</span> <span class="cm-variable">minStack</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable">MinStack</span>() {</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">stack</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Stack</span><span class="cm-operator">&lt;&gt;</span>();</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">minStack</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Stack</span><span class="cm-operator">&lt;&gt;</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">void</span> <span class="cm-variable">push</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">val</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">stack</span>.<span class="cm-variable">push</span>(<span class="cm-variable">val</span>);</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">minStack</span>.<span class="cm-variable">isEmpty</span>()) <span class="cm-variable">minStack</span>.<span class="cm-variable">push</span>(<span class="cm-variable">val</span>);</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable">getMin</span>() <span class="cm-operator">&lt;=</span> <span class="cm-variable">val</span>) <span class="cm-variable">minStack</span>.<span class="cm-variable">push</span>(<span class="cm-variable">getMin</span>());</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable">getMin</span>() <span class="cm-operator">&gt;</span> <span class="cm-variable">val</span>) <span class="cm-variable">minStack</span>.<span class="cm-variable">push</span>(<span class="cm-variable">val</span>);</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">void</span> <span class="cm-variable">pop</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">stack</span>.<span class="cm-variable">pop</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">minStack</span>.<span class="cm-variable">pop</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">int</span> <span class="cm-variable">top</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">stack</span>.<span class="cm-variable">peek</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">int</span> <span class="cm-variable">getMin</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">minStack</span>.<span class="cm-variable">peek</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 570px;"></div><div class="CodeMirror-gutters" style="display: none; height: 570px;"></div></div></div></pre><h3 id='最大栈'><font color=#1FA774><span>最大栈</span></font></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 729.5px; left: 11.200000762939453px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">FreqStack</span> {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 记录最大频率</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-variable">maxFreq</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 记录每个元素的频率</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Map</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Integer</span>, <span class="cm-variable-3">Integer</span><span class="cm-operator">&gt;</span> <span class="cm-variable">valToFreq</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 记录某一频率的所有元素</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Map</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Integer</span>, <span class="cm-variable">Stack</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Integer</span><span class="cm-operator">&gt;&gt;</span> <span class="cm-variable">freqToVal</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable">MinStack</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">stack</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Stack</span><span class="cm-operator">&lt;&gt;</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">minStack</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Stack</span><span class="cm-operator">&lt;&gt;</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">void</span> <span class="cm-variable">push</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">val</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">stack</span>.<span class="cm-variable">push</span>(<span class="cm-variable">val</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">minStack</span>.<span class="cm-variable">isEmpty</span>()) <span class="cm-variable">minStack</span>.<span class="cm-variable">push</span>(<span class="cm-variable">val</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable">getMin</span>() <span class="cm-operator">&lt;=</span> <span class="cm-variable">val</span>) <span class="cm-variable">minStack</span>.<span class="cm-variable">push</span>(<span class="cm-variable">getMin</span>());</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable">getMin</span>() <span class="cm-operator">&gt;</span> <span class="cm-variable">val</span>) <span class="cm-variable">minStack</span>.<span class="cm-variable">push</span>(<span class="cm-variable">val</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">void</span> <span class="cm-variable">pop</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">stack</span>.<span class="cm-variable">pop</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">minStack</span>.<span class="cm-variable">pop</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">int</span> <span class="cm-variable">top</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">stack</span>.<span class="cm-variable">peek</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">int</span> <span class="cm-variable">getMin</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">minStack</span>.<span class="cm-variable">peek</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 570px;"></div><div class="CodeMirror-gutters" style="display: none; height: 570px;"></div></div></div></pre><h3 id='最大栈'><font color=#1FA774><span>最大栈</span></font></h3><pre class="md-fences md-end-block ty-contain-cm md-focus" spellcheck="false" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">FreqStack</span> {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 记录最大频率</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-variable">maxFreq</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 记录每个元素的频率</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Map</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Integer</span>, <span class="cm-variable-3">Integer</span><span class="cm-operator">&gt;</span> <span class="cm-variable">valToFreq</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 记录某一频率的所有元素</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Map</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Integer</span>, <span class="cm-variable">Stack</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Integer</span><span class="cm-operator">&gt;&gt;</span> <span class="cm-variable">freqToVal</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
 </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable">FreqStack</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">maxFreq</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">valToFreq</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">HashMap</span><span class="cm-operator">&lt;&gt;</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">freqToVal</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">HashMap</span><span class="cm-operator">&lt;&gt;</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
 </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">void</span> <span class="cm-variable">push</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">val</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 获得 val 的频率</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">freq</span> <span class="cm-operator">=</span> <span class="cm-variable">valToFreq</span>.<span class="cm-variable">getOrDefault</span>(<span class="cm-variable">val</span>, <span class="cm-number">0</span>) <span class="cm-operator">+</span> <span class="cm-number">1</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 更新 val to freq</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">valToFreq</span>.<span class="cm-variable">put</span>(<span class="cm-variable">val</span>, <span class="cm-variable">freq</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 更新 freq to val</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">freqToVal</span>.<span class="cm-variable">putIfAbsent</span>(<span class="cm-variable">freq</span>, <span class="cm-keyword">new</span> <span class="cm-variable">Stack</span><span class="cm-operator">&lt;&gt;</span>());</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">freqToVal</span>.<span class="cm-variable">get</span>(<span class="cm-variable">freq</span>).<span class="cm-variable">push</span>(<span class="cm-variable">val</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 更新 maxFreq</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">maxFreq</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-variable">max</span>(<span class="cm-variable">maxFreq</span>, <span class="cm-variable">freq</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">int</span> <span class="cm-variable">pop</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 弹出一个频率最大的元素</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">Stack</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Integer</span><span class="cm-operator">&gt;</span> <span class="cm-variable">valStack</span> <span class="cm-operator">=</span> <span class="cm-variable">freqToVal</span>.<span class="cm-variable">get</span>(<span class="cm-variable">maxFreq</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">v</span> <span class="cm-operator">=</span> <span class="cm-variable">valStack</span>.<span class="cm-variable">pop</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 更新 val to freq</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">valToFreq</span>.<span class="cm-variable">put</span>(<span class="cm-variable">v</span>, <span class="cm-variable">valToFreq</span>.<span class="cm-variable">get</span>(<span class="cm-variable">v</span>) <span class="cm-operator">-</span> <span class="cm-number">1</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 更新 maxFreq</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">valStack</span>.<span class="cm-variable">isEmpty</span>()) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">maxFreq</span><span class="cm-operator">--</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">v</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 741px;"></div><div class="CodeMirror-gutters" style="display: none; height: 741px;"></div></div></div></pre></div></div>
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">int</span> <span class="cm-variable">pop</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 弹出一个频率最大的元素</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">Stack</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Integer</span><span class="cm-operator">&gt;</span> <span class="cm-variable">valStack</span> <span class="cm-operator">=</span> <span class="cm-variable">freqToVal</span>.<span class="cm-variable">get</span>(<span class="cm-variable">maxFreq</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">v</span> <span class="cm-operator">=</span> <span class="cm-variable">valStack</span>.<span class="cm-variable">pop</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 更新 val to freq</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">valToFreq</span>.<span class="cm-variable">put</span>(<span class="cm-variable">v</span>, <span class="cm-variable">valToFreq</span>.<span class="cm-variable">get</span>(<span class="cm-variable">v</span>) <span class="cm-operator">-</span> <span class="cm-number">1</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 更新 maxFreq</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">valStack</span>.<span class="cm-variable">isEmpty</span>()) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">maxFreq</span><span class="cm-operator">--</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">v</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 741px;"></div><div class="CodeMirror-gutters" style="display: none; height: 741px;"></div></div></div></pre></div></div>
 </body>
 </html>

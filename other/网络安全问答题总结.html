@@ -5,15 +5,33 @@
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220108/01012216415748821641574882653Cdc3fw.ico" type="image/x-icon">
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220108/01012216415748821641574882653Cdc3fw.ico" type="image/x-icon">
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-227874201-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-227874201-2');
+</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4LE2XZ6JLM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4LE2XZ6JLM');
+</script>
 <link href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
@@ -24,8 +42,6 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
@@ -53,7 +69,7 @@ sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inh
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
 figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
+thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
@@ -75,6 +91,7 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
 .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
 .CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
 .md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
@@ -89,7 +106,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
   .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
@@ -132,6 +149,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 }
 a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
 .footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
@@ -173,7 +191,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
 .outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
 .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
 .outline-expander:hover::before { content: ""; }
@@ -201,15 +219,19 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
 .typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
 .md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
 
 
+/*快速自定义配置*/
 :root {
     --monospace: "JetBrains Mono", "Fira Code", "Cascadia Code", Menlo, "Ubuntu Mono", Consolas, HYZhengYuan; /*代码字体*/
     --text-font: var(--monospace); /*正文字体*/
     --title-font: var(--monospace); /*标题字体*/
+    --latex-font: var(--monospace); /*LaTeX字体(不含英语)*/
     --text-line-height: 1.6; /*正文行间距*/
-    --code-block-line-height: 1.6; /*代码块行间距*/
+    --code-line-height: 1.6; /*代码块行间距*/
     --p-spacing: 0.8rem; /*段间距*/
+    --text-size: 12px;
 }/*
  * Copyright (C) 2018 Drake, Inc.
  *
@@ -273,7 +295,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 }
 
 html {
-    font-size: 12px;
+    font-size: var(--text-size);
 }
 
 body {
@@ -300,10 +322,52 @@ p {
     background-color: var(--code-block-bg-color);
     color: var(--code-block-color);
     border: .1em solid #e8eaed;
-    line-height: var(--code-block-line-height);
+    line-height: var(--code-line-height);
+}
+
+/*inline latex*/
+.MathJax {
+    font-size: 120% !important;
+}
+.MathJax text, .MathJax use {
+    font-family: var(--latex-font);
+}
+/*math-block latex*/
+.md-math-block .MathJax {
+    font-size: 130% !important;
 }
 
 /*mermaid*/
+[mermaid-type="journey"] line {
+    stroke: #7a7a7a !important;
+}
+[mermaid-type="journey"] .label {
+    color: #333 !important;
+}
+[id^=mermaidChart] .relationshipLabelBox {
+    fill: var(--bg-color) !important;
+    opacity: 1 !important;
+    background-color: var(--bg-color) !important;
+}
+[id^=mermaidChart] .legend {
+    fill: var(--text-color) !important;
+}
+[id^=mermaidChart] g.label {
+    font-size: 1rem !important;
+}
+[id^=mermaidChart] line.divider {
+    stroke: var(--table-border-color) !important;
+}
+[id^=mermaidChart] span.nodeLabel {
+    color: var(--code-block-color) !important;
+    line-height: 1.8rem;
+}
+tspan {
+    color: var(--text-color)
+}
+[id^=mermaidChart] .entityLabel {
+    fill: var(--code-block-color) !important;
+}
 [id^=mermaidChart] {
     fill: var(--text-color) !important;
 }
@@ -316,7 +380,7 @@ p {
     font-family: var(--text-font) !important;
     font-size: 1rem !important;
 }
-.md-diagram-panel-preview .actor { /*方块*/
+.md-diagram-panel-preview .actor, .md-diagram-panel-preview .entityBox { /*方块*/
     stroke: var(--table-border-color) !important;
     fill: var(--code-block-bg-color) !important;
 }
@@ -385,7 +449,7 @@ pre.md-fences-advanced.md-focus .md-fences-adv-panel {
     fill: var(--code-block-bg-color) !important;
 }
 #write .md-diagram-panel .md-diagram-panel-preview div { /*形状内文字*/
-    color: var(--code-block-color) !important;
+    color: var(--code-block-color);
     font-family: var(--text-font) !important;
     font-size: 1rem !important;
 }
@@ -533,12 +597,15 @@ h1 {
     margin-top: 0;
 }
 
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
 h2 .md-plain {
     padding-bottom: .3rem;
     border-bottom: .2rem solid var(--h2-underline-color);
     line-height: 3rem;
 }
-
 .on-focus-mode h2.md-end-block.md-heading:not(.md-focus):not(.md-focus-container):after {
     background-color: var(--blur-text-color) !important;
 }
@@ -680,8 +747,11 @@ ol:last-child {
     margin-bottom: 0;
 }
 
-table {
-    padding: 0;
+.ty-table-edit {
+    margin-top: -1rem !important;
+}
+#write table {
+    margin-top: 1rem;
     word-break: initial;
     background-color: var(--table-bg-color);
 }
@@ -746,7 +816,6 @@ kbd {
     font-size: .95rem;
     padding: .3em .4em;
     border-radius: .4em;
-    vertical-align: top;
     box-shadow: .1em .1em .2em rgba(0, 0, 0, 0.3);
 }
 
@@ -1303,6 +1372,7 @@ a.ty-link {
 }
 .cm-s-inner .CodeMirror-gutters {
     border-right: 1px solid rgba(120, 120, 120, 0.3);
+    background: var(--code-block-bg-color);
 }
 .cm-s-inner .CodeMirror-linenumber {
     color: #787878;
@@ -1443,7 +1513,7 @@ foreignObject[data-mjx-xml] {
   overflow: visible;
 }
 
-mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
   stroke-width: 3;
 }
 

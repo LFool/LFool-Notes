@@ -5,15 +5,33 @@
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220108/01012216415748821641574882653Cdc3fw.ico" type="image/x-icon">
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220108/01012216415748821641574882653Cdc3fw.ico" type="image/x-icon">
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-227874201-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-227874201-2');
+</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4LE2XZ6JLM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4LE2XZ6JLM');
+</script>
 <link href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
@@ -24,8 +42,6 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
@@ -53,7 +69,7 @@ sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inh
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
 figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
+thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
@@ -75,6 +91,7 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
 .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
 .CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
 .md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
@@ -89,7 +106,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
   .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
@@ -132,6 +149,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 }
 a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
 .footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
@@ -173,7 +191,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
 .outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
 .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
 .outline-expander:hover::before { content: ""; }
@@ -201,6 +219,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
 .typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
 .md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
 
 
 .CodeMirror { height: auto; }
@@ -258,8 +277,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
 .CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
 .CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
 .CodeMirror-lines { cursor: text; }
-.CodeMirror pre { border-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; }
-.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
 .CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
 .CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
 .CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
@@ -284,13 +303,16 @@ span.cm-strikethrough { text-decoration: line-through; }
 }
 
 
+/*快速自定义配置*/
 :root {
     --monospace: "JetBrains Mono", "Fira Code", "Cascadia Code", Menlo, "Ubuntu Mono", Consolas, HYZhengYuan; /*代码字体*/
     --text-font: var(--monospace); /*正文字体*/
     --title-font: var(--monospace); /*标题字体*/
+    --latex-font: var(--monospace); /*LaTeX字体(不含英语)*/
     --text-line-height: 1.6; /*正文行间距*/
-    --code-block-line-height: 1.6; /*代码块行间距*/
+    --code-line-height: 1.6; /*代码块行间距*/
     --p-spacing: 0.8rem; /*段间距*/
+    --text-size: 12px;
 }/*
  * Copyright (C) 2018 Drake, Inc.
  *
@@ -354,7 +376,7 @@ span.cm-strikethrough { text-decoration: line-through; }
 }
 
 html {
-    font-size: 12px;
+    font-size: var(--text-size);
 }
 
 body {
@@ -381,10 +403,52 @@ p {
     background-color: var(--code-block-bg-color);
     color: var(--code-block-color);
     border: .1em solid #e8eaed;
-    line-height: var(--code-block-line-height);
+    line-height: var(--code-line-height);
+}
+
+/*inline latex*/
+.MathJax {
+    font-size: 120% !important;
+}
+.MathJax text, .MathJax use {
+    font-family: var(--latex-font);
+}
+/*math-block latex*/
+.md-math-block .MathJax {
+    font-size: 130% !important;
 }
 
 /*mermaid*/
+[mermaid-type="journey"] line {
+    stroke: #7a7a7a !important;
+}
+[mermaid-type="journey"] .label {
+    color: #333 !important;
+}
+[id^=mermaidChart] .relationshipLabelBox {
+    fill: var(--bg-color) !important;
+    opacity: 1 !important;
+    background-color: var(--bg-color) !important;
+}
+[id^=mermaidChart] .legend {
+    fill: var(--text-color) !important;
+}
+[id^=mermaidChart] g.label {
+    font-size: 1rem !important;
+}
+[id^=mermaidChart] line.divider {
+    stroke: var(--table-border-color) !important;
+}
+[id^=mermaidChart] span.nodeLabel {
+    color: var(--code-block-color) !important;
+    line-height: 1.8rem;
+}
+tspan {
+    color: var(--text-color)
+}
+[id^=mermaidChart] .entityLabel {
+    fill: var(--code-block-color) !important;
+}
 [id^=mermaidChart] {
     fill: var(--text-color) !important;
 }
@@ -397,7 +461,7 @@ p {
     font-family: var(--text-font) !important;
     font-size: 1rem !important;
 }
-.md-diagram-panel-preview .actor { /*方块*/
+.md-diagram-panel-preview .actor, .md-diagram-panel-preview .entityBox { /*方块*/
     stroke: var(--table-border-color) !important;
     fill: var(--code-block-bg-color) !important;
 }
@@ -466,7 +530,7 @@ pre.md-fences-advanced.md-focus .md-fences-adv-panel {
     fill: var(--code-block-bg-color) !important;
 }
 #write .md-diagram-panel .md-diagram-panel-preview div { /*形状内文字*/
-    color: var(--code-block-color) !important;
+    color: var(--code-block-color);
     font-family: var(--text-font) !important;
     font-size: 1rem !important;
 }
@@ -614,12 +678,15 @@ h1 {
     margin-top: 0;
 }
 
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
 h2 .md-plain {
     padding-bottom: .3rem;
     border-bottom: .2rem solid var(--h2-underline-color);
     line-height: 3rem;
 }
-
 .on-focus-mode h2.md-end-block.md-heading:not(.md-focus):not(.md-focus-container):after {
     background-color: var(--blur-text-color) !important;
 }
@@ -761,8 +828,11 @@ ol:last-child {
     margin-bottom: 0;
 }
 
-table {
-    padding: 0;
+.ty-table-edit {
+    margin-top: -1rem !important;
+}
+#write table {
+    margin-top: 1rem;
     word-break: initial;
     background-color: var(--table-bg-color);
 }
@@ -827,7 +897,6 @@ kbd {
     font-size: .95rem;
     padding: .3em .4em;
     border-radius: .4em;
-    vertical-align: top;
     box-shadow: .1em .1em .2em rgba(0, 0, 0, 0.3);
 }
 
@@ -1384,6 +1453,7 @@ a.ty-link {
 }
 .cm-s-inner .CodeMirror-gutters {
     border-right: 1px solid rgba(120, 120, 120, 0.3);
+    background: var(--code-block-bg-color);
 }
 .cm-s-inner .CodeMirror-linenumber {
     color: #787878;
@@ -1524,7 +1594,7 @@ foreignObject[data-mjx-xml] {
   overflow: visible;
 }
 
-mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
   stroke-width: 3;
 }
 
@@ -1541,7 +1611,7 @@ mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
 </style><title>Kruskal最小生成树算法</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='kruskal-最小生成树算法'><span>Kruskal 最小生成树算法</span></h1><p>&nbsp;</p><p><a href='https://leetcode-cn.com/problems/min-cost-to-connect-all-points/'><span>1584. 连接所有点的最小费用</span></a></p><p>&nbsp;</p><p><span>首先弄清楚</span><strong><font color='red'><span>最小生成树</span></font></strong><span>概念之前，请先弄清楚 「</span><strong><span>生成子图</span></strong><span>」「</span><strong><span>树</span></strong><span>」「</span><strong><span>生成树</span></strong><span>」概念</span></p><ul><li><span>生成子图：一个图的生成子图指</span><strong><span>顶点集相同</span></strong><span>，边集可不同的子图 </span><font color='red'><span>-&gt; 详情见 </span><a href='../other/图论.html'><span>图论--定义 10</span></a></font></li><li><span>树：不含圈的连通图称为树 </span><font color='red'><span>-&gt; 详情见 </span><a href='../other/图论.html'><span>图论--定义 35</span></a></font></li><li><span>生成树：若图 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.778ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 786 727" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><defs><path id="MJX-12-TEX-I-1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43A" xlink:href="#MJX-12-TEX-I-1D43A"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>G</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">G</script><span> 的生成子图 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.593ex" height="1.532ex" role="img" focusable="false" viewBox="0 -677 704 677" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: 0px;"><defs><path id="MJX-9-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-9-TEX-I-1D447"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">T</script><span> 是树，则称 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.593ex" height="1.532ex" role="img" focusable="false" viewBox="0 -677 704 677" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: 0px;"><defs><path id="MJX-9-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-9-TEX-I-1D447"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">T</script><span> 为 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.778ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 786 727" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><defs><path id="MJX-12-TEX-I-1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43A" xlink:href="#MJX-12-TEX-I-1D43A"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>G</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">G</script><span> 的</span><strong><span>生成树</span></strong><span> </span><font color='red'><span>-&gt; 详情见 </span><a href='../other/图论.html'><span>图论--定义 40</span></a></font></li><li><span>最小生成子树：在连通赋权图 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.778ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 786 727" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><defs><path id="MJX-12-TEX-I-1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43A" xlink:href="#MJX-12-TEX-I-1D43A"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>G</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">G</script><span> 中，边权之和最小的生成树称为 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.778ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 786 727" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><defs><path id="MJX-12-TEX-I-1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43A" xlink:href="#MJX-12-TEX-I-1D43A"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>G</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">G</script><span> 的</span><strong><span>最小生成树</span></strong><span> </span><font color='red'><span>-&gt; 详情见 </span><a href='../other/图论.html'><span>图论--定义 43</span></a></font></li></ul><p>&nbsp;</p><p><span>可利用</span><strong><span>图的连通性</span></strong><span>来解决最小生成树的问题，很容易想到可以运用</span><strong><span>「并查集」</span></strong><span>算法来辅助生成最小生成树</span></p><p><span>关于并查集算法的详细总结可点击该处 -&gt; </span><a href='./并查集-Union-Find.html'><span>并查集</span></a></p><p>&nbsp;</p><p><span>针对上述四个概念，我们一一来分析并提出解决方案</span></p><ul><li><strong><span>问题一：</span></strong><span>如何判断一个图是否为原图的生成子图</span></li><li><strong><span>问题二：</span></strong><span>如何判断生成子图是一棵树</span></li><li><strong><span>问题三：</span></strong><span>如何获得最小生成树</span></li></ul><p><strong><font color='red'><span>问题一：利用并查集的连通分支的数量来判断</span></font></strong></p><p><span>设顶点集的数量为 n，并查集中的节点数同为 n，一一对应</span></p><p><span>若最终并查集的连通分支数量为 1，则表明所有节点都在同一连通分支中，即子图为生成子图；反之则在多个分支中</span></p><p><span>总结就是，</span><strong><span>对于添加的这条边，如果该边的两个节点本来就在同一连通分量里，那么添加这条边会产生环；反之，如果该边的两个节点不在同一连通分量里，则添加这条边不会产生环</span></strong></p><p><strong><font color='red'><span>问题二：利用并查集的连通性来判断</span></font></strong></p><p><span>显而易见，如果在一个连通分支中，新增一条边，则会出现环/圈</span></p><p><span>故每次进行</span><code>union(u,v)</code><span>操作时前进行判断，如果</span><code>connected(u,v)==true</code><span>，则跳过。这样就可以保证生成子图是一棵树</span></p><p><strong><font color='red'><span>问题三：对边进行非递减排序，从权值小的开始得到生成子树</span></font></strong></p><p>&nbsp;</p><p><span>对于算法的形象化模拟可以看下面动图</span></p><p><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220312/20482116470893011647089301366dGO1Y9.gif" alt="pic" style="zoom: 25%;" /></p><p>&nbsp;</p><p><span>关于 Kruskal 算法的核心思想 可见 </span><a href='../other/图论.html'><span>图论 -- Kruskal 算法部分</span></a></p><p>&nbsp;</p><p><strong><span>算法模版</span></strong></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-def">minimumCost</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">n</span>, <span class="cm-variable-3">int</span>[][] <span class="cm-variable">edges</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 编号为 0...n</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">UF</span> <span class="cm-variable">uf</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">UF</span>(<span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 对所有边按照权重从小到大排序</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">Arrays</span>.<span class="cm-variable">sort</span>(<span class="cm-variable">edges</span>, (<span class="cm-variable">a</span>, <span class="cm-variable">b</span>) <span class="cm-operator">-&gt;</span> (<span class="cm-variable">a</span>[<span class="cm-number">2</span>] <span class="cm-operator">-</span> <span class="cm-variable">b</span>[<span class="cm-number">2</span>]));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 记录最小生成树的权重之和</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">mst</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span>[] <span class="cm-variable">edge</span> : <span class="cm-variable">edges</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">u</span> <span class="cm-operator">=</span> <span class="cm-variable">edge</span>[<span class="cm-number">0</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">v</span> <span class="cm-operator">=</span> <span class="cm-variable">edge</span>[<span class="cm-number">1</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">weight</span> <span class="cm-operator">=</span> <span class="cm-variable">edge</span>[<span class="cm-number">2</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 若这条边会产生环，则不能加入 mst</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">uf</span>.<span class="cm-variable">connected</span>(<span class="cm-variable">u</span>, <span class="cm-variable">v</span>)) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">continue</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 若这条边不会产生环，则属于最小生成树</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">mst</span> <span class="cm-operator">+=</span> <span class="cm-variable">weight</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">uf</span>.<span class="cm-variable">union</span>(<span class="cm-variable">u</span>, <span class="cm-variable">v</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 保证所有节点都被连通</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// uf.count() == 1 说明所有节点被连通</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">uf</span>.<span class="cm-variable">count</span>() <span class="cm-operator">==</span> <span class="cm-number">1</span> <span class="cm-operator">?</span> <span class="cm-variable">mst</span> : <span class="cm-operator">-</span><span class="cm-number">1</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+<div id='write'  class=''><h1 id='kruskal-最小生成树算法'><span>Kruskal 最小生成树算法</span></h1><p>&nbsp;</p><p><a href='https://leetcode-cn.com/problems/min-cost-to-connect-all-points/'><span>1584. 连接所有点的最小费用</span></a></p><p>&nbsp;</p><p><span>首先弄清楚</span><strong><font color='red'><span>最小生成树</span></font></strong><span>概念之前，请先弄清楚 「</span><strong><span>生成子图</span></strong><span>」「</span><strong><span>树</span></strong><span>」「</span><strong><span>生成树</span></strong><span>」概念</span></p><ul><li><span>生成子图：一个图的生成子图指</span><strong><span>顶点集相同</span></strong><span>，边集可不同的子图 </span><font color='red'><span>-&gt; 详情见 </span><a href='../other/图论.html'><span>图论--定义 10</span></a></font></li><li><span>树：不含圈的连通图称为树 </span><font color='red'><span>-&gt; 详情见 </span><a href='../other/图论.html'><span>图论--定义 35</span></a></font></li><li><span>生成树：若图 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.778ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 786 727" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><defs><path id="MJX-12-TEX-I-1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43A" xlink:href="#MJX-12-TEX-I-1D43A"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>G</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">G</script><span> 的生成子图 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.593ex" height="1.532ex" role="img" focusable="false" viewBox="0 -677 704 677" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: 0px;"><defs><path id="MJX-9-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-9-TEX-I-1D447"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">T</script><span> 是树，则称 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.593ex" height="1.532ex" role="img" focusable="false" viewBox="0 -677 704 677" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: 0px;"><defs><path id="MJX-9-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-9-TEX-I-1D447"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">T</script><span> 为 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.778ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 786 727" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><defs><path id="MJX-12-TEX-I-1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43A" xlink:href="#MJX-12-TEX-I-1D43A"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>G</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">G</script><span> 的</span><strong><span>生成树</span></strong><span> </span><font color='red'><span>-&gt; 详情见 </span><a href='../other/图论.html'><span>图论--定义 40</span></a></font></li><li><span>最小生成子树：在连通赋权图 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.778ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 786 727" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><defs><path id="MJX-12-TEX-I-1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43A" xlink:href="#MJX-12-TEX-I-1D43A"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>G</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">G</script><span> 中，边权之和最小的生成树称为 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.778ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 786 727" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><defs><path id="MJX-12-TEX-I-1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43A" xlink:href="#MJX-12-TEX-I-1D43A"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>G</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">G</script><span> 的</span><strong><span>最小生成树</span></strong><span> </span><font color='red'><span>-&gt; 详情见 </span><a href='../other/图论.html'><span>图论--定义 43</span></a></font></li></ul><p>&nbsp;</p><p><span>可利用</span><strong><span>图的连通性</span></strong><span>来解决最小生成树的问题，很容易想到可以运用</span><strong><span>「并查集」</span></strong><span>算法来辅助生成最小生成树</span></p><p><span>关于并查集算法的详细总结可点击该处 -&gt; </span><a href='./并查集-Union-Find.html'><span>并查集</span></a></p><p>&nbsp;</p><p><span>针对上述四个概念，我们一一来分析并提出解决方案</span></p><ul><li><strong><span>问题一：</span></strong><span>如何判断一个图是否为原图的生成子图</span></li><li><strong><span>问题二：</span></strong><span>如何判断生成子图是一棵树</span></li><li><strong><span>问题三：</span></strong><span>如何获得最小生成树</span></li></ul><p><strong><font color='red'><span>问题一：利用并查集的连通分支的数量来判断</span></font></strong></p><p><span>设顶点集的数量为 n，并查集中的节点数同为 n，一一对应</span></p><p><span>若最终并查集的连通分支数量为 1，则表明所有节点都在同一连通分支中，即子图为生成子图；反之则在多个分支中</span></p><p><span>总结就是，</span><strong><span>对于添加的这条边，如果该边的两个节点本来就在同一连通分量里，那么添加这条边会产生环；反之，如果该边的两个节点不在同一连通分量里，则添加这条边不会产生环</span></strong></p><p><strong><font color='red'><span>问题二：利用并查集的连通性来判断</span></font></strong></p><p><span>显而易见，如果在一个连通分支中，新增一条边，则会出现环/圈</span></p><p><span>故每次进行</span><code>union(u,v)</code><span>操作时前进行判断，如果</span><code>connected(u,v)==true</code><span>，则跳过。这样就可以保证生成子图是一棵树</span></p><p><strong><font color='red'><span>问题三：对边进行非递减排序，从权值小的开始得到生成子树</span></font></strong></p><p>&nbsp;</p><p><span>对于算法的形象化模拟可以看下面动图</span></p><p><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220312/20482116470893011647089301366dGO1Y9.gif" alt="pic" style="zoom: 25%;" /></p><p>&nbsp;</p><p><span>关于 Kruskal 算法的核心思想 可见 </span><a href='../other/图论.html'><span>图论 -- Kruskal 算法部分</span></a></p><p>&nbsp;</p><p><strong><span>算法模版</span></strong></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-def">minimumCost</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">n</span>, <span class="cm-variable-3">int</span>[][] <span class="cm-variable">edges</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 编号为 0...n</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">UF</span> <span class="cm-variable">uf</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">UF</span>(<span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 对所有边按照权重从小到大排序</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">Arrays</span>.<span class="cm-variable">sort</span>(<span class="cm-variable">edges</span>, (<span class="cm-variable">a</span>, <span class="cm-variable">b</span>) <span class="cm-operator">-&gt;</span> (<span class="cm-variable">a</span>[<span class="cm-number">2</span>] <span class="cm-operator">-</span> <span class="cm-variable">b</span>[<span class="cm-number">2</span>]));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 记录最小生成树的权重之和</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">mst</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span>[] <span class="cm-variable">edge</span> : <span class="cm-variable">edges</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">u</span> <span class="cm-operator">=</span> <span class="cm-variable">edge</span>[<span class="cm-number">0</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">v</span> <span class="cm-operator">=</span> <span class="cm-variable">edge</span>[<span class="cm-number">1</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">weight</span> <span class="cm-operator">=</span> <span class="cm-variable">edge</span>[<span class="cm-number">2</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 若这条边会产生环，则不能加入 mst</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">uf</span>.<span class="cm-variable">connected</span>(<span class="cm-variable">u</span>, <span class="cm-variable">v</span>)) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">continue</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 若这条边不会产生环，则属于最小生成树</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">mst</span> <span class="cm-operator">+=</span> <span class="cm-variable">weight</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">uf</span>.<span class="cm-variable">union</span>(<span class="cm-variable">u</span>, <span class="cm-variable">v</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 保证所有节点都被连通</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// uf.count() == 1 说明所有节点被连通</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">uf</span>.<span class="cm-variable">count</span>() <span class="cm-operator">==</span> <span class="cm-number">1</span> <span class="cm-operator">?</span> <span class="cm-variable">mst</span> : <span class="cm-operator">-</span><span class="cm-number">1</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
 </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">UF</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 见 并查集总结 的实现</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 513px;"></div><div class="CodeMirror-gutters" style="display: none; height: 513px;"></div></div></div></pre><p>&nbsp;</p></div></div>
 </body>
 </html>

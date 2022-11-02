@@ -14,15 +14,24 @@
 
   gtag('config', 'UA-227874201-2');
 </script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4LE2XZ6JLM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4LE2XZ6JLM');
+</script>
 <link href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
@@ -33,8 +42,6 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
@@ -62,7 +69,7 @@ sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inh
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
 figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
+thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
@@ -84,6 +91,7 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
 .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
 .CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
 .md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
@@ -98,7 +106,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
   .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
@@ -141,6 +149,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 }
 a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
 .footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
@@ -182,7 +191,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
 .outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
 .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
 .outline-expander:hover::before { content: ""; }
@@ -210,6 +219,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
 .typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
 .md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
 
 
 .CodeMirror { height: auto; }
@@ -267,8 +277,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
 .CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
 .CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
 .CodeMirror-lines { cursor: text; }
-.CodeMirror pre { border-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; }
-.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
 .CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
 .CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
 .CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
@@ -293,13 +303,16 @@ span.cm-strikethrough { text-decoration: line-through; }
 }
 
 
+/*快速自定义配置*/
 :root {
     --monospace: "JetBrains Mono", "Fira Code", "Cascadia Code", Menlo, "Ubuntu Mono", Consolas, HYZhengYuan; /*代码字体*/
     --text-font: var(--monospace); /*正文字体*/
     --title-font: var(--monospace); /*标题字体*/
+    --latex-font: var(--monospace); /*LaTeX字体(不含英语)*/
     --text-line-height: 1.6; /*正文行间距*/
-    --code-block-line-height: 1.6; /*代码块行间距*/
+    --code-line-height: 1.6; /*代码块行间距*/
     --p-spacing: 0.8rem; /*段间距*/
+    --text-size: 12px;
 }/*
  * Copyright (C) 2018 Drake, Inc.
  *
@@ -363,7 +376,7 @@ span.cm-strikethrough { text-decoration: line-through; }
 }
 
 html {
-    font-size: 12px;
+    font-size: var(--text-size);
 }
 
 body {
@@ -390,19 +403,52 @@ p {
     background-color: var(--code-block-bg-color);
     color: var(--code-block-color);
     border: .1em solid #e8eaed;
-    line-height: var(--code-block-line-height);
+    line-height: var(--code-line-height);
 }
 
 /*inline latex*/
 .MathJax {
-  font-size: 120% !important;
+    font-size: 120% !important;
+}
+.MathJax text, .MathJax use {
+    font-family: var(--latex-font);
 }
 /*math-block latex*/
 .md-math-block .MathJax {
-  font-size: 130% !important;
+    font-size: 130% !important;
 }
 
 /*mermaid*/
+[mermaid-type="journey"] line {
+    stroke: #7a7a7a !important;
+}
+[mermaid-type="journey"] .label {
+    color: #333 !important;
+}
+[id^=mermaidChart] .relationshipLabelBox {
+    fill: var(--bg-color) !important;
+    opacity: 1 !important;
+    background-color: var(--bg-color) !important;
+}
+[id^=mermaidChart] .legend {
+    fill: var(--text-color) !important;
+}
+[id^=mermaidChart] g.label {
+    font-size: 1rem !important;
+}
+[id^=mermaidChart] line.divider {
+    stroke: var(--table-border-color) !important;
+}
+[id^=mermaidChart] span.nodeLabel {
+    color: var(--code-block-color) !important;
+    line-height: 1.8rem;
+}
+tspan {
+    color: var(--text-color)
+}
+[id^=mermaidChart] .entityLabel {
+    fill: var(--code-block-color) !important;
+}
 [id^=mermaidChart] {
     fill: var(--text-color) !important;
 }
@@ -415,7 +461,7 @@ p {
     font-family: var(--text-font) !important;
     font-size: 1rem !important;
 }
-.md-diagram-panel-preview .actor { /*方块*/
+.md-diagram-panel-preview .actor, .md-diagram-panel-preview .entityBox { /*方块*/
     stroke: var(--table-border-color) !important;
     fill: var(--code-block-bg-color) !important;
 }
@@ -484,7 +530,7 @@ pre.md-fences-advanced.md-focus .md-fences-adv-panel {
     fill: var(--code-block-bg-color) !important;
 }
 #write .md-diagram-panel .md-diagram-panel-preview div { /*形状内文字*/
-    color: var(--code-block-color) !important;
+    color: var(--code-block-color);
     font-family: var(--text-font) !important;
     font-size: 1rem !important;
 }
@@ -634,6 +680,7 @@ h1 {
 
 h2 {
     font-size: 1.8rem;
+    margin-bottom: 1.5rem;
 }
 h2 .md-plain {
     padding-bottom: .3rem;
@@ -781,8 +828,11 @@ ol:last-child {
     margin-bottom: 0;
 }
 
-table {
-    padding: 0;
+.ty-table-edit {
+    margin-top: -1rem !important;
+}
+#write table {
+    margin-top: 1rem;
     word-break: initial;
     background-color: var(--table-bg-color);
 }
@@ -847,7 +897,6 @@ kbd {
     font-size: .95rem;
     padding: .3em .4em;
     border-radius: .4em;
-    vertical-align: top;
     box-shadow: .1em .1em .2em rgba(0, 0, 0, 0.3);
 }
 
@@ -1404,6 +1453,7 @@ a.ty-link {
 }
 .cm-s-inner .CodeMirror-gutters {
     border-right: 1px solid rgba(120, 120, 120, 0.3);
+    background: var(--code-block-bg-color);
 }
 .cm-s-inner .CodeMirror-linenumber {
     color: #787878;
@@ -1413,6 +1463,6 @@ a.ty-link {
 </style><title>前缀和之异或篇</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='前缀和之异或篇'><span>前缀和之异或篇</span></h1><p><a href='https://leetcode.cn/problems/xor-queries-of-a-subarray/'><span>1310. 子数组异或查询</span></a></p><p><a href='https://leetcode.cn/problems/find-the-longest-substring-containing-vowels-in-even-counts/'><span>1371. 每个元音包含偶数次的最长子字符串</span></a></p><p>&nbsp;</p><p><span>今天遇到了两个「前缀和」结合「异或」的题目，感觉很有意思，特意来总结一波！</span><strong><span>关于前缀和详细介绍可见 </span><a href='./前缀和数组.html'><span>前缀和数组</span></a></strong></p><p>&nbsp;</p><p><span>对于「+ -」操作来说，是一对逆运算，比如：</span><code>n + 3 - 3 = n</code></p><p><span>而对于「异或」操作来说，自身就是一种逆运算，任何两个相同的数的异或结果为 0，所以有：</span><code>n ^ 3 ^ 3 = n</code></p><p><span>至于为什么有这种特性，可以模拟一下「异或」运算的过程就懂了</span></p><p><span>来看一个样例：</span><code>[1,2,3,4,5]</code></p><ul><li><span>其中</span><code>sum(1,5) = 1 + 2 + 3 + 4 + 5 = 15</code><span>，</span><code>sum(1,2) = 1 + 2 = 3</code><span>，</span><code>sum(3,5) = 3 + 4 + 5 = 12</code></li><li><span>其中</span><code>XOR(1,5) = 1 ^ 2 ^ 3 ^ 4 ^ 5 = 1</code><span>，</span><code>XOR(1,2) = 1 ^ 2 = 3</code><span>，</span><code>XOR(3,5) = 3 ^ 4 ^ 5 = 2</code></li></ul><p><span>所以：</span><code>sum(1,2) + sum(3,5) = sum(1,5)</code><span> -&gt; </span><code>sum(3,5) = sum(1,5) - sum(1,2)</code></p><p><span>同理：</span><code>sum(1,2) ^ sum(3,5) = sum(1,5)</code><span> -&gt; </span><code>sum(3,5) = sum(1,5) ^ sum(1,2)</code></p><p><span>有了这样一个简单的推导，下面直接上题目</span></p><h3 id='子数组异或查询'><font color=#1FA774><span>子数组异或查询</span></font></h3><p><strong><span>题目详情可见 </span><a href='https://leetcode.cn/problems/xor-queries-of-a-subarray/'><span>子数组异或查询</span></a></strong></p><p><span>这个题目就是个模版题，直接把「和」换成「异或」即可</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="java"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7.500009536743164px; left: 3.999969482421875px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-variable-3">int</span>[] <span class="cm-def">xorQueries</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span>[][] <span class="cm-variable">queries</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">preSum</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">int</span>[<span class="cm-variable">arr</span>.<span class="cm-variable">length</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">preSum</span>.<span class="cm-variable">length</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) <span class="cm-variable">preSum</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>] <span class="cm-variable">^</span> <span class="cm-variable">arr</span>[<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">ans</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">int</span>[<span class="cm-variable">queries</span>.<span class="cm-variable">length</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">queries</span>.<span class="cm-variable">length</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">query</span> <span class="cm-operator">=</span> <span class="cm-variable">queries</span>[<span class="cm-variable">i</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">ans</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">query</span>[<span class="cm-number">1</span>] <span class="cm-operator">+</span> <span class="cm-number">1</span>] <span class="cm-variable">^</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">query</span>[<span class="cm-number">0</span>]];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">ans</span>;</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 190px;"></div><div class="CodeMirror-gutters" style="display: none; height: 190px;"></div></div></div></pre><h3 id='每个元音包含偶数次的最长子字符串'><font color=#1FA774><span>每个元音包含偶数次的最长子字符串</span></font></h3><p><strong><span>题目详情可见 </span><a href='https://leetcode.cn/problems/find-the-longest-substring-containing-vowels-in-even-counts/'><span>每个元音包含偶数次的最长子字符串</span></a></strong></p><p><span>我们把五个元音字母看作是五个特殊标记</span></p><p><span>如果一个子数组里面包含偶数个相同的元音字母，那么这个子数组中所有元音字母的异或结果肯定是 0，因为相同的元素异或为 0。例：</span><code>&#39;a&#39; ^ &#39;a&#39; = 0</code></p><p><span>所以我们只计算含有元音字母的前缀和，非元音字母的位置直接继承前一个结果，具体实现可见代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 482.5px; left: 11.20001220703125px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-variable-3">int</span> <span class="cm-def">findTheLongestSubstring</span>(<span class="cm-variable-3">String</span> <span class="cm-variable">s</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">List</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Character</span><span class="cm-operator">&gt;</span> <span class="cm-variable">vowel</span> <span class="cm-operator">=</span> <span class="cm-variable">Arrays</span>.<span class="cm-variable">asList</span>(<span class="cm-string">'a'</span>, <span class="cm-string">'e'</span>, <span class="cm-string">'i'</span>, <span class="cm-string">'o'</span>, <span class="cm-string">'u'</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">preSum</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">int</span>[<span class="cm-variable">s</span>.<span class="cm-variable">length</span>() <span class="cm-operator">+</span> <span class="cm-number">1</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">preSum</span>.<span class="cm-variable">length</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">vowel</span>.<span class="cm-variable">contains</span>(<span class="cm-variable">s</span>.<span class="cm-variable">charAt</span>(<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>))) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 如果是元音，就做「异或」操作</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">preSum</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>] <span class="cm-variable">^</span> (<span class="cm-variable-3">int</span>) <span class="cm-variable">s</span>.<span class="cm-variable">charAt</span>(<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 如果不是元音，直接继承前一个结果</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  } <span class="cm-keyword">else</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">ans</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 结尾从最后一个元素开始搜索 [......i]</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">s</span>.<span class="cm-variable">length</span>() <span class="cm-operator">-</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&gt;=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span><span class="cm-operator">--</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 开头从第一个元素开始搜索 [j......]</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 注意：一定要 j &lt;= i，因为存在 "d" 这样的情况</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;=</span> <span class="cm-variable">i</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 如果找到含有偶数个元音的子数组，直接开始上一个元素结尾的搜索</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 以 i 为结尾的子数组不可能有更长满足条件的情况</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> ((<span class="cm-variable">preSum</span>[<span class="cm-variable">i</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>] <span class="cm-variable">^</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">j</span>]) <span class="cm-operator">==</span> <span class="cm-number">0</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">ans</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-variable">max</span>(<span class="cm-variable">ans</span>, <span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-variable">j</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">break</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">ans</span>;</span></pre><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 494px;"></div><div class="CodeMirror-gutters" style="display: none; height: 494px;"></div></div></div></pre></div></div>
+<div id='write'  class=''><h1 id='前缀和之异或篇'><span>前缀和之异或篇</span></h1><p><a href='https://leetcode.cn/problems/xor-queries-of-a-subarray/'><span>1310. 子数组异或查询</span></a></p><p><a href='https://leetcode.cn/problems/find-the-longest-substring-containing-vowels-in-even-counts/'><span>1371. 每个元音包含偶数次的最长子字符串</span></a></p><p>&nbsp;</p><p><span>今天遇到了两个「前缀和」结合「异或」的题目，感觉很有意思，特意来总结一波！</span><strong><span>关于前缀和详细介绍可见 </span><a href='./前缀和数组.html'><span>前缀和数组</span></a></strong></p><p>&nbsp;</p><p><span>对于「+ -」操作来说，是一对逆运算，比如：</span><code>n + 3 - 3 = n</code></p><p><span>而对于「异或」操作来说，自身就是一种逆运算，任何两个相同的数的异或结果为 0，所以有：</span><code>n ^ 3 ^ 3 = n</code></p><p><span>至于为什么有这种特性，可以模拟一下「异或」运算的过程就懂了</span></p><p><span>来看一个样例：</span><code>[1,2,3,4,5]</code></p><ul><li><span>其中</span><code>sum(1,5) = 1 + 2 + 3 + 4 + 5 = 15</code><span>，</span><code>sum(1,2) = 1 + 2 = 3</code><span>，</span><code>sum(3,5) = 3 + 4 + 5 = 12</code></li><li><span>其中</span><code>XOR(1,5) = 1 ^ 2 ^ 3 ^ 4 ^ 5 = 1</code><span>，</span><code>XOR(1,2) = 1 ^ 2 = 3</code><span>，</span><code>XOR(3,5) = 3 ^ 4 ^ 5 = 2</code></li></ul><p><span>所以：</span><code>sum(1,2) + sum(3,5) = sum(1,5)</code><span> -&gt; </span><code>sum(3,5) = sum(1,5) - sum(1,2)</code></p><p><span>同理：</span><code>sum(1,2) ^ sum(3,5) = sum(1,5)</code><span> -&gt; </span><code>sum(3,5) = sum(1,5) ^ sum(1,2)</code></p><p><span>有了这样一个简单的推导，下面直接上题目</span></p><h3 id='子数组异或查询'><font color=#1FA774><span>子数组异或查询</span></font></h3><p><strong><span>题目详情可见 </span><a href='https://leetcode.cn/problems/xor-queries-of-a-subarray/'><span>子数组异或查询</span></a></strong></p><p><span>这个题目就是个模版题，直接把「和」换成「异或」即可</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="java"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-variable-3">int</span>[] <span class="cm-def">xorQueries</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span>[][] <span class="cm-variable">queries</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">preSum</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">int</span>[<span class="cm-variable">arr</span>.<span class="cm-variable">length</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">preSum</span>.<span class="cm-variable">length</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) <span class="cm-variable">preSum</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>] <span class="cm-variable">^</span> <span class="cm-variable">arr</span>[<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">ans</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">int</span>[<span class="cm-variable">queries</span>.<span class="cm-variable">length</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">queries</span>.<span class="cm-variable">length</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">query</span> <span class="cm-operator">=</span> <span class="cm-variable">queries</span>[<span class="cm-variable">i</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">ans</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">query</span>[<span class="cm-number">1</span>] <span class="cm-operator">+</span> <span class="cm-number">1</span>] <span class="cm-variable">^</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">query</span>[<span class="cm-number">0</span>]];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">ans</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 190px;"></div><div class="CodeMirror-gutters" style="display: none; height: 190px;"></div></div></div></pre><h3 id='每个元音包含偶数次的最长子字符串'><font color=#1FA774><span>每个元音包含偶数次的最长子字符串</span></font></h3><p><strong><span>题目详情可见 </span><a href='https://leetcode.cn/problems/find-the-longest-substring-containing-vowels-in-even-counts/'><span>每个元音包含偶数次的最长子字符串</span></a></strong></p><p><span>我们把五个元音字母看作是五个特殊标记</span></p><p><span>如果一个子数组里面包含偶数个相同的元音字母，那么这个子数组中所有元音字母的异或结果肯定是 0，因为相同的元素异或为 0。例：</span><code>&#39;a&#39; ^ &#39;a&#39; = 0</code></p><p><span>所以我们只计算含有元音字母的前缀和，非元音字母的位置直接继承前一个结果，具体实现可见代码</span></p><pre class="md-fences md-end-block ty-contain-cm md-focus" spellcheck="false" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-variable-3">int</span> <span class="cm-def">findTheLongestSubstring</span>(<span class="cm-variable-3">String</span> <span class="cm-variable">s</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">List</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Character</span><span class="cm-operator">&gt;</span> <span class="cm-variable">vowel</span> <span class="cm-operator">=</span> <span class="cm-variable">Arrays</span>.<span class="cm-variable">asList</span>(<span class="cm-string">'a'</span>, <span class="cm-string">'e'</span>, <span class="cm-string">'i'</span>, <span class="cm-string">'o'</span>, <span class="cm-string">'u'</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">preSum</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">int</span>[<span class="cm-variable">s</span>.<span class="cm-variable">length</span>() <span class="cm-operator">+</span> <span class="cm-number">1</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">preSum</span>.<span class="cm-variable">length</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">vowel</span>.<span class="cm-variable">contains</span>(<span class="cm-variable">s</span>.<span class="cm-variable">charAt</span>(<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>))) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 如果是元音，就做「异或」操作</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">preSum</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>] <span class="cm-variable">^</span> (<span class="cm-variable-3">int</span>) <span class="cm-variable">s</span>.<span class="cm-variable">charAt</span>(<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 如果不是元音，直接继承前一个结果</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  } <span class="cm-keyword">else</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">ans</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 结尾从最后一个元素开始搜索 [......i]</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">s</span>.<span class="cm-variable">length</span>() <span class="cm-operator">-</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&gt;=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span><span class="cm-operator">--</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 开头从第一个元素开始搜索 [j......]</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 注意：一定要 j &lt;= i，因为存在 "d" 这样的情况</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;=</span> <span class="cm-variable">i</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 如果找到含有偶数个元音的子数组，直接开始上一个元素结尾的搜索</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 以 i 为结尾的子数组不可能有更长满足条件的情况</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> ((<span class="cm-variable">preSum</span>[<span class="cm-variable">i</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>] <span class="cm-variable">^</span> <span class="cm-variable">preSum</span>[<span class="cm-variable">j</span>]) <span class="cm-operator">==</span> <span class="cm-number">0</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">ans</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-variable">max</span>(<span class="cm-variable">ans</span>, <span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-variable">j</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">break</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">ans</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 494px;"></div><div class="CodeMirror-gutters" style="display: none; height: 494px;"></div></div></div></pre></div></div>
 </body>
 </html>
