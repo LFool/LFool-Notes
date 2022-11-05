@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-11-04 14:44:46
+> 更新时间：2022-11-05 14:55:20
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>149</font>**
+> 截止目前，文章总数：**<font color='red'>150</font>**
 >
 > 记录本人总结！！！
 >
@@ -198,7 +198,8 @@
 - [equals && hashCode](./java/equals-hashCode.html)
 - [注解](./java/注解.html)
 - [反射机制](./java/反射机制.html)
-- [重载 & 重写](./java/重载-重写.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [重载 vs 重写](./java/重载-重写.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [动态语言 vs 动态类型语言](./java/动态语言-动态类型语言.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### JVM 😭
 
