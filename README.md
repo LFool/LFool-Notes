@@ -207,11 +207,10 @@
 
 - 待更新...
 
-- 
-
+- [虚拟机栈](./java/虚拟机栈) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [方法调用](./java/方法调用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [从字节码角度分析 i++ 和 ++i](./java/从字节码角度分析i++和++i.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [虚拟机栈面试题](./java/虚拟机栈面试题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [方法调用](./java/方法调用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 
 #### 「类加载子系统」系列
