@@ -14,11 +14,11 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-11-05 15:33:03
+> 更新时间：2022-11-12 16:11:02
 >
 > <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>153</font>**
+> 截止目前，文章总数：**<font color='red'>154</font>**
 >
 > 记录本人总结！！！
 >
@@ -213,16 +213,17 @@
 - [虚拟机栈面试题](./java/虚拟机栈面试题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [方法调用面试题](./java/方法调用面试题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
-
 #### 「类加载子系统」系列
 
-- [类加载的过程](./java/类加载的过程.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [类加载的时机](./java/类加载的时机.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [类加载器](./java/类加载器.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [剖析 [Bootstrap、Extension、Application] ClassLoader](./java/剖析-Bootstrap-Extension-Application-ClassLoader.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [双亲委派模型](./java/双亲委派模型.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [自定义类加载器](./java/自定义类加载器.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [破坏双亲委派模型](./java/破坏双亲委派模型.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [类加载子系统-导读 ❤️‍🔥](./java/类加载子系统-导读.html)
+
+- [类加载的过程](./java/类加载的过程.html)
+- [类加载的时机](./java/类加载的时机.html)
+- [类加载器](./java/类加载器.html)
+- [剖析 [Bootstrap、Extension、Application] ClassLoader](./java/剖析-Bootstrap-Extension-Application-ClassLoader.html)
+- [双亲委派模型](./java/双亲委派模型.html)
+- [自定义类加载器](./java/自定义类加载器.html)
+- [破坏双亲委派模型](./java/破坏双亲委派模型.html)
 
 ### 并发 😔
 
