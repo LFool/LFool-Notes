@@ -14,15 +14,12 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-11-12 16:11:02
+> 更新时间：2022-11-20 16:33:15
 >
-> <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+> 截止目前，文章总数：**<font color='red'>165</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
-> 截止目前，文章总数：**<font color='red'>154</font>**
+> 记录本人总结～持续更新...
 >
-> 记录本人总结！！！
->
-> 持续更新...
 
 ## 算法
 
@@ -198,20 +195,33 @@
 - [equals && hashCode](./java/equals-hashCode.html)
 - [注解](./java/注解.html)
 - [反射机制](./java/反射机制.html)
-- [重载 vs 重写](./java/重载-重写.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [动态语言 vs 动态类型语言](./java/动态语言-动态类型语言.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [重载 vs 重写](./java/重载-重写.html)
+- [动态语言 vs 动态类型语言](./java/动态语言-动态类型语言.html)
 
 ### JVM 😭
 
 #### 「运行时数据区域」系列
 
-- 待更新...
+- [运行时数据区域](./java/运行时数据区域.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
-- [虚拟机栈](./java/虚拟机栈.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [方法调用](./java/方法调用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [从字节码角度分析 i++ 和 ++i](./java/从字节码角度分析i++和++i.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [虚拟机栈面试题](./java/虚拟机栈面试题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [方法调用面试题](./java/方法调用面试题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [虚拟机栈](./java/虚拟机栈.html)
+- [方法调用](./java/方法调用.html)
+- [从字节码角度分析 i++ 和 ++i](./java/从字节码角度分析i++和++i.html)
+- [虚拟机栈面试题](./java/虚拟机栈面试题.html)
+- [方法调用面试题](./java/方法调用面试题.html)
+- [逃逸分析](./java/逃逸分析.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [对象的创建](./java/对象的创建.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [方法区](./java/方法区.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [运行时常量池](./java/运行时常量池.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [字符串常量池](./java/字符串常量池.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [实战「静态变量」「实例变量」「局部变量」](./java/实战-静态变量-实例变量-局部变量.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [各区域 OOM 汇总](./java/各区域OOM汇总.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [常用参数汇总](./java/运行时数据区常用参数汇总.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+
+#### 「垃圾收集」系列
+
+- [生存还是死亡？?](./java/生存还是死亡.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [垃圾收集算法](./java/垃圾收集算法.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 #### 「类加载子系统」系列
 
