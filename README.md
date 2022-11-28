@@ -14,9 +14,9 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-11-20 16:55:07
+> 更新时间：2022-11-28 19:29:28
 >
-> 截止目前，文章总数：**<font color='red'>166</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+> 截止目前，文章总数：**<font color='red'>167</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
 > 记录本人总结～持续更新...
 >
@@ -76,7 +76,7 @@
 - [下降路径最小和 -「回溯」&「动规」](./algorithm/下降路径最小和-回溯-动规.html)
 - [动态规划之最长回文子序列「dp 空间优化」](./algorithm/动态规划之最长回文子序列.html)
 - [关于回文子串的两种方法：「中心扩展」&「动态规划」](./algorithm/回文子串的两种方法-中心扩展-动态规划.html)
-- [「数位 DP」详解](./algorithm/数位DP.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [数位 DP 详解](./algorithm/数位DP.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### 搜索算法 (DFS/回溯/BFS)
 
@@ -224,6 +224,7 @@
 
 - [生存还是死亡？?](./java/生存还是死亡.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [垃圾收集算法](./java/垃圾收集算法.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [强/软/弱/虚-引用](./java/强软弱虚引用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 #### 「类加载子系统」系列
 
@@ -247,7 +248,7 @@
 ### 设计模式
 
 - [单例模式](./java/单例模式.html)
-- [「简单工厂/工厂方法/抽象工厂」模式](./java/简单工厂-工厂方法-抽象工厂-模式.html)
+- [简单工厂/工厂方法/抽象工厂-模式](./java/简单工厂-工厂方法-抽象工厂-模式.html)
 
 ---
 
