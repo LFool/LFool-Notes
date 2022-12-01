@@ -14,9 +14,9 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-11-28 19:29:28
+> 更新时间：2022-12-01 22:09:39
 >
-> 截止目前，文章总数：**<font color='red'>167</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+> 截止目前，文章总数：**<font color='red'>169</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
 > 记录本人总结～持续更新...
 >
@@ -224,6 +224,7 @@
 
 - [生存还是死亡？?](./java/生存还是死亡.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [垃圾收集算法](./java/垃圾收集算法.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [HotSpot 的算法细节实现](./java/HotSpot的算法细节实现.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [强/软/弱/虚-引用](./java/强软弱虚引用.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 #### 「类加载子系统」系列
@@ -243,6 +244,7 @@
 - [Java 内存模型](./java/Java内存模型.html)
 - [synchronized 关键字](./java/synchronized关键字.html)
 - [volatile 关键字](./java/volatile关键字.html)
+- [伪共享](./java/伪共享.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 
 ### 设计模式
