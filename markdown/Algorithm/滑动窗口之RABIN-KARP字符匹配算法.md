@@ -2,7 +2,7 @@
 
 [187. 重复的DNA序列](https://leetcode.cn/problems/repeated-dna-sequences/)
 
-[28. 实现 strStr()](https://leetcode.cn/problems/implement-strstr/)
+[28. 找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
 
 
 
@@ -55,7 +55,7 @@ public List<String> findRepeatedDnaSequences(String s) {
 
 把`'A'`, `'C'`, `'G'`,`'T'`映射成`0, 1, 2, 3`四个数字，所以字符串`ACGT`就变成了数`0123`
 
-比较两个字符串是否相等，只需要比较对应的树是否相等即可！换句话来说，就是把比较字符串换成了比较字符串的 Hash 值
+比较两个字符串是否相等，只需要比较对应的数是否相等即可！换句话来说，就是把比较字符串换成了比较字符串的 Hash 值
 
 ```java
 public List<String> findRepeatedDnaSequences(String s) {
@@ -92,9 +92,9 @@ public List<String> findRepeatedDnaSequences(String s) {
 所以我们可以说这个算法一般情况下的平均时间复杂度是`O(N)`，极端情况下的时间复杂度会退化成`O(NL)`
 
 
-### <font color=#1FA774>实现 strStr()</font>
+### <font color=#1FA774>找出字符串中第一个匹配项的下标</font>
 
-**题目详情可见 [实现 strStr()](https://leetcode.cn/problems/implement-strstr/)**
+**题目详情可见 [找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)**
 
 这个题目大家肯定也可以想到暴力的方法：(和上一题暴力的方法大同小异)
 
