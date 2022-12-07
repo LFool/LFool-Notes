@@ -50,7 +50,7 @@ Heap
 
 可以看到一共进行了两次 GC，分别是 Young GC 和 Full GC。原因如下：
 
-- **<font color='red'>arallel Scavenge (-XX:+UseParallelGC) 框架下，默认是在要触发 Full GC 前先执行一次 Young GC，并且两次 GC 之间能让应用程序稍微运行一小下，以期降低 Full GC 的暂停时间</font>****
+- **<font color='red'>arallel Scavenge (-XX:+UseParallelGC) 框架下，默认是在要触发 Full GC 前先执行一次 Young GC，并且两次 GC 之间能让应用程序稍微运行一小下，以期降低 Full GC 的暂停时间</font>**
 - 因为 Young GC 会尽量清理了年轻代的死对象，减少了 Full GC 的工作量
 
 **关于这个内容的详细解释可见 [Major GC和Full GC的区别是什么？触发条件呢？ - RednaxelaFX的回答 - 知乎](https://www.zhihu.com/question/41922036/answer/93079526)**
@@ -105,6 +105,6 @@ Heap
 
 **<font color='red'>HotSpot 的 Full GC 实现中，默认年轻代中所有活的对象都要晋升到老年代，实在晋升不了才会留在年轻代</font>**
 
-**注意：**执行完 Full GC 后老年代内存空间的使用**<font color='red'>不减反增</font>**也是非常正常的行为。假如做 Full GC 的时候，老年代中的对象几乎没有死掉的，而年轻代又有活对象晋升来，那么 Full GC 结束后老年代内存空间的使用自然就上升了
+**注意：**执行完 Full GC 后老年代内存空间的使用**<font color='red'>不减反增</font>**也是非常正常的行为。假如执行 Full GC 的时候，老年代中的对象几乎没有死掉的，而年轻代又有活对象晋升来，那么 Full GC 结束后老年代内存空间的使用自然就上升了
 
 **关于这个内容的详细解释可见 [JVM full GC的奇怪现象，求解惑？ - RednaxelaFX的回答 - 知乎](https://www.zhihu.com/question/48780091/answer/113063216)**
