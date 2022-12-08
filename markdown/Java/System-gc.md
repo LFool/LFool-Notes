@@ -12,6 +12,8 @@ The call System.gc() is effectively equivalent to the call: Runtime.getRuntime()
 
 **注意：**可以通过`System.gc()`调用来决定 Java 虚拟机 GC 的行为；但一般情况下，垃圾回收应该是自动进行的！！
 
+### <font color=#1FA774>辨析点一</font>
+
 对于不同垃圾收集器，`System.gc()`的表现可能略有不同，测试代码如下所示：
 
 ```java
@@ -70,6 +72,8 @@ Heap
   class space    used 347K, capacity 388K, committed 512K, reserved 1048576K
 ```
 
+### <font color=#1FA774>辨析点二</font>
+
 无论是使用 ParallelGC 还是使用 SerialGC，都会发现一个很奇怪的地方，慢慢道来...(注意：我们的分析基于`ParallelGC`)
 
 根据虚拟机启动参数`-Xms1024m -Xmx1024m `可以知道为 Java 堆分配了固定的 1024m 的内存，利用`jstat`命令查看内存分配情况：
@@ -94,7 +98,7 @@ Heap
 
 首先`buffer`会在 Eden 区分配内存，当执行为一次 Young GC 后，`buffer`会被移动到 s0 区，但是当执行完 Full GC，新生代中的对象全部移动到了老年代
 
-此时问题就来了，新生代晋升到老年代只有四种情况：
+此时问题就来了，新生代晋升到老年代只有四种情况：(**更详细的内容可见 [对象的创建](./对象的创建.html#对象内存分配与回收策略)**)
 
 - 大对象直接在老年代分配：如果一个对象的大小超过了参数`-XX:PretenureSizeThreshold`指定的值 (默认为 0)，那么就直接在老年代为对象分配内存
 - 长期存活的对象将进入老年代：如果一个对象的 GC 年龄超过了参数`-XX:MaxTenuringThreshold`指定的值 (默认为 15)，那么在下一次 GC 时就会被移动到老年代
