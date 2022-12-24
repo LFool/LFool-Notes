@@ -14,7 +14,7 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2022-12-06 13:44:58
+> 更新时间：2022-12-24 21:08:53
 >
 > 截止目前，文章总数：**<font color='red'>174</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
@@ -22,6 +22,8 @@
 >
 
 ## 算法
+
+**<font color='red'>PS：在算法篇的开头，强烈推荐一波东哥的算法小抄，部分内容参考自东哥的文章～ -> [LABULADONG 的算法网站](https://labuladong.github.io/algo/)</font>**
 
 ### 特殊板块😝～
 
