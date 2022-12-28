@@ -187,8 +187,8 @@ public int subarrayGCD(int[] nums, int k) {
             g[0] = gcd(g[0], nums[i]);
             // 原地去重
             if (gcds.get(j)[0] == g[0])  // 值相同
-                gcds.get(j)[1] = g[1];   // 值不同
-            else gcds.set(++j, g);
+                gcds.get(j)[1] = g[1];
+            else gcds.set(++j, g);       // 值不同
         }
         // 截断 [j + 1, ors.size())
         gcds.subList(j + 1, gcds.size()).clear();
