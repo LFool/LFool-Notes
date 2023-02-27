@@ -14,9 +14,9 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2023-02-25 16:09:06
+> 更新时间：2023-02-27 17:00:47
 >
-> 截止目前，文章总数：**<font color='red'>188</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+> 截止目前，文章总数：**<font color='red'>190</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
 > 记录本人总结～持续更新...
 >
@@ -75,6 +75,8 @@
 - [全排列「变题」](./algorithm/全排列-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [字符串相加「变题」](./algorithm/字符串相加-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [最长递增子序列「变题」](./algorithm/最长递增子序列-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [接雨水「变题」](./algorithm/接雨水-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [二叉树中的最大路径和「变题」](./algorithm/二叉树中的最大路径和-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### 动态规划
 
