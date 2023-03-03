@@ -18,7 +18,7 @@
 
 如上图所示，左边是 C++ 实现，右边是 Java 实现。这里是跨语言调用，JNI 实现了由 C++ 向 Java 跨语言调用。C++ 调用的第一个 Java 类是 Launcher 类
 
-从这个图中我们可以看出，C++ 调用 Java 创建 JVM 启动器，其中一个启动器是 Launcher，它实际是调用了`sun.misc.Launcher`类的`getLauncher()`方法
+从这个图中我们可以看出，C++ 调用 Java 代买创建 JVM 启动器，其中一个启动器是 Launcher，实际是调用`sun.misc.Launcher`类的`getLauncher()`方法创建
 
 那我们就从这个方法入手看看到底是如何运行的？！
 
@@ -35,7 +35,7 @@ public class Launcher {
 
 可以明显看出这就是一个单例模式！！`launcher`对象在类加载完成的时候就已经初始化好了，C++ 调用`getLauncher()`方法的时候会返回`launcher`对象
 
-我们先来看看`Launcher`的构造方法，它主要就是初始化了两个构造器：扩展类加载器、应用程序类加载器
+我们先来看看`Launcher`的构造方法，它主要就是初始化了两个类加载器：扩展类加载器、应用程序类加载器
 
 ```java
 public Launcher() {
@@ -255,5 +255,5 @@ public abstract class ClassLoader {
 
 **<font color='red'>结论：</font>**
 
-- C++ 在启动 JVM 的时候，调用了 Launcher 启动类，这个启动类同时加载了 ExtClassLoader 和 AppClassLoader
-- appClassLoader 的父类是 extClassLoader，extClassLoader 的父类是 bootstrapClassLoader
+- C++ 在启动 JVM 的时候调用了 Launcher 启动类，这个启动类同时加载了 ExtClassLoader 和 AppClassLoader
+- AppClassLoader 的父类是 ExtClassLoader，ExtClassLoader 的父类是 BootstrapClassLoader
