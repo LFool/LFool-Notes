@@ -183,7 +183,7 @@ public class LRUCache {
 
 
 
-上面都是纯手动实现的 API，下面给出借助`LinkedListHashMap`实现的代码
+上面都是纯手动实现的 API，下面给出借助`LinkedHashMap`实现的代码
 
 ```java
 class LRUCache {
