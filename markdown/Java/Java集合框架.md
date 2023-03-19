@@ -237,7 +237,7 @@ public interface Comparator<T> {
 }
 ```
 
-如果我们的这个类`Person`无法修改或者没有继承`Comparable`接口，我们又要对其进行排序，`Comparator`就可以派上用场了
+如果我们的这个类`Person`无法修改或者没有实现`Comparable`接口，我们又要对其进行排序，`Comparator`就可以派上用场了
 
 将类`Person`实现的`Comparable`接口去掉
 
