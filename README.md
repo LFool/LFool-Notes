@@ -14,16 +14,120 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2023-03-19 01:10:32
+> 更新时间：2023-03-24 18:30:43
 >
-> 截止目前，文章总数：**<font color='red'>195</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+> 截止目前，文章总数：**<font color='red'>197</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
 > 记录本人总结～持续更新...
 >
 
+## Java
+
+### 基础 😁
+
+- [Java 小技巧总结](./java/Java-小技巧总结.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
+- [Java 集合框架](./java/Java集合框架.html)
+- [Java 8 Stream sorted()](./java/Java-8-Stream-sorted.html)
+- [Random 类](./java/Random.html)
+- [equals && hashCode](./java/equals-hashCode.html)
+- [注解](./java/注解.html)
+- [反射机制](./java/反射机制.html)
+- [重载 vs 重写](./java/重载-重写.html)
+- [动态语言 vs 动态类型语言](./java/动态语言-动态类型语言.html)
+- [IO 模型](./java/IO模型.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [HashMap 源码剖析](./java/HashMap源码剖析.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+
+### JVM 😭
+
+#### 「运行时数据区域」系列
+
+- [运行时数据区域-导读 ❤️‍🔥](./java/运行时数据区域-导读.html)
+
+- [运行时数据区域](./java/运行时数据区域.html)
+
+- [虚拟机栈](./java/虚拟机栈.html)
+- [方法调用](./java/方法调用.html)
+- [从字节码角度分析 i++ 和 ++i](./java/从字节码角度分析i++和++i.html)
+- [虚拟机栈面试题](./java/虚拟机栈面试题.html)
+- [方法调用面试题](./java/方法调用面试题.html)
+- [逃逸分析](./java/逃逸分析.html)
+- [对象的创建](./java/对象的创建.html)
+- [方法区](./java/方法区.html)
+- [运行时常量池](./java/运行时常量池.html)
+- [字符串常量池](./java/字符串常量池.html)
+- [实战「静态变量」「实例变量」「局部变量」](./java/实战-静态变量-实例变量-局部变量.html)
+- [各区域 OOM 汇总](./java/各区域OOM汇总.html)
+- [常用参数汇总](./java/运行时数据区常用参数汇总.html)
+
+#### 「垃圾收集」系列
+
+- [生存还是死亡？?](./java/生存还是死亡.html)
+- [垃圾收集算法](./java/垃圾收集算法.html)
+- [HotSpot 的算法细节实现](./java/HotSpot的算法细节实现.html)
+- [垃圾回收相关概念](./java/垃圾回收相关概念.html)
+- [垃圾收集器前言](./java/垃圾收集器前言.html)
+- [经典垃圾收集器](./java/经典垃圾收集器.html)
+- [强/软/弱/虚-引用](./java/强软弱虚引用.html)
+- [内存泄漏 & 内存溢出](./java/内存泄漏-内存溢出.html)
+- [System.gc()](./java/System-gc.html)
+
+#### 「类加载子系统」系列
+
+- [类加载子系统-导读 ❤️‍🔥](./java/类加载子系统-导读.html)
+
+- [类加载的过程](./java/类加载的过程.html)
+- [类加载的时机](./java/类加载的时机.html)
+- [类加载器](./java/类加载器.html)
+- [剖析 [Bootstrap、Extension、Application] ClassLoader](./java/剖析-Bootstrap-Extension-Application-ClassLoader.html)
+- [双亲委派模型](./java/双亲委派模型.html)
+- [自定义类加载器](./java/自定义类加载器.html)
+- [破坏双亲委派模型](./java/破坏双亲委派模型.html)
+
+### 并发 😔
+
+- [Java 内存模型](./java/Java内存模型.html)
+- [synchronized 关键字](./java/synchronized关键字.html)
+- [volatile 关键字](./java/volatile关键字.html)
+- [伪共享](./java/伪共享.html)
+- [CAS](./java/CAS.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [Java 并发中的「锁」](./java/Java并发中的锁.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+
+
+### 设计模式
+
+- [单例模式](./java/单例模式.html)
+- [简单工厂/工厂方法/抽象工厂-模式](./java/简单工厂-工厂方法-抽象工厂-模式.html)
+
+---
+
 ## 算法
 
-**<font color='red'>PS：在算法篇的开头，强烈推荐一波东哥的算法小抄，部分内容参考自东哥的文章～ -> [LABULADONG 的算法网站](https://labuladong.github.io/algo/)</font>**
+### 面试变题 ❤️‍🔥
+
+- [最大子数组和「变题」](./algorithm/最大子数组和-变题.html)
+- [无重复字符的最长子串「变题」](./algorithm/无重复字符的最长子串-变题.html)
+- [数组中的第K个最大元素「变题」](./algorithm/数组中的第K个最大元素-变题.html)
+- [可被三整除的最大和「变题」](./algorithm/可被三整除的最大和-变题.html)
+- [K 个一组翻转链表「变题」](./algorithm/K个一组翻转链表-变题.html)
+- [合并两个有序链表「变题」](./algorithm/合并两个有序链表-变题.html)
+- [合并两个有序数组「变题」](./algorithm/合并两个有序数组-变题.html)
+- [二叉树的层序遍历「变题」](./algorithm/二叉树的层序遍历-变题.html)
+- [搜索旋转排序数组「变题」](./algorithm/搜索旋转排序数组-变题.html)
+- [有效的括号「变题」](./algorithm/有效的括号-变题.html)
+- [买卖股票的最佳时机「变题」](./algorithm/买卖股票的最佳时机-变题.html)
+- [岛屿数量「变题」](./algorithm/岛屿数量-变题.html)
+- [环形链表「变题」](./algorithm/环形链表-变题.html)
+- [相交链表「变题」](./algorithm/相交链表-变题.html)
+- [最长回文子串「变题」](./algorithm/最长回文子串-变题.html)
+- [二叉树的最近公共祖先「变题」](./algorithm/二叉树的最近公共祖先-变题.html)
+- [全排列「变题」](./algorithm/全排列-变题.html)
+- [字符串相加「变题」](./algorithm/字符串相加-变题.html)
+- [最长递增子序列「变题」](./algorithm/最长递增子序列-变题.html)
+- [接雨水「变题」](./algorithm/接雨水-变题.html)
+- [二叉树中的最大路径和「变题」](./algorithm/二叉树中的最大路径和-变题.html)
+- [二叉树的中序遍历「变题」](./algorithm/二叉树的中序遍历-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [爬楼梯「变题」](./algorithm/爬楼梯-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [排序链表「变题」](./algorithm/排序链表-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### 特殊板块😝～
 
@@ -53,33 +157,6 @@
 - [手撸 LRU](./algorithm/手撸LRU.html)
 - [队列-栈-互相转换](./algorithm/队列-栈-互相转换.html)
 - 
-
-### 面试变题 ❤️‍🔥
-
-- [最大子数组和「变题」](./algorithm/最大子数组和-变题.html)
-- [无重复字符的最长子串「变题」](./algorithm/无重复字符的最长子串-变题.html)
-- [数组中的第K个最大元素「变题」](./algorithm/数组中的第K个最大元素-变题.html)
-- [可被三整除的最大和「变题」](./algorithm/可被三整除的最大和-变题.html)
-- [K 个一组翻转链表「变题」](./algorithm/K个一组翻转链表-变题.html)
-- [合并两个有序链表「变题」](./algorithm/合并两个有序链表-变题.html)
-- [合并两个有序数组「变题」](./algorithm/合并两个有序数组-变题.html)
-- [二叉树的层序遍历「变题」](./algorithm/二叉树的层序遍历-变题.html)
-- [搜索旋转排序数组「变题」](./algorithm/搜索旋转排序数组-变题.html)
-- [有效的括号「变题」](./algorithm/有效的括号-变题.html)
-- [买卖股票的最佳时机「变题」](./algorithm/买卖股票的最佳时机-变题.html)
-- [岛屿数量「变题」](./algorithm/岛屿数量-变题.html)
-- [环形链表「变题」](./algorithm/环形链表-变题.html)
-- [相交链表「变题」](./algorithm/相交链表-变题.html)
-- [最长回文子串「变题」](./algorithm/最长回文子串-变题.html)
-- [二叉树的最近公共祖先「变题」](./algorithm/二叉树的最近公共祖先-变题.html)
-- [全排列「变题」](./algorithm/全排列-变题.html)
-- [字符串相加「变题」](./algorithm/字符串相加-变题.html)
-- [最长递增子序列「变题」](./algorithm/最长递增子序列-变题.html)
-- [接雨水「变题」](./algorithm/接雨水-变题.html)
-- [二叉树中的最大路径和「变题」](./algorithm/二叉树中的最大路径和-变题.html)
-- [二叉树的中序遍历「变题」](./algorithm/二叉树的中序遍历-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [爬楼梯「变题」](./algorithm/爬楼梯-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [排序链表「变题」](./algorithm/排序链表-变题.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### 动态规划
 
@@ -202,83 +279,6 @@
 - [MySQL 容易被忽略的小知识](./SQL/MySQL-容易被忽略的小知识.html)
 - [InnoDB 中 row_id 的秘密](./SQL/InnoDB中row_id的秘密.html)
 - [深挖 MySQL 记录的二进制表示](./SQL/深挖MySQL记录的二进制表示.html)
-
----
-
-## Java
-
-### 基础 😁
-
-- [Java 小技巧总结](./java/Java-小技巧总结.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220305/21165516464862151646486215299QNtVQx.svg" alt="" style="zoom: 60%;" />
-- [Java 集合框架](./java/Java集合框架.html)
-- [Java 8 Stream sorted()](./java/Java-8-Stream-sorted.html)
-- [Random 类](./java/Random.html)
-- [equals && hashCode](./java/equals-hashCode.html)
-- [注解](./java/注解.html)
-- [反射机制](./java/反射机制.html)
-- [重载 vs 重写](./java/重载-重写.html)
-- [动态语言 vs 动态类型语言](./java/动态语言-动态类型语言.html)
-- [IO 模型](./java/IO模型.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [HashMap 源码剖析](./java/HashMap源码剖析.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-
-### JVM 😭
-
-#### 「运行时数据区域」系列
-
-- [运行时数据区域-导读 ❤️‍🔥](./java/运行时数据区域-导读.html)
-
-- [运行时数据区域](./java/运行时数据区域.html)
-
-- [虚拟机栈](./java/虚拟机栈.html)
-- [方法调用](./java/方法调用.html)
-- [从字节码角度分析 i++ 和 ++i](./java/从字节码角度分析i++和++i.html)
-- [虚拟机栈面试题](./java/虚拟机栈面试题.html)
-- [方法调用面试题](./java/方法调用面试题.html)
-- [逃逸分析](./java/逃逸分析.html)
-- [对象的创建](./java/对象的创建.html)
-- [方法区](./java/方法区.html)
-- [运行时常量池](./java/运行时常量池.html)
-- [字符串常量池](./java/字符串常量池.html)
-- [实战「静态变量」「实例变量」「局部变量」](./java/实战-静态变量-实例变量-局部变量.html)
-- [各区域 OOM 汇总](./java/各区域OOM汇总.html)
-- [常用参数汇总](./java/运行时数据区常用参数汇总.html)
-
-#### 「垃圾收集」系列
-
-- [生存还是死亡？?](./java/生存还是死亡.html)
-- [垃圾收集算法](./java/垃圾收集算法.html)
-- [HotSpot 的算法细节实现](./java/HotSpot的算法细节实现.html)
-- [垃圾回收相关概念](./java/垃圾回收相关概念.html)
-- [垃圾收集器前言](./java/垃圾收集器前言.html)
-- [经典垃圾收集器](./java/经典垃圾收集器.html)
-- [强/软/弱/虚-引用](./java/强软弱虚引用.html)
-- [内存泄漏 & 内存溢出](./java/内存泄漏-内存溢出.html)
-- [System.gc()](./java/System-gc.html)
-
-#### 「类加载子系统」系列
-
-- [类加载子系统-导读 ❤️‍🔥](./java/类加载子系统-导读.html)
-
-- [类加载的过程](./java/类加载的过程.html)
-- [类加载的时机](./java/类加载的时机.html)
-- [类加载器](./java/类加载器.html)
-- [剖析 [Bootstrap、Extension、Application] ClassLoader](./java/剖析-Bootstrap-Extension-Application-ClassLoader.html)
-- [双亲委派模型](./java/双亲委派模型.html)
-- [自定义类加载器](./java/自定义类加载器.html)
-- [破坏双亲委派模型](./java/破坏双亲委派模型.html)
-
-### 并发 😔
-
-- [Java 内存模型](./java/Java内存模型.html)
-- [synchronized 关键字](./java/synchronized关键字.html)
-- [volatile 关键字](./java/volatile关键字.html)
-- [伪共享](./java/伪共享.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-
-
-### 设计模式
-
-- [单例模式](./java/单例模式.html)
-- [简单工厂/工厂方法/抽象工厂-模式](./java/简单工厂-工厂方法-抽象工厂-模式.html)
 
 ---
 
