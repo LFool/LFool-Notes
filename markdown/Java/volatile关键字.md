@@ -84,10 +84,10 @@ Java 虚拟机的即时编译器中也有指令重排序优化
 
 JVM 根据读、写两种操作提供了四种屏障
 
-- LoadLoad：「Load1 LoadLoad Load2」用于保证访问 Load2 的读取操作一定不能排到 Load1 的前面
-- StoreStore：「Store1 StoreStore Store2」用于保证 Store1 及其之后写出的数据一定先于 Store2，即其他线程一定先看到 Store1 的数据，再看到 Store2 的数据
-- LoadStore：「Load1 LoadStore Store2」用于保证 Store2 及其之后写出的数据被其他线程看到之前，Load1 读取的数据一定先读入了缓存
-- StoreLoad：「Store1 StoreLoad Load2」用于保证 Store1 写出的数据被其他线程看到后才能读取 Load2 的数据到缓存
+- LoadLoad：「Load1 LoadLoad Load2」确保 Load1 数据的装载先于 Load2 及所有后续装载指令的装载
+- StoreStore：「Store1 StoreStore Store2」确保 Store1 数据对其它处理器可见 (刷新回内存) 先于 Store2 数据及所有后续存储指令的存储
+- LoadStore：「Load1 LoadStore Store2」确保 Load1 数据的装载先于Store2 数据及所有后续存储指令刷新到内存
+- StoreLoad：「Store1 StoreLoad Load2」确保 Store1 数据对其它处理器可见先于 Load2 及所有后续装载指令的装载。StoreLoad 会使该屏障之前的所有内存访问指令完成后，才执行该屏障之后的内存访问指令
 
 ### <font color=#1FA774>volatile 的特性</font>
 
@@ -143,7 +143,7 @@ class VolatileFeaturesExample {
 
 简而言之，volatile 变量自身具有下列特性：
 
-- **<font color='red'>可见性：对一个 volatile 变量的读，总是能看到 (任意线程) 对这个 volatile 变量最后的写入</font>**
+- **<font color='red'>可见性：对一个 volatile 变量的读，总是能看到 (任意线程) 对这个 volatile 变量最后的写入，包括在这之前的所有其它变量</font>**
 - **<font color='red'>原子性：对任意单个 volatile 变量的读/写具有原子性，但类似于 volatile++ 这种复合操作不具有原子性</font>**
 
 ### <font color=#1FA774>volatile 写-读建立的 happens-before 关系</font>
@@ -187,13 +187,15 @@ public class VolatileExample {
 
 这里 A 线程写一个 volatile 变量后，B 线程读同一个 volatile 变量
 
-**<font color='red'>A 线程在写 volatile 变量之前所有可见的共享变量，在 B 线程读同一个 volatile 变量后，将立即变得对 B 线程可见</font>**
+**<font color='red'>A 线程在写 volatile 变量之前所有可见的共享变量 (如：a，flag)，在 B 线程读同一个 volatile 变量后，将立即变得对 B 线程可见</font>**
 
 ### <font color=#1FA774>volatile 写-读的内存语义</font>
 
+volatile 的特性类似于是宏观上的表现；而 volatile 的内存语义是微观上的表现
+
 **volatile 写的内存语义如下：**
 
-- **<font color='red'>当写一个 volatile 变量时，JMM 会把该线程对应的本地内存中的共享变量值刷新到主内存</font>**
+- **<font color='red'>当写一个 volatile 变量时，JMM 会把该线程对应的本地内存中的所有的共享变量值刷新到主内存</font>**
 
 以上面示例程序 VolatileExample 为例，假设线程 A 首先执行`writer()`方法，随后线程 B 执行`reader()`方法，初始时两个线程的本地内存中的`flag`和`a`都是初始状态。下图是线程 A 执行 volatile 写后，共享变量的状态示意图:
 
@@ -211,7 +213,7 @@ public class VolatileExample {
 
 如上图所示，在读`flag`变量后，本地内存 B 包含的值已经被置为无效。此时，线程 B 必须从主内存中读取共享变量。线程 B 的读取操作将导致本地内存 B 与主内存中的共享变量的值也变成一致的了
 
-如果我们把 volatile 写和 volatile 读这两个步骤综合起来看的话，**在读线程 B 读一个 volatile 变量后，写线程 A 在写这个 volatile 变量之前所有可见的共享变量的值都将立即变得对读线程 B 可见**
+如果我们把 volatile 写和 volatile 读这两个步骤综合起来看的话，**<font color='red'>在读线程 B 读一个 volatile 变量后，写线程 A 在写这个 volatile 变量之前所有可见的共享变量的值都将立即变得对读线程 B 可见</font>**
 
 下面对 volatile 写和 volatile 读的内存语义做个总结：
 
@@ -301,30 +303,6 @@ class ReorderExample {
 
 ```java
 class ReorderExample {
-    volatile int v = 10;  // 可以理解为初始化好的某种资源 
-    boolean flag = false; // 用于判断某种操作是否完成
-
-    public void use(){
-        int a = v;        // 1 可以理解为这里是在利用某种资源 (volatile 读)
-        flag = true;      // 2 利用完volatile资源之后，用于判断操作完成 (普通写)
-    }
-
-    public void release() {
-        while (flag) {
-            v = 0;        // 可以理解为释放资源
-        }
-    }
-}
-```
-
-这里假设有两个线程 A 和 B，A 首先执行`use()`方法，随后 B 线程接着执行`release()`方法
-
-由于操作 1 和操作 2 没有数据依赖关系，编译器和处理器可以对这两个操作重排序，假设不禁止重排序，那么上述程序中的执行顺序可能是：
-
-![19](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20221009/1357141665295034igR5nI19.svg)
-
-```java
-class ReorderExample {
     int a = 0;
     volatile boolean flag = false;
     public void writer() {
@@ -342,7 +320,7 @@ class ReorderExample {
 
 ![9](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20221007/20440916651466491iFQwZ9.svg)
 
-在程序中，操作 3 和操作 4 存在控制依赖关系。当代码中存在控制依赖性时，会影响指令序列执行的并行度。为此，编译器和处理器会采用猜测 (Speculation) 执行来克服控制相关性对并行度的影响。以处理器的猜测执行为例，执行线程 B 的处理器可以提前读取并计算`a * a`，然后把计算结果临时保存到一个名为重排序缓冲 (reorder buffer ROB) 的硬件缓存中。当接下来操作 3 的条件判断为真时，就把该计算结果写入变量`i`中
+在程序中，操作 3 和操作 4 存在控制依赖关系。当代码中存在控制依赖性时，会影响指令序列执行的并行度。为此，编译器和处理器会采用猜测 (Speculation) 执行来克服控制相关性对并行度的影响。以处理器的猜测执行为例，执行线程 B 的处理器可以提前读取并计算`a * a`，然后把计算结果临时保存到一个名为重排序缓冲 (Reorder Buffer，ROB) 的硬件缓存中。当接下来操作 3 的条件判断为真时，就把该计算结果写入变量`i`中
 
 从图中我们可以看出，猜测执行实质上对操作 3 和 4 做了重排序。重排序在这里破坏了多线程程序的语义！
 
