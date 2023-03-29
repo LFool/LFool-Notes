@@ -14,9 +14,9 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2023-03-30 01:13:01
+> 更新时间：2023-03-30 03:30:33
 >
-> 截止目前，文章总数：**<font color='red'>198</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+> 截止目前，文章总数：**<font color='red'>199</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
 > 记录本人总结～持续更新...
 >
@@ -92,6 +92,7 @@
 - [CAS](./java/CAS.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [Java 并发中的「锁」](./java/Java并发中的锁.html)<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [interrupt()中断 && LockSupport.park()/unpark()](./java/interrupt-LockSupport-park-unpark.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [AbstractQueuedSynchronizer (AQS)](./java/AbstractQueuedSynchronizer.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 
 ### 设计模式
