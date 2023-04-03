@@ -14,9 +14,9 @@
 >
 > **<font color=#9933FF>PS: 结尾有彩蛋...</font>**
 >
-> 更新时间：2023-04-02 04:51:37
+> 更新时间：2023-04-04 03:58:34
 >
-> 截止目前，文章总数：**<font color='red'>200</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+> 截止目前，文章总数：**<font color='red'>201</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
 > 记录本人总结～持续更新...
 >
@@ -35,6 +35,7 @@
 - [重载 vs 重写](./java/重载-重写.html)
 - [动态语言 vs 动态类型语言](./java/动态语言-动态类型语言.html)
 - [IO 模型](./java/IO模型.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [浅记「字节/字符流」乱码问题](./java/浅记字节字符流乱码问题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [HashMap 源码剖析](./java/HashMap源码剖析.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ### JVM 😭
