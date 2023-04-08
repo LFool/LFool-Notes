@@ -311,7 +311,7 @@ final Node<K,V>[] resize() {
             // 新阈值为原阈值的两倍
             newThr = oldThr << 1; // double threshold
     }
-    // 原容量为 0，但原阈值不为 0 表示使用带餐构造函数创建 HashMap 对象，此时的 oldThr 表示初始容量大小
+    // 原容量为 0，但原阈值不为 0 表示使用带参构造函数创建 HashMap 对象，此时的 oldThr 表示初始容量大小
     else if (oldThr > 0) // initial capacity was placed in threshold
         newCap = oldThr;
     // 原容量和原阈值均为 0 表示使用无参构造函数创建 HashMap 对象
