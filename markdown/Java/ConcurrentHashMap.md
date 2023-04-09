@@ -32,9 +32,7 @@ ConcurrentHashMap 是由 Segment 数组和 HashEntry 数组组成。Segment 是�
 **<font color='red'>注意：</font>**Segment 数组一旦初始化就不能改变其大小，默认大小 16，可认为默认大小下最多支持 16 个线程并发；HashEntry 数组支持扩容
 
 
-
 ![1](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20230401/0130471680283847leYTtY1.svg)
-
 
 
 #### <font color=#9933FF>初始化</font>
@@ -155,7 +153,7 @@ final V put(K key, int hash, V value, boolean onlyIfAbsent) {
     try {
         HashEntry<K,V>[] tab = table;
         int index = (tab.length - 1) & hash;  // (n - 1) & hash 利用位运算计算下标
-        HashEntry<K,V> first = entryAt(tab, index);  // CAS 获取下标的值
+        HashEntry<K,V> first = entryAt(tab, index);  // 底层调用 getObjectVolatile() 获取下标的值
         for (HashEntry<K,V> e = first;;) {    // 从第一个元素开始遍历链表
             if (e != null) {
                 K k;
@@ -434,7 +432,7 @@ final V putVal(K key, V value, boolean onlyIfAbsent) {
         Node<K,V> f; int n, i, fh;      // f 是目标位置元素、fh 目标位置元素的 hash 值
         if (tab == null || (n = tab.length) == 0)  // 进行初始化 (CAS + 自旋)
             tab = initTable();
-        else if ((f = tabAt(tab, i = (n - 1) & hash)) == null) {  // (n - 1) & hash 计算下标；tabAt() 使用 CAS 获取对应下标元素
+        else if ((f = tabAt(tab, i = (n - 1) & hash)) == null) {  // (n - 1) & hash 计算下标；tabAt() 底层调用 getObjectVolatile() 获取对应下标元素
             // table[i] 为 null，直接 CAS 放入
             if (casTabAt(tab, i, null, new Node<K,V>(hash, key, value, null)))
                 break;                   // no lock when adding to empty bin
