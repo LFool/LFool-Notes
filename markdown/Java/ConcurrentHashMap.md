@@ -96,7 +96,7 @@ public ConcurrentHashMap(int initialCapacity,
 
 - 参数校验：方法参数是否符合要求
 - 校验并发级别：判断是否大于所允许的最大并发级别 1 << 16
-- 寻找并发级别：寻找 Segment 数组的实际长度，必须大于等于 concurrencyLevel 且为最小的 2^n
+- 寻找并发级别：寻找 Segment 数组的实际长度，必须大于等于 concurrencyLevel 且为最小的 $2^n$
 - 计算段偏移量和段掩码；计算平均每个段负责的元素个数 c，需要向上取整，然后寻找寻找大于等于 c 且为最小的 2^n 作为实际的 HashEntry 长度
 - 创建 Segment 数组，设置 segments[0]，默认大小为 2，扩容阈值 = 2 * 0.75 = 1.5，当插入第二个元素时才会进行扩容
 
@@ -687,7 +687,7 @@ private final void fullAddCount(long x, boolean wasUncontended) {
 
 前文提到 sizeCtl 决定着当前的状态，如果 table 已经初始化，那么 sizeCtl > 0 就表示扩容阈值，当元素个数超过了 sizeCtl 就会触发扩容
 
-在两个地方会引起扩容，第一个就是在上面介绍的`addCount()`方法中；第二个就是在`treeifyBin()`方法中，如果链表节点数 $\ge 8$ 但数组大小 $< 64$，则只会扩容而不会链表转红黑树
+在两个地方会引起扩容，第一个就是在上面介绍的`addCount()`方法中；第二个就是在`treeifyBin()`方法中，如果链表节点数 $> 8$ 但数组大小 $< 64$，则只会扩容而不会链表转红黑树
 
 这两个地方扩容的步骤差不多，`addCount()`在上面已经分析过，这里重点分析`treeifyBin()`中调用的`tryPresize()`方法
 
