@@ -2,7 +2,7 @@
 
 ### <font color=#1FA774>记录格式介绍</font>
 
-说来也巧，刚刚总结了一篇关于「InnoDB 中 row_id 的秘密」的文章，**详情可见 [InnoDB 中 row_id 的秘密](https://lfool.github.io/LFool-Notes/SQL/InnoDB中row_id的秘密.html)**
+说来也巧，刚刚总结了一篇关于「InnoDB 中 row_id 的秘密」的文章，**详情可见 [InnoDB 中 row_id 的秘密](./InnoDB中row_id的秘密.html)**
 
 总结了在不同的情况下，`_rowid`字段的一些特点：「何时是显式」「何时是隐式」
 
