@@ -55,7 +55,7 @@ Sentinel 和 Redis 的通信关系如下图所示：
 
 ### <font color='#1FA774'>Sentinel 检测节点下线</font>
 
-Sentinel 节点监控 Redis 节点就是为了能及时发现是否有节点处于下线，而检测节点下线的方法无非就是向定时向节点发送一条命令，如果在规定时间内没有回应，就可以认为下线
+Sentinel 节点监控 Redis 节点就是为了能及时发现是否有节点处于下线，而检测节点下线的方法无非就是向定时向节点发送一条命令，如果在规定时间内没有回应，就可以认为下线 (**定时监控任务三**)
 
 如果自己认为下线就单方面认为它一定下线，这种判断方式有一定局限性；只有当超过一定数量的 Sentinel 节点都认为它下线才认为它下线，这种判断方式更为合理
 
@@ -64,9 +64,21 @@ Sentinel 节点监控 Redis 节点就是为了能及时发现是否有节点处�
 - 当 Redis 节点超过`down-after-milliseconds`时间内没有回复当前 Sentinel 节点的`ping`命令，只是单方面的认为它下线 (主观下线)
 - 当超过`<quorum>`数量的 Sentinel 节点都认为某个 Redis 节点，那么它才算真正的下线 (客观下线)
 
-当前 Sentinel 节点如何才能知道有多少其它 Sentinel 节点也认为某个 Redis 节点下线了呢？这就需要用到上一部分介绍的**定时监控任务二**
+Sentinel 节点如何才能知道有多少其它 Sentinel 节点也认为某个 Redis 节点下线了呢？
 
-这也是为什么建议部署多个 Sentinel 节点的原因！！因为一个人认为你可以，你不一定真的可以；但超过一半人认为你可以，你才是真的可以
+当 Sentinel 节点认为一个 Redis 节点主观下线后，会向其它 Sentinel 节点发送`sentinel is-master-down-by-addr`命令询问是否也认为该 Redis 节点下线，同时会记录数量，当超过一半的 Sentinel 节点认为下线就会认定为客观下线
+
+这里介绍一下上面发送的那条命令
+
+```bash
+sentinel is-master-down-by-addr <ip> <port> <current_epoch> <runId>
+# 当 runId 为 *，表示该命令是用来询问其它 Sentinel 节点 6379 是否下线
+sentinel is-master-down-by-addr 127.0.0.1 6379 0 *
+# 当 runId 为其它 Sentinel 节点的 runId，表示该命令是用来选举 Sentinel Leader
+sentinel is-master-down-by-addr 127.0.0.1 6379 0 xxx
+```
+
+这也是为什么建议部署多个 Sentinel 节点的原因！！至少部署 3 个 Sentinel 节点，否则当一个 Sentinel 宕机后，无法收获超过一半数量的 Sentinel 节点，就无法判断为客观下线
 
 当一个主节点被认为客观下线后，就需要进行后续的故障转移，也就是挑选出新的主节点，以及维护正确的主从关系
 
