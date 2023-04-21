@@ -12,9 +12,9 @@
 
 > **<font color='red'>如有错误或建议，可联系作者微信 -> <a href="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220624/0209091656007749vMEG08image-20220624020909519.png">LFool_</a></font>** ![wx](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220624/0233091656009189Pbt89Xwx.svg)
 >
-> 更新时间：2023-04-21 09:12:33
+> 更新时间：2023-04-22 05:22:41
 >
-> 截止目前，文章总数：**<font color='red'>213</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+> 截止目前，文章总数：**<font color='red'>215</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
 > 记录本人总结～～ 持续更新...
 >
@@ -26,6 +26,8 @@
 - [Redis 主从复制](./redis/Redis主从复制.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [Redis Sentinel](./redis/Redis-Sentinel.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [Redis Cluster](./redis/Redis-Cluster.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [Redis 缓存更新策略](./redis/Redis缓存更新策略.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [Redis 阻塞](./redis/Redis阻塞.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 ---
 
