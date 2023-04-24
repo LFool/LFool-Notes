@@ -62,11 +62,11 @@ Sentinel 节点监控 Redis 节点就是为了能及时发现是否有节点处�
 我们可以将下线分为两种：**主观下线**和**客观下线**
 
 - 当 Redis 节点超过`down-after-milliseconds`时间内没有回复当前 Sentinel 节点的`ping`命令，只是单方面的认为它下线 (主观下线)
-- 当超过`<quorum>`数量的 Sentinel 节点都认为某个 Redis 节点，那么它才算真正的下线 (客观下线)
+- 当有法定数量 quorum 的 Sentinel 节点都认为某个 Redis 节点，那么它才算真正的下线 (客观下线)。一般 quorum = n / 2 + 1
 
 Sentinel 节点如何才能知道有多少其它 Sentinel 节点也认为某个 Redis 节点下线了呢？
 
-当 Sentinel 节点认为一个 Redis 节点主观下线后，会向其它 Sentinel 节点发送`sentinel is-master-down-by-addr`命令询问是否也认为该 Redis 节点下线，同时会记录数量，当超过一半的 Sentinel 节点认为下线就会认定为客观下线
+当 Sentinel 节点认为一个 Redis 节点主观下线后，会向其它 Sentinel 节点发送`sentinel is-master-down-by-addr`命令询问是否也认为该 Redis 节点下线，同时会记录数量，当有法定数量 quorum 的 Sentinel 节点认为下线就会认定为客观下线
 
 这里介绍一下上面发送的那条命令
 
