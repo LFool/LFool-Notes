@@ -39,21 +39,23 @@
 public class A {
     // 修饰静态方法
     public static synchronized void f1(int c) {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             System.out.println("静态方法 " + c);
         }
     }
     // 修饰普通方法
     public synchronized void f2(int c) {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             System.out.println("普通方法" + c);
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // 测试静态方法
         // f1() 属于类 A，所以下方两个线程存在同步，一定是先输出所有「静态方法 1」，然后再输出所有「静态方法 2」
         new Thread(() -> A.f1(1)).start();
         new Thread(() -> A.f1(2)).start();
+        Thread.sleep(1000);
+        System.out.println("------------------");
         // 测试普通方法
         A a1 = new A();
         A a2 = new A();
@@ -75,7 +77,7 @@ public class B {
     public void f1(int c) {
         // 修饰类
         synchronized (B.class) {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 100; i++) {
                 System.out.println("修饰类 " + c);
             }
         }
@@ -83,18 +85,20 @@ public class B {
     public void f2(int c) {
         // 修饰当前对象
         synchronized (this) {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 100; i++) {
                 System.out.println("修饰当前对象 " + c);
             }
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         B b1 = new B();
         B b2 = new B();
         // 测试修饰类
         // 同步对象为类的所有对象，一定是先输出所有「修饰类 1」，然后再输出所有「修饰类 2」
         new Thread(() -> b1.f1(1)).start();
         new Thread(() -> b2.f1(2)).start();
+        Thread.sleep(1000);
+        System.out.println("------------------");
         // 测试修饰当前对象
         // 同步对象为当前对象，下方两个线程不存在同步，一个取对象 b1 的锁，一个取对象 b2 的锁
         // 输出内容「修饰当前对象 1」「修饰当前对象 2」无规则交替出现
