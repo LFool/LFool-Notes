@@ -15,7 +15,7 @@
 > <iframe src="https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230425/1534471682408087mbvYQnweichat.svg" height="400" frameborder="0" scrolling="no"></iframe>
 >  </details>
 >    
->    更新时间：2023-04-25 15:28:12
+>    更新时间：2023-04-26 03:10:56
 > 
 >截止目前，文章总数：**<font color='red'>216</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 > 
@@ -26,9 +26,10 @@
 
 - [MySQL 基础知识汇总](./mysql/MySQL基础知识汇总.html)
 - [MySQL 容易被忽略的小知识](./mysql/MySQL-容易被忽略的小知识.html)
-- [InnoDB 中 row_id 的秘密](./mysql/InnoDB中row_id的秘密.html)
-- [深挖 MySQL 记录的二进制表示](./mysql/深挖MySQL记录的二进制表示.html)
 - [MySQL 主键自增一定连续吗？](./mysql/MySQL主键自增一定连续吗.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [InnoDB 中 row_id 的秘密](./mysql/InnoDB中row_id的秘密.html)
+- [InnoDB 记录的存储结构](./mysql/InnoDB记录的存储结构.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+
 
 ---
 
