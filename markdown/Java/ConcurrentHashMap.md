@@ -95,9 +95,9 @@ public ConcurrentHashMap(int initialCapacity,
 根据上面的源码总结一下初始化的流程：
 
 - 参数校验：方法参数是否符合要求
-- 校验并发级别：判断是否大于所允许的最大并发级别 1 << 16
+- 校验并发级别：判断是否大于所允许的最大并发级别 $2^{16}$
 - 寻找并发级别：寻找 Segment 数组的实际长度，必须大于等于 concurrencyLevel 且为最小的 $2^n$
-- 计算段偏移量和段掩码；计算平均每个段负责的元素个数 c，需要向上取整，然后寻找寻找大于等于 c 且为最小的 2^n 作为实际的 HashEntry 长度
+- 计算段偏移量和段掩码；计算平均每个段负责的元素个数 c，需要向上取整，然后寻找寻找大于等于 c 且为最小的 $2^n$ 作为实际的 HashEntry 长度
 - 创建 Segment 数组，设置 segments[0]，默认大小为 2，扩容阈值 = 2 * 0.75 = 1.5，当插入第二个元素时才会进行扩容
 
 #### <font color=#9933FF>插入</font>
@@ -132,11 +132,9 @@ private Segment<K,V> ensureSegment(int k) {
         float lf = proto.loadFactor;     // 负载因子
         int threshold = (int)(cap * lf); // 阈值
         HashEntry<K,V>[] tab = (HashEntry<K,V>[])new HashEntry[cap];
-        if ((seg = (Segment<K,V>)UNSAFE.getObjectVolatile(ss, u))
-            == null) { // 再次检查
+        if ((seg = (Segment<K,V>)UNSAFE.getObjectVolatile(ss, u)) == null) { // 再次检查
             Segment<K,V> s = new Segment<K,V>(lf, threshold, tab);
-            while ((seg = (Segment<K,V>)UNSAFE.getObjectVolatile(ss, u))
-                   == null) { // 自旋检查
+            while ((seg = (Segment<K,V>)UNSAFE.getObjectVolatile(ss, u)) == null) { // 自旋检查
                 if (UNSAFE.compareAndSwapObject(ss, u, null, seg = s))  // 确保更新的原子性
                     break;
             }
