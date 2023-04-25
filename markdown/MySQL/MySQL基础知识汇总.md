@@ -301,12 +301,4 @@ SELECT prod_name, prod_desc FROM Products WHERE prod_desc LIKE '%toy%carrots%';
 
 ## 第 7 课：创建计算字段
 
-未完待续。。。
-
-
-
-
-
-## 数据库附录
-
-<img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220404/1740441649065244O5fWiyimage-20220404174044902.png" alt="image-20220404174044902" style="zoom: 50%;" />
+未完待续 ...

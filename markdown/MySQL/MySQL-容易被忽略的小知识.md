@@ -51,9 +51,9 @@ MySQL 把数据的存储和提取操作封装到了一个名为存储引擎的�
 
 #### <font color=#9933FF>关于存储引擎的操作</font>
 
-查看当前服务器支持的存储引擎：`show engines;`
+查看当前服务器支持的存储引擎：`show engines`
 
-查看表的创建结构：`show create table engine_demo_table\G;`
+查看表的创建结构：`show create table engine_demo_table\G`
 
 创建表时指定存储引擎：
 
@@ -75,7 +75,7 @@ alter table engine_demo_table engine=MyISAM;
 
 刚刚提到了启动服务端有：`mysqld`，如果我们现在使用`mysqld --skip-networking`启动表示禁止「TCP/IP」方式的连接。如：`mysql -h127.0.0.1 -uroot -p`
 
-刚刚我们用命令`show engines;`看到了服务器的默认存储引擎，如果我们现在使用`mysqld --default-storage-engine=MyISAM`启动表示服务器默认引擎改为「MyISAM」
+刚刚我们用命令`show engines`看到了服务器的默认存储引擎，如果我们现在使用`mysqld --default-storage-engine=MyISAM`启动表示服务器默认引擎改为「MyISAM」
 
 **<font color='red'>总结：</font>**--启动选项1[=值1] --启动选项2[=值2] ... --启动选项n[=值n]
 
@@ -141,9 +141,9 @@ option2 = value2
 
 ### <font color=#1FA774>系统变量</font>
 
-查看系统变量：`show variables [like 匹配模式];`
+**查看系统变量：**`show variables [like 匹配模式]`
 
-通过启动选项设置系统变量
+通过启动选项设置系统变量有两种方式：
 
 - 通过命令行添加启动选择：`mysqld --default-storage-engine=MyISAM --max-connections=10`
 
@@ -155,13 +155,11 @@ option2 = value2
     max-connections = 10
     ```
 
-在服务器启动时会初始化一个系统变量，作用范围为`GLOBAL`；之后每当有一个客户端连接到该服务器时，服务器会单独为该客户端分配一个作用范围为`SESSION`的系统变量
+除了在启动 MySQL 服务时设置系统变量，还可以在服务运行过程中设置系统变量。在服务器启动时会初始化一个系统变量，作用范围为`GLOBAL`，之后每当有一个客户端连接到该服务器时，服务器会单独为该客户端分配一个作用范围为`SESSION`的系统变量。下面给出三种常用命令：
 
-设置不同作用范围的系统变量：`set [GLOBAL|SESSION] 系统变量名 = 值;`或`set [@@(GLOBAL|SESSION).] 系统变量名 = 值;`
-
-只对本客户端生效：`set 系统变量名 = 值;`
-
-查看不同作用范围的系统变量：`show [GLOBAL|SESSION] variables [like 匹配模式];`
+- 设置不同作用范围的系统变量：`set [GLOBAL|SESSION] 系统变量名 = 值`或`set [@@(GLOBAL|SESSION).] 系统变量名 = 值`
+- 只对本客户端生效 (SESSION 级别)：`set 系统变量名 = 值`
+- 查看不同作用范围的系统变量：`show [GLOBAL|SESSION] variables [like 匹配模式]`
 
 **<font color='red'>注意：</font>**
 
@@ -172,7 +170,7 @@ option2 = value2
 
 与系统变量相对的还有状态变量，表示服务器运行的状态，不可修改
 
-查看不同作用范围的状态变量：`show [GLOBAL|SESSION] status [like 匹配模式];`
+查看不同作用范围的状态变量：`show [GLOBAL|SESSION] status [like 匹配模式]`
 
 ### <font color=#1FA774>字符集和比较规则</font>
 
@@ -194,9 +192,9 @@ option2 = value2
 
 **<font color='red'>注意：</font>**MySQL 中，utf8 是 utf8mb3 的别名
 
-查看字符集：`show charset;`
+查看字符集：`show charset`
 
-查看比较规则：`show collation [like 匹配的模式];`
+查看比较规则：`show collation [like 匹配的模式]`
 
 - `_ci`表示不区分大小写 (case insensitive)
 
@@ -206,9 +204,9 @@ option2 = value2
 
 可以在配置文件中设置这两个变量的值
 
-`show variables like 'character_set_server';`
+`show variables like 'character_set_server'`
 
-`show variables like 'collation_server';`
+`show variables like 'collation_server'`
 
 **<font color='red'>数据库级别</font>**
 

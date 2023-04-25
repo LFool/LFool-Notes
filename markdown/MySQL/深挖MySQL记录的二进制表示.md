@@ -2,13 +2,15 @@
 
 ### <font color=#1FA774>记录格式介绍</font>
 
-说来也巧，刚刚总结了一篇关于「InnoDB 中 row_id 的秘密」的文章，**详情可见 [InnoDB 中 row_id 的秘密](./InnoDB中row_id的秘密.html)**
+说来也巧，刚刚总结了一篇关于 **[InnoDB 中 row_id 的秘密](./InnoDB中row_id的秘密.html)** 的文章，介绍了 row_id 的一些细节
 
-总结了在不同的情况下，`_rowid`字段的一些特点：「何时是显式」「何时是隐式」
+**InnoDB 主键生成策略：**
 
-InnoDB 主键生成策略：优先使用用户自定义的主键作为主键；如果用户没有定义主键，则选取一个不允许存储`NULL`值的 UNIQUE 键作为主键；如果表中连不允许存储`NULL`值的 UNIQUE 键都没有定义，则 InnoDB 会为表默认添加一个名为`row_id`的隐藏列作为主键
+- 优先使用用户自定义的主键作为主键
+- 如果用户没有定义主键，则选取一个不允许存储`NULL`值的 UNIQUE 键作为主键
+- 如果表中连不允许存储`NULL`值的 UNIQUE 键都没有定义，则 InnoDB 会为表默认添加一个名为`row_id`的隐藏列作为主键
 
-这里再次给出在 InnoDB 中一条记录的格式：
+这里给出在 InnoDB 中一条记录的格式：
 
 ![11](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220717/1729521658050192kslQcB11.svg)
 
