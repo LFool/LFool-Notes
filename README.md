@@ -17,7 +17,7 @@
 >    
 >    更新时间：2023-04-28 05:20:25
 > 
->截止目前，文章总数：**<font color='red'>220</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+>截止目前，文章总数：**<font color='red'>221</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 > 
 >记录本人总结～～ 持续更新...
 > 
@@ -33,6 +33,7 @@
 - [MySQL 索引](./mysql/MySQL索引.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [B+ 树索引](./mysql/B+树索引.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [覆盖索引 & 索引条件下推](./mysql/覆盖索引-索引条件下推.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [联合索引 & 最左前缀匹配原则](./mysql/联合索引-最左前缀匹配原则.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 
 ---
