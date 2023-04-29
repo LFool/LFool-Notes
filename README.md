@@ -8,19 +8,19 @@
 <a href="https://github.com/LFool"><img src="https://img.shields.io/badge/%E4%BD%9C%E8%80%85-@LFool-000000.svg?style=flat-square&logo=GitHub"/></a> </a> <a href="https://leetcode-cn.com/u/lfool/" target="_blank"><img src="https://img.shields.io/badge/LeetCode-@LFool-000000.svg?style=flat-square&logo=LeetCode"></a>
 </p>
 
-
-
 > <details>
 > <summary><font color='red'><b>如有错误或建议，可联系作者微信 -> Click Here!!!</b></font> <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220624/0233091656009189Pbt89Xwx.svg" alt="wx" /></summary>
 > <iframe src="https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230425/1534471682408087mbvYQnweichat.svg" height="400" frameborder="0" scrolling="no"></iframe>
 >  </details>
+> <details>
+> <summary><font color='red'><b>如果文章对你有帮助，可以请作者喝杯速溶咖啡 -> Click Here!!!</b></font> <img src="https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230430/00271416827856345XY7K0coffee.svg" alt="wx" /></summary>
+> <iframe src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220420/1540281650440428oY7cvU2.svg" height="400" frameborder="0" scrolling="no"></iframe>
+>  </details>
+> **更新时间：**2023-04-30 00:21:34
 >    
->    更新时间：2023-04-28 05:20:25
-> 
->截止目前，文章总数：**<font color='red'>221</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
-> 
->记录本人总结～～ 持续更新...
-> 
+> 截止目前，文章总数：**<font color='red'>222</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+>
+> 记录本人总结～～ 持续更新......
 
 ## MySQL
 
@@ -34,6 +34,7 @@
 - [B+ 树索引](./mysql/B+树索引.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [覆盖索引 & 索引条件下推](./mysql/覆盖索引-索引条件下推.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [联合索引 & 最左前缀匹配原则](./mysql/联合索引-最左前缀匹配原则.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [InnoDB 的 Buffer Pool](./mysql/InnoDB的Buffer-Pool.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 
 
 ---
@@ -336,14 +337,3 @@
 - [图论作业 4](./other/图论作业-4.html)
 - [图论-超级无敌精华汇总](./other/超级无敌精华汇总.html)
 - [图论-超详细证明题总结](./other/超详细证明题总结.html)
-
----
-
-## Donate
-
-<font color='red'>如果本总结对你有帮助，可以请作者喝杯速溶咖啡！！！</font>
-
-<details>
-    <summary>Click Here!!!</summary>
-    <iframe src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220420/1540281650440428oY7cvU2.svg" height="400" frameborder="0" scrolling="no"></iframe>
-</details>
