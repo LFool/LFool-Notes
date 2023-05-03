@@ -150,6 +150,10 @@ MySQL 为每个线程分配了一块内存作为 binlog cache，可以通过参�
 - 开始更新记录，修改 Buffer Pool 中对应的数据页，修改后变为脏页，同时也要在 redo log 中记录该数据页的修改，防止数据丢失
 - 更新记录后要记录该语句对应的 binlog，此时保存到 binlog cache 中，事务提交后根据设置来决定刷盘策略
 - **提交事务 ...**
+- 利用 **[两阶段提交](./两阶段提交.html#内部-xa-事务)** 刷盘 redo log 和 binlog
+    - **prepare 阶段：**先将 XID 写入到 redo log 中，然后将 redo log 刷盘，最后将 redo log 对应的事务设置为 prepare 状态
+    - **commit 阶段：**先将 XID 写入到 binlog 中，然后调用存储引擎提交事务接口将 redo log 状态设置为 commit，此状态不需要持久化
+
 
 主要分三个阶段：更新前记录 undo log，同时需要在 redo log 中记录 Undo 页的修改；更新时记录对应数据页的 redo log；更新后记录该操作的 binlog
 
