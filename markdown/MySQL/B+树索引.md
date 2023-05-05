@@ -64,6 +64,8 @@ create table index_demo (
 
 假设一个页可以存放 100 条用户记录 或 1000 条目录项纪录，那么 4 层 B+ 树最多可以存储 $10^{11}$ 条用户记录
 
+**这里推荐一个可视化网站，可以模拟 B+ 树的变化过程 👉 [B+ Trees](https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html)**
+
 ### <font color=#1FA774>聚簇索引</font>
 
 聚簇索引又被称为主键索引，该索引是根据主键自动建立，它的效果和上一部分介绍的一模一样，叶子节点存放完整的用户记录 (包括隐藏列)，非叶子节点存放目录项纪录
