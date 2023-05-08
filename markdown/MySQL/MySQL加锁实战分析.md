@@ -34,19 +34,21 @@ delete ...                      # 对删除的记录加独占锁 (X 锁)
 
 **<font color='red'>注意：</font>**S 型 Gap Lock 和 X 型 Gap Lock 其实没有区别，都是不允许在指定间隙插入新记录，所以 Gap Lock 并没有刻意区分 S 锁和 X 锁
 
-S 锁和 X 锁的兼容性规则如下图所示：(**<font color='red'>注意：</font>**无论是 Gap Lock，还是 Next-Key Lock 的 S 锁和 X 锁都遵循该兼容规则)
+S 锁和 X 锁的兼容性规则如下图所示：(**<font color='red'>注意：</font>**无论是 Gap Lock 还是 Next-Key Lock 的 S 锁和 X 锁都遵循该兼容规则)
 
 ![13](https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230505/2327411683300461VXaaF813.svg)
 
 **<font color='red'>重点：</font>**一般情况下，对于锁定读的语句，在隔离级别为 READ UNCOMMITTED 和 READ COMMITTED 时，会为当前记录加 Record Lock；在隔离级别为 REPEATABLE READ 和 SERIALIZABLE 时，会为当前记录加 Next-Key Lock。但存在锁退化的特殊情况，后文出现时会分析原因！！
 
+**<font color='red'>注意：</font>**虽然 **[REPEATABLE READ 隔离级别中并不能彻底解决幻读](./RR隔离级别下彻底解决幻读了吗.html)**，但在实现时尽最大能力避免幻读的出现，所以加的是 Next-Key Lock，其中包含的间隙锁含义就是专门用于解决幻读
+
 ### <font color=#1FA774>几个概念</font>
 
 在正式介绍之前再介绍几个小小的概念 (不要急～)
 
-**唯一索引：**主键索引、声明为`UNIQUE KEY`的索引都是唯一索引。需要注意`UNIQUE`索引中可以包含多个 NULL 值，而主键索引规定不允许为 NULL
+**唯一索引：**主键索引、声明为`UNIQUE KEY`的索引都是唯一索引，值不允许重复。需要注意`UNIQUE`索引中可以包含多个 NULL 值，而主键索引规定不允许为 NULL
 
-**非唯一索引：**除了上面提到的两种索引外都是非唯一索引
+**非唯一索引：**除了上面提到的两种索引外都是非唯一索引，值允许重复
 
 **等值查询：**查询语句中判断条件是一个等值判断，如：`where id = 1`。如果是唯一索引中的等值查询，那么最多查询出一条记录；如果是非唯一索引中的等值查询，那么可能会查询出多条记录
 
