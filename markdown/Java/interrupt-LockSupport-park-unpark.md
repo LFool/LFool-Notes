@@ -142,6 +142,10 @@ public static void main(String[] args) {
 
 它们俩有一个独特的性质：**<font color='red'>不需要管调用的先后顺序，可以先调用`unpark()`获得一个许可，后面再调用`park()`使用掉这个许可</font>**
 
+**<font color='red'>注意：</font>**如果先调用`unpart()`，必须保证线程已经启动，也就是执行了`start()`方法，否则没有效果。详情可见 JDK 注释：
+
+- This operation is not guaranteed to have any effect at all if the given thread has not been started.
+
 `park()`是调用`UNSAFE.park(false, 0L)`方法，而`UNSAFE.park(false, 0L)`是一个本地方法，在 **[os_posix.cpp](https://hg.openjdk.org/jdk/jdk/file/1871c5d07caf/src/hotspot/os/posix/os_posix.cpp#l1955)** 中。代码太长，看不懂？？？直接上简化版的伪代码：
 
 ```cpp
