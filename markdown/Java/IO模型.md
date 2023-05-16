@@ -104,7 +104,7 @@
 
 **<font color='red'>I/O 多路复用的特点：</font>**在单线程里同时监控多个 socket，而这些 socket 任一个进入读就绪状态，`select`函数就可以返回。I/O 多路复用类似于多线程下的 BIO
 
-**关于 I/O 多路复用更详细介绍可见 [I/O 多路复用](../java/IO多路复用.html)**
+**关于 I/O 多路复用更详细介绍可见 [I/O 多路复用](../os/IO多路复用.html)**
 
 ![5](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20230313/2048271678711707lCocJa5.svg)
 
