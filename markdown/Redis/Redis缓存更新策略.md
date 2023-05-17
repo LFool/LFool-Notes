@@ -73,6 +73,8 @@
 
 ### <font color='#1FA774'>读写穿透 (Read/Write Through Pattern)</font>
 
+**<font color='red'>核心思想：</font>**更新 DB，缓存存在就更新，不存在就不管
+
 读写穿透将 Cache 作为主要的数据存储，从中读取并将数据写入其中，Cache 服务自己负责将此数据读取和写入 DB，从而减轻了程序员的职责
 
 这种模式平时使用很少，大概率因为 Redis 分布式缓存并没有提供 Cache 将数据写入 DB 的功能
@@ -89,7 +91,9 @@
 
 ![26](https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230422/0515471682111747Uot9bm26.svg)
 
-### <font color='#1FA774'>异步缓存写入 (Write Behind Pattern)</font>
+### <font color='#1FA774'>异步缓存写入 (Write Back Pattern)</font>
+
+**<font color='red'>核心思想：</font>**只更新缓存，异步更新 DB
 
 异步缓存写入和读写穿透很相似，两者都是由 Cache 服务来负责 Cache 和 DB 的读写。它们俩最大的不同在于：读写穿透是同步更新 Cache 和 DB；而异步缓存写入是异步更新 DB
 
