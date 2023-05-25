@@ -26,7 +26,8 @@
 <link href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
@@ -46,7 +47,7 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
 img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
-button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
@@ -73,8 +74,8 @@ thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
-.CodeMirror-linenumber { }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -84,7 +85,7 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping pre { white-space: pre; }
 #write pre.ty-contain-cm { white-space: normal; }
 .CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
 .md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
 #write .md-fences.mock-cm { white-space: pre-wrap; }
 .md-fences.md-fences-with-lineno { padding-left: 0px; }
@@ -94,7 +95,7 @@ div.hr:focus { cursor: none; }
 svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
@@ -106,16 +107,18 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
   .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
   .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
 p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
 #write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
 p > .md-image:only-child { display: inline-block; width: 100%; }
@@ -126,7 +129,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
 .math { font-size: 1rem; }
 .md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
@@ -153,19 +156,19 @@ a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; 
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
 .md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
-code { text-align: left; }
-a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
 [lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
 [lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom-width: 0px; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
 video { max-width: 100%; display: block; margin: 0px auto; }
-iframe { max-width: 100%; width: 100%; border: none; }
+iframe { max-width: 100%; width: 100%; border: medium; }
 .highlight td, .highlight tr { border: 0px; }
-mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 .md-expand mark .md-meta { opacity: 0.3 !important; }
 mark .md-meta { color: rgb(0, 0, 0); }
@@ -177,7 +180,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
 .md-fences.md-fences-math { font-size: 1em; }
 .md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
-.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
 .typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
 .typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
 .typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
@@ -188,7 +191,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 @media screen and (max-width: 800px) {
   .typora-export-sidebar { display: none; }
 }
-.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
 .outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
@@ -601,11 +604,7 @@ h2 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
-h2 .md-plain {
-    padding-bottom: .3rem;
-    border-bottom: .2rem solid var(--h2-underline-color);
-    line-height: 3rem;
-}
+
 .on-focus-mode h2.md-end-block.md-heading:not(.md-focus):not(.md-focus-container):after {
     background-color: var(--blur-text-color) !important;
 }
@@ -1382,6 +1381,6 @@ a.ty-link {
 </style><title>HTTP-状态码</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='http-状态码'><span>HTTP 状态码</span></h1><p><span>简单来讲，HTTP 状态码的作用是服务器告诉客户端当前请求</span><strong><span>响应</span></strong><span>的状态，通过状态码就能判断和分析服务器的运行状态</span></p><p><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220604/1945561654343156LNNO3mimage-20220604194555953.png" alt="image-20220604194555953" style="zoom: 20%;" /></p><p><span>状态码的第一位数字表示状态类型，第二、三位数字表示具体的情况</span></p><ul><li><strong><span>1xx：</span></strong><span>表示消息响应</span></li><li><strong><span>2xx：</span></strong><span>表示成功</span></li><li><strong><span>3xx：</span></strong><span>表示重定向</span></li><li><strong><span>4xx：</span></strong><span>表示客户端错误</span></li><li><strong><span>5xx：</span></strong><span>表示服务端错误</span></li></ul><h3 id='1xx'><font color=#1FA774><span>1xx</span></font></h3><p><span>表示请求已被接受，需要继续处理。这类响应是临时响应，只包含「状态行」和某些可选的响应「头信息」，并以空行结束</span></p><p><span>常见的有：</span></p><ul><li><strong><span>100 (继续)：</span></strong><span>这个为临时响应，表示迄今为止的所有内容都是可行的，客户端应该继续发送剩余请求，如果已经完成，则忽略它</span></li><li><strong><span>101 (切换协议)：</span></strong><span>服务器根据客户端的请求切换协议，主要用于 websocket 或 http2 升级</span></li></ul><h3 id='2xx'><font color=#1FA774><span>2xx</span></font></h3><p><span>表示请求已成功被服务器接收、理解、并接受</span></p><p><span>常见的有：</span></p><ul><li><strong><span>200 (成功)：</span></strong><span>请求已成功，请求所希望的响应头或数据体将随此响应返回</span></li><li><strong><span>201 (已创建)：</span></strong><span>请求成功并且服务器创建了新的资源</span></li><li><strong><span>202 (已创建)：</span></strong><span>服务器已经接收请求，但尚未处理</span></li><li><strong><span>203 (非授权信息)：</span></strong><span>服务器已成功处理请求，但返回的信息可能来自另一来源</span></li><li><strong><span>204 (无内容)：</span></strong><span>服务器成功处理请求，但没有返回任何内容。例如：删除请求或请求是通过表单发送的，响应不应导致刷新表单或加载新页面</span></li><li><strong><span>205 (重置内容)：</span></strong><span>将文档重置为原始状态。例如，清除表单</span></li><li><strong><span>206 (部分内容)：</span></strong><span>服务器成功处理了部分请求</span></li></ul><h3 id='3xx'><font color=#1FA774><span>3xx</span></font></h3><p><span>表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向</span></p><p><span>常见的有：</span></p><ul><li><strong><span>300 (多种选择)：</span></strong><span>针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择</span></li><li><strong><span>301 (永久移动)：</span></strong><span>请求的网页已永久移动到新位置。 服务器返回此响应 (对 GET 或 HEAD 请求的响应)时，会自动将请求者转到新位置</span></li><li><strong><span>302 (临时移动)：</span></strong><span>服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求</span></li><li><strong><span>303 (查看其他位置)：</span></strong><span>请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码</span></li><li><strong><span>305  (使用代理)：</span></strong><span>请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理</span></li><li><strong><span>307  (临时重定向)：</span></strong><span>服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求</span></li></ul><h3 id='4xx'><font color=#1FA774><span>4xx</span></font></h3><p><span>表示客户端有错误，妨碍了服务器的处理</span></p><p><span>常见的有：</span></p><ul><li><strong><span>400 (错误请求)：</span></strong><span>服务器不理解请求的语法</span></li><li><strong><span>401 (未授权)：</span></strong><span>请求要求身份验证。对于需要登录的网页，服务器可能返回此响应</span></li><li><strong><span>403 (禁止)：</span></strong><span>服务器拒绝请求</span></li><li><strong><span>404 (未找到)：</span></strong><span>服务器找不到请求的网页</span></li><li><strong><span>405 (方法禁用)：</span></strong><span>禁用请求中指定的方法</span></li><li><strong><span>406 (不接受)：</span></strong><span>无法使用请求的内容特性响应请求的网页</span></li><li><strong><span>407 (需要代理授权)：</span></strong><span>此状态代码与 401 (未授权)类似，但指定请求者应当授权使用代理</span></li><li><strong><span>408 (请求超时)：</span></strong><span>服务器等候请求时发生超时</span></li></ul><h3 id='5xx'><font color=#1FA774><span>5xx</span></font></h3><p><span>表示服务器有错误，在处理请求的过程中有错误或者异常状态发生</span></p><p><span>常见的有：</span></p><ul><li><strong><span>500 (服务器内部错误)：</span></strong><span>服务器遇到错误，无法完成请求</span></li><li><strong><span>501 (尚未实施)：</span></strong><span>服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码</span></li><li><strong><span>502 (错误网关)：</span></strong><span>服务器作为网关或代理，从上游服务器收到无效响应</span></li><li><strong><span>503 (服务不可用)：</span></strong><span>服务器目前无法使用 (由于超载或停机维护)</span></li><li><strong><span>504 (网关超时)：</span></strong><span>服务器作为网关或代理，但是没有及时从上游服务器收到请求</span></li><li><strong><span>505 (HTTP 版本不受支持)：</span></strong><span>服务器不支持请求中所用的 HTTP 协议版本</span></li></ul><h3 id='适用场景'><font color='red'><span>适用场景</span></font></h3><p><strong><span>100：</span></strong><span>客户端在发送 POST 数据给服务器前，征询服务器情况，看服务器是否处理POST的数据，如果不处理，客户端则不上传 POST 数据，如果处理，则 POST 上传数据。常用于 POST 大数据传输</span></p><p><strong><span>206：</span></strong><span>一般用来做断点续传，或者是视频文件等大文件的加载</span></p><p><strong><span>301：</span></strong><span>永久重定向会缓存。新域名替换旧域名，旧的域名不再使用时，用户访问旧域名时用 301 就重定向到新的域名</span></p><p><strong><span>302：</span></strong><span>临时重定向不会缓存，常用 于未登陆的用户访问用户中心重定向到登录页面</span></p><p><strong><span>304：</span></strong><span>协商缓存，告诉客户端有缓存，直接使用缓存中的数据，返回页面的只有头部信息，是没有内容部分</span></p><p><strong><span>400：</span></strong><span>参数有误，请求无法被服务器识别</span></p><p><strong><span>403：</span></strong><span>告诉客户端进制访问该站点或者资源，如在外网环境下，然后访问只有内网 IP 才能访问的时候则返回</span></p><p><strong><span>404：</span></strong><span>服务器找不到资源时，或者服务器拒绝请求又不想说明理由时</span></p><p><strong><span>503：</span></strong><span>服务器停机维护时，主动用 503 响应请求或 nginx 设置限速，超过限速，会返回 503</span></p><p><strong><span>504：</span></strong><span>网关超时</span></p></div></div>
+<div id='write'  class=''><h1 id='http-状态码'><span>HTTP 状态码</span></h1><p><span>简单来讲，HTTP 状态码的作用是服务器告诉客户端当前请求</span><strong><span>响应</span></strong><span>的状态，通过状态码就能判断和分析服务器的运行状态</span></p><p><img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220604/1945561654343156LNNO3mimage-20220604194555953.png" alt="image-20220604194555953" style="zoom: 20%;" /></p><p><span>状态码的第一位数字表示状态类型，第二、三位数字表示具体的情况</span></p><ul><li><p><strong><span>1xx：</span></strong><span>表示接收的请求正在处理</span></p></li><li><p><strong><span>2xx：</span></strong><span>表示请求正常处理完毕 (成功)</span></p></li><li><p><strong><span>3xx：</span></strong><span>表示重定向</span></p></li><li><p><strong><span>4xx：</span></strong><span>表示客户端错误</span></p></li><li><p><strong><span>5xx：</span></strong><span>表示服务端错误</span></p></li></ul><h3 id='1xx'><font color=#1FA774><span>1xx</span></font></h3><p><span>表示请求已被接受，需要继续处理。这类响应是临时响应，只包含「状态行」和某些可选的响应「头信息」，并以空行结束</span></p><p><span>常见的有：</span></p><ul><li><p><strong><span>100 (继续)：</span></strong><span>这个为临时响应，表示迄今为止的所有内容都是可行的，客户端应该继续发送剩余请求，如果已经完成，则忽略它</span></p></li><li><p><strong><span>101 (切换协议)：</span></strong><span>服务器根据客户端的请求切换协议，主要用于 websocket 或 http2 升级</span></p></li></ul><h3 id='2xx'><font color=#1FA774><span>2xx</span></font></h3><p><span>表示请求已成功被服务器接收、理解、并接受</span></p><p><span>常见的有：</span></p><ul><li><p><strong><span>200 (成功)：</span></strong><span>请求已成功，请求所希望的响应头或数据体将随此响应返回</span></p></li><li><p><strong><span>201 (已创建)：</span></strong><span>请求成功并且服务器创建了新的资源</span></p></li><li><p><strong><span>202 (已创建)：</span></strong><span>服务器已经接收请求，但尚未处理</span></p></li><li><p><strong><span>203 (非授权信息)：</span></strong><span>服务器已成功处理请求，但返回的信息可能来自另一来源</span></p></li><li><p><strong><span>204 (无内容)：</span></strong><span>服务器成功处理请求，但没有返回任何内容。例如：删除请求或请求是通过表单发送的，响应不应导致刷新表单或加载新页面</span></p></li><li><p><strong><span>205 (重置内容)：</span></strong><span>将文档重置为原始状态。例如，清除表单</span></p></li><li><p><strong><span>206 (部分内容)：</span></strong><span>服务器成功处理了部分请求 (范围请求，服务器成功执行了该范围内的请求)</span></p></li></ul><h3 id='3xx'><font color=#1FA774><span>3xx</span></font></h3><p><span>表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向</span></p><p><span>常见的有：</span></p><ul><li><p><strong><span>300 (多种选择)：</span></strong><span>针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择</span></p></li><li><p><strong><span>301 (永久重定向)：</span></strong><span>请求的网页已永久移动到新位置。 服务器返回此响应 (对 GET 或 HEAD 请求的响应)时，会自动将请求者转到新位置</span></p></li><li><p><strong><span>302 (临时重定向)：</span></strong><span>服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求</span></p></li><li><p><strong><span>303 (查看其它位置)：</span></strong><span>请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码</span></p></li><li><p><strong><span>304 (缓存重定向)：</span></strong><span>表示资源没有被修改，可以重定向到缓存文件</span></p></li><li><p><strong><span>305  (使用代理)：</span></strong><span>请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理</span></p></li><li><p><strong><span>307  (临时重定向)：</span></strong><span>服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求 (和 302 相同)</span></p></li></ul><h3 id='4xx'><font color=#1FA774><span>4xx</span></font></h3><p><span>表示客户端有错误，妨碍了服务器的处理</span></p><p><span>常见的有：</span></p><ul><li><p><strong><span>400 (错误请求)：</span></strong><span>请求报文中存在语法错误</span></p></li><li><p><strong><span>401 (未授权)：</span></strong><span>请求要求身份验证。对于需要登录的网页，服务器可能返回此响应</span></p></li><li><p><strong><span>403 (禁止)：</span></strong><span>服务器拒绝请求</span></p></li><li><p><strong><span>404 (未找到)：</span></strong><span>服务器找不到请求的网页</span></p></li><li><p><strong><span>405 (方法禁用)：</span></strong><span>禁用请求中指定的方法</span></p></li><li><p><strong><span>406 (不接受)：</span></strong><span>无法使用请求的内容特性响应请求的网页</span></p></li><li><p><strong><span>407 (需要代理授权)：</span></strong><span>此状态代码与 401 (未授权)类似，但指定请求者应当授权使用代理</span></p></li><li><p><strong><span>408 (请求超时)：</span></strong><span>服务器等候请求时发生超时</span></p></li></ul><h3 id='5xx'><font color=#1FA774><span>5xx</span></font></h3><p><span>表示服务器有错误，在处理请求的过程中有错误或者异常状态发生</span></p><p><span>常见的有：</span></p><ul><li><p><strong><span>500 (服务器内部错误)：</span></strong><span>服务器遇到错误，无法完成请求</span></p></li><li><p><strong><span>501 (尚未实施)：</span></strong><span>服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码</span></p></li><li><p><strong><span>502 (错误网关)：</span></strong><span>服务器作为网关或代理，从上游服务器收到无效响应</span></p></li><li><p><strong><span>503 (服务不可用)：</span></strong><span>服务器目前无法使用 (由于超载或停机维护)</span></p></li><li><p><strong><span>504 (网关超时)：</span></strong><span>服务器作为网关或代理，但是没有及时从上游服务器收到请求</span></p></li><li><p><strong><span>505 (HTTP 版本不受支持)：</span></strong><span>服务器不支持请求中所用的 HTTP 协议版本</span></p></li></ul><h3 id='适用场景'><font color='red'><span>适用场景</span></font></h3><p><strong><span>100：</span></strong><span>客户端在发送 POST 数据给服务器前，征询服务器情况，看服务器是否处理POST的数据，如果不处理，客户端则不上传 POST 数据，如果处理，则 POST 上传数据。常用于 POST 大数据传输</span></p><p><strong><span>206：</span></strong><span>一般用来做断点续传，或者是视频文件等大文件的加载</span></p><p><strong><span>301：</span></strong><span>永久重定向会缓存。新域名替换旧域名，旧的域名不再使用时，用户访问旧域名时用 301 就重定向到新的域名</span></p><p><strong><span>302：</span></strong><span>临时重定向不会缓存，常用 于未登陆的用户访问用户中心重定向到登录页面</span></p><p><strong><span>304：</span></strong><span>协商缓存，告诉客户端有缓存，直接使用缓存中的数据，返回页面的只有头部信息，是没有内容部分</span></p><p><strong><span>400：</span></strong><span>参数有误，请求无法被服务器识别</span></p><p><strong><span>403：</span></strong><span>告诉客户端进制访问该站点或者资源，如在外网环境下，然后访问只有内网 IP 才能访问的时候则返回</span></p><p><strong><span>404：</span></strong><span>服务器找不到资源时，或者服务器拒绝请求又不想说明理由时</span></p><p><strong><span>503：</span></strong><span>服务器停机维护时，主动用 503 响应请求或 Nginx 设置限速，超过限速，会返回 503</span></p><p><strong><span>504：</span></strong><span>网关超时</span></p></div></div>
 </body>
 </html>
