@@ -28,7 +28,7 @@
 - [HTTP 状态码](./network/HTTP-状态码.html)
 - [TCP/IP 网络模型](./network/TCPIP网络模型.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [DNS](./network/DNS.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
-- [get && post 请求](./network/get-post请求.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [GET && POST 请求](./network/GET-POST请求.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [HTTP 缓存策略](./network/HTTP-缓存策略.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [HTTP && HTTPS](./network/HTTP-HTTPS.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
 - [TCP 三次握手 & 四次挥手](./network/TCP-三次握手-四次挥手.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
