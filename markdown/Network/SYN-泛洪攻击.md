@@ -43,7 +43,7 @@ net.core.netdev_max_backlog = 10000
 
 #### <font color=#9933FF>方法三：开启 net.ipv4.tcp_syncookies</font>
 
-开启 net.ipv4.tcp_syncookies 后可以不需要加入到 SYN 半连接队列中，直接成功建立连接
+开启 net.ipv4.tcp_syncookies 后可以不需要加入到 SYN 半连接队列中，也可以成功建立连接
 
 #### <font color=#9933FF>方法四：减少 SYN + ACK 重发次数</font>
 
