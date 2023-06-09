@@ -451,7 +451,7 @@ select * from user where age = 18 for update;
 commit;
 ```
 
-那么事务 A 会为`age = 15`的记录对应的主键索引加一个 **<font color='red'>X 型记录锁</font>**，以及对应的二级索引加一个 **<font color='red'>X 型 Next-Key Lock</font>** 和一个 **<font color='red'>X 型间隙锁</font>**，如下图所示：
+那么事务 A 会为`age = 18`的记录对应的主键索引加一个 **<font color='red'>X 型记录锁</font>**，以及对应的二级索引加一个 **<font color='red'>X 型 Next-Key Lock</font>** 和一个 **<font color='red'>X 型间隙锁</font>**，如下图所示：
 
 ![14](https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230507/2326051683473165CnJn0x14.svg)
 
