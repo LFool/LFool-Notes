@@ -2,6 +2,8 @@
 
 本篇文章主要介绍 Spring IoC 以及 Spring Bean 相关的内容～～但其实本篇文章更侧重与之相关的八股问题，哈哈哈哈 (功利心极强 😊)
 
+**<font color='red'>更新：</font>**总觉得 IoC 是 Spring 的精髓所在，同时有一身不想只是速成的傲骨 (古代文人附身～)，所以本着有多底层就多底层的原则 (其实也没有到祖坟的程度)，将核心源码过了一遍，附在文章末尾
+
 ### <font color=#1FA774>什么是 IoC</font>
 
 IoC (Inversion Of control，控制反转) 是一种设计思想，并非一个具体技术的实现，将原本在程序中手动创建对象的控制权，交由 Spring 框架来管理
@@ -150,8 +152,8 @@ Spring 中 Bean 的作用域通常有下面几种：
 
 对于 Spring Bean 的生命周期来说，主要分为五个阶段：**实例化**、**属性赋值**、**初始化**、**使用**、**销毁**，但在这四个步骤中间会穿插一些小的步骤，具体过程如下：
 
-- 执行`getBean()`后，Bean 容器在配置文件中找到对应 Bean 的定义
-- **实例化：**Bean 容器使用 Java 反射机制创建 Bean 的实例，调用无参构造函数
+- 执行`getBean()`后，Bean 容器在配置文件中找到对应 Bean 的定义。在容器初始化后，会将配置文件中每个 Bean 生成一个对应的 BeanDefinition 对象，但这并非 Bean 实例
+- **实例化：**Bean 容器使用 Java 反射机制创建 Bean 的实例，调用构造函数
 - **属性赋值：**为 Bean 实例的属性设置值，如果属性本身就是 Bean，则将对其进行解析和创建
 - 如果 Bean 实现了`BeanNameAware`接口，会调用`setBeanName()`方法，并将配置文件中设置的 Bean 名称作为参数传入该方法中，那么在 Bean 实例中就可以获取配置文件中为该实例设置的名称
 - 如果 Bean 实现了`BeanClassLoaderAware`接口，会调用`setBeanClassLoader(ClassLoader)`方法，那么在 Bean 实例中就可以获取加载本类的类加载器
@@ -341,6 +343,618 @@ public class Test {
 11. 执行自定义 destroyMethod() 方法
 ```
 
+### <font color=#1FA774>Spring IoC 源码剖析</font>
+
+前文说过 Spring IoC 就是一个 Map 集合，存储所有 Bean 实例，在配置好的前提下，无须手动创建 Bean 实例，直接去 IoC 容器中取即可
+
+配置 Bean 可以通过 XML 文件、注解、Java 配置类，这里采用最原始的配置方法：XML 文件。如果在配置 Bean 时没有指定懒加载，那么会在 Spring IoC 容器初始化时创建所有的 Bean 实例；如果指定了懒加载，那么会在调用`getBean(name)`方法时创建 Bean 实例。指定懒加载方法如下：
+
+```xml
+<bean name="myBean" class="com.lfool.ioc.entity.MyBean" lazy-init="true"></bean>
+```
+
+本部分主要从两个方面展开讨论相关源码：**Spring IoC 容器的初始化**、**Bean 的生命周期**
+
+**<font color='red'>注意：</font>**本部分介绍的源码基于 spring-context 4.3.11.RELEASE
+
+#### <font color=#9933FF>Spring IoC 容器的初始化</font>
+
+首先会在程序中创建一个 spring IoC 容器，这里使用 XML 的方式：
+
+```java
+ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+```
+
+上面创建 spring IoC 容器会调用下面的构造函数：
+
+```java
+// ClassPathXmlApplicationContext.java
+public ClassPathXmlApplicationContext(String configLocation) throws BeansException {
+    this(new String[] {configLocation}, true, null);  // 见下方
+}
+public ClassPathXmlApplicationContext(String[] configLocations, boolean refresh, ApplicationContext parent) throws BeansException {
+    super(parent);
+    setConfigLocations(configLocations);  // 根据提供的路径，处理成配置文件数组 (以分号、逗号、空格、换行符分割)
+    if (refresh) {
+        refresh();  // 核心方法，见下方
+    }
+}
+```
+
+`refresh()`方法不仅仅可以用来第一次初始化，也可以用来重建 ApplicationContext，会将原来的 ApplicationContext 销毁，然后重新执行一次初始化，详细见下方：
+
+```java
+// AbstractApplicationContext.java
+public void refresh() throws BeansException, IllegalStateException {
+    // 加锁，每次只能有一个线程执行 refresh() 方法
+    synchronized (this.startupShutdownMonitor) {
+        // 准备工作：记录容器启动时间、标记「已启动」状态、处理配置文件中的占位符
+        prepareRefresh();
+        // 创建 BeanFactory，并将配置文件中的 Bean 解析提取并生成一个 BeanDefinition 对象，保存在 BeanFactory 中 (实际是一个 Map 集合)
+        ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
+        // 设置 BeanFactory 类加载器、添加几个 BeanPostProcessor、手动注册几个特殊的 Bean
+        prepareBeanFactory(beanFactory);
+
+        try {
+            // 提供给子类的扩展点。到这里所有的 Bean 都加载、注册，但还没有初始化，只是将 Bean 对应的 BeanDefinition 加入 BeanFactory 中
+            // 如果 Bean 实现了 BeanFactoryPostProcessor 接口，会在这里配置
+            postProcessBeanFactory(beanFactory);
+            // 调用 BeanFactoryPostProcessor 各个实现类的 postProcessBeanFactory(factory) 方法
+            invokeBeanFactoryPostProcessors(beanFactory);
+
+            // 注册 BeanPostProcessor 实现类，有两个方法：postProcessBeforeInitialization 和 postProcessAfterInitialization，会在 Bean 初始化前后执行
+            // BeanPostProcessor 和 BeanFactoryPostProcessor 的区别在于：BeanPostProcessor 只会注册并不会执行方法，BeanFactoryPostProcessor 注册并执行方法
+            registerBeanPostProcessors(beanFactory);
+
+            // 初始化当前 ApplicationContext 的 MessageSource
+            initMessageSource();
+
+            // 初始化当前 ApplicationContext 的事件广播器
+            initApplicationEventMulticaster();
+
+            // 钩子方法，可以在具体的子类中初始化一些特殊的 Bean
+            onRefresh();
+
+            // 注册事件监听器
+            registerListeners();
+
+            // 初始化所有 Bean，包括：实例化、属性赋值、初始化，但如果 Bean 指定为懒加载就不会初始化
+            finishBeanFactoryInitialization(beanFactory);
+
+            // 广播事件，ApplicationContext 初始化完成
+            finishRefresh();
+        } catch (BeansException ex) {
+            // 省略...主要会销毁创建的 Bean，并抛出异常
+        } finally {
+            // 省略...
+        }
+    }
+}
+```
+
+对于`refresh()`调用的方法，这里只挑几个重要的分析，第一个就是`obtainFreshBeanFactory()`方法：
+
+```java
+// AbstractApplicationContext.java
+protected ConfigurableListableBeanFactory obtainFreshBeanFactory() {
+    // 如果当前 ApplicationContext 存在 BeanFactory，那么先关闭它，然后创建一个新的 BeanFactory，具体见下方
+    refreshBeanFactory();
+    // 返回刚刚创建的 BeanFactory
+    ConfigurableListableBeanFactory beanFactory = getBeanFactory();
+    if (logger.isDebugEnabled()) {
+        logger.debug("Bean factory for " + getDisplayName() + ": " + beanFactory);
+    }
+    return beanFactory;
+}
+// AbstractRefreshableApplicationContext.java
+protected final void refreshBeanFactory() throws BeansException {
+    // 如果当前 ApplicationContext 已经存在 BeanFactory，先关闭它
+    if (hasBeanFactory()) {
+        destroyBeans();
+        closeBeanFactory();
+    }
+    try {
+        // 创建一个 DefaultListableBeanFactory
+        DefaultListableBeanFactory beanFactory = createBeanFactory();
+        // 设置序列化 ID
+        beanFactory.setSerializationId(getId());
+        // 这是 Bean 是否允许覆盖、是否允许循环引用
+        customizeBeanFactory(beanFactory);
+        // 解析配置文件，为每个 Bean 生成对应的 BeanDefinition 对象并加入 beanFactory 中
+        // 这里就不展开讨论该方法的细节，主要就是解析 XML 文件
+        loadBeanDefinitions(beanFactory);
+        synchronized (this.beanFactoryMonitor) {
+            this.beanFactory = beanFactory;
+        }
+    } catch (IOException ex) {
+        throw new ApplicationContextException("I/O error parsing bean definition source for " + getDisplayName(), ex);
+    }
+}
+```
+
+第二个要详细介绍就是`finishBeanFactoryInitialization()`方法：
+
+```java
+// AbstractApplicationContext.java
+protected void finishBeanFactoryInitialization(ConfigurableListableBeanFactory beanFactory) {
+    // Initialize conversion service for this context.
+    if (beanFactory.containsBean(CONVERSION_SERVICE_BEAN_NAME) &&
+            beanFactory.isTypeMatch(CONVERSION_SERVICE_BEAN_NAME, ConversionService.class)) {
+        beanFactory.setConversionService(
+                beanFactory.getBean(CONVERSION_SERVICE_BEAN_NAME, ConversionService.class));
+    }
+
+    // Register a default embedded value resolver if no bean post-processor
+    // (such as a PropertyPlaceholderConfigurer bean) registered any before:
+    // at this point, primarily for resolution in annotation attribute values.
+    if (!beanFactory.hasEmbeddedValueResolver()) {
+        beanFactory.addEmbeddedValueResolver(new StringValueResolver() {
+            @Override
+            public String resolveStringValue(String strVal) {
+                return getEnvironment().resolvePlaceholders(strVal);
+            }
+        });
+    }
+
+    // 先初始化 LoadTimeWeaverAware 类型的 Bean
+    String[] weaverAwareNames = beanFactory.getBeanNamesForType(LoadTimeWeaverAware.class, false, false);
+    for (String weaverAwareName : weaverAwareNames) {
+        getBean(weaverAwareName);
+    }
+
+    // Stop using the temporary ClassLoader for type matching.
+    beanFactory.setTempClassLoader(null);
+
+    // 确保配置文件中所有 Bean 都已经被解析、加载、注册
+    beanFactory.freezeConfiguration();
+
+    // 开始初始化 (重点介绍)，见下方
+    beanFactory.preInstantiateSingletons();
+}
+// DefaultListableBeanFactory.java
+public void preInstantiateSingletons() throws BeansException {
+    if (this.logger.isDebugEnabled()) {
+        this.logger.debug("Pre-instantiating singletons in " + this);
+    }
+    
+    // 存储 Bean 的名称
+    List<String> beanNames = new ArrayList<String>(this.beanDefinitionNames);
+
+    // 遍历所有 Bean
+    for (String beanName : beanNames) {
+        RootBeanDefinition bd = getMergedLocalBeanDefinition(beanName);
+        // !bd.isAbstract() 表示非抽象；bd.isSingleton() 表示单例；!bd.isLazyInit() 表示非懒加载
+        if (!bd.isAbstract() && bd.isSingleton() && !bd.isLazyInit()) {
+            if (isFactoryBean(beanName)) {
+                final FactoryBean<?> factory = (FactoryBean<?>) getBean(FACTORY_BEAN_PREFIX + beanName);
+                boolean isEagerInit;
+                if (System.getSecurityManager() != null && factory instanceof SmartFactoryBean) {
+                    isEagerInit = AccessController.doPrivileged(new PrivilegedAction<Boolean>() {
+                        @Override
+                        public Boolean run() {
+                            return ((SmartFactoryBean<?>) factory).isEagerInit();
+                        }
+                    }, getAccessControlContext());
+                }
+                else {
+                    isEagerInit = (factory instanceof SmartFactoryBean &&
+                            ((SmartFactoryBean<?>) factory).isEagerInit());
+                }
+                if (isEagerInit) {
+                    getBean(beanName);
+                }
+            }
+            else {
+                // 初始化普通 Bean，见下方
+                getBean(beanName);
+            }
+        }
+    }
+    
+    // 到这里表示所有 Bean 已经初始化完成，如果定义的 Bean 实现了 SmartInitializingSingleton 接口，需要在这里回调 (不做重点介绍)
+    for (String beanName : beanNames) {
+        Object singletonInstance = getSingleton(beanName);
+        if (singletonInstance instanceof SmartInitializingSingleton) {
+            final SmartInitializingSingleton smartSingleton = (SmartInitializingSingleton) singletonInstance;
+            if (System.getSecurityManager() != null) {
+                AccessController.doPrivileged(new PrivilegedAction<Object>() {
+                    @Override
+                    public Object run() {
+                        smartSingleton.afterSingletonsInstantiated();
+                        return null;
+                    }
+                }, getAccessControlContext());
+            }
+            else {
+                smartSingleton.afterSingletonsInstantiated();
+            }
+        }
+    }
+}
+// AbstractBeanFactory.java
+public Object getBean(String name) throws BeansException {
+    // 该方法负责执行构造函数、属性赋值、初始化 (Bean 生命周期的前三阶段)
+    // 从这里开始和调用 getBean() 获取 Bean 重复，具体见「Bean 的生命周期」源码介绍
+    return doGetBean(name, null, null, false);
+}
+```
+
+#### <font color=#9933FF>Bean 的生命周期</font>
+
+当 Bean 指定为懒加载，那么会在第一次调用`getBean()`时初始化；当 Bean 指定为非懒加载，那么会在 Spring IoC 容器初始化时完成 Bean 的初始化。下面假设 Bean 被指定为懒加载模式！！
+
+首先调用`getBean()`方法的细节如下：
+
+```java
+// AbstractApplicationContext.java
+public Object getBean(String name) throws BeansException {
+    assertBeanFactoryActive();
+    return getBeanFactory().getBean(name);
+}
+// AbstractBeanFactory.java
+public Object getBean(String name) throws BeansException {
+    // 从这里开始，和非懒加载下的 Spring IoC 容器初始化过程重合
+    return doGetBean(name, null, null, false);
+}
+```
+
+`doGetBean()`方法会根据 Bean 的作用域不同采用不同的创建策略，具体如下：
+
+```java
+// AbstractBeanFactory.java
+protected <T> T doGetBean(final String name, final Class<T> requiredType, final Object[] args, boolean typeCheckOnly) throws BeansException {
+
+    final String beanName = transformedBeanName(name);
+    Object bean;
+
+    // 尝试先从 BeanFactory 中获取
+    Object sharedInstance = getSingleton(beanName);
+    if (sharedInstance != null && args == null) {
+        // 从 BeanFactory 中获取成功
+        if (logger.isDebugEnabled()) {
+            if (isSingletonCurrentlyInCreation(beanName)) {
+                logger.debug("Returning eagerly cached instance of singleton bean '" + beanName +
+                        "' that is not fully initialized yet - a consequence of a circular reference");
+            }
+            else {
+                logger.debug("Returning cached instance of singleton bean '" + beanName + "'");
+            }
+        }
+        bean = getObjectForBeanInstance(sharedInstance, name, beanName, null);
+    } else {
+        // 从 BeanFactory 中获取失败
+        if (isPrototypeCurrentlyInCreation(beanName)) {
+            throw new BeanCurrentlyInCreationException(beanName);
+        }
+
+        // Check if bean definition exists in this factory.
+        BeanFactory parentBeanFactory = getParentBeanFactory();
+        if (parentBeanFactory != null && !containsBeanDefinition(beanName)) {
+            // Not found -> check parent.
+            String nameToLookup = originalBeanName(name);
+            if (args != null) {
+                // Delegation to parent with explicit args.
+                return (T) parentBeanFactory.getBean(nameToLookup, args);
+            }
+            else {
+                // No args -> delegate to standard getBean method.
+                return parentBeanFactory.getBean(nameToLookup, requiredType);
+            }
+        }
+
+        if (!typeCheckOnly) {
+            markBeanAsCreated(beanName);
+        }
+
+        try {
+            final RootBeanDefinition mbd = getMergedLocalBeanDefinition(beanName);
+            checkMergedBeanDefinition(mbd, beanName, args);
+
+            // Guarantee initialization of beans that the current bean depends on.
+            String[] dependsOn = mbd.getDependsOn();
+            if (dependsOn != null) {
+                for (String dep : dependsOn) {
+                    if (isDependent(beanName, dep)) {
+                        throw new BeanCreationException(mbd.getResourceDescription(), beanName,
+                                "Circular depends-on relationship between '" + beanName + "' and '" + dep + "'");
+                    }
+                    registerDependentBean(dep, beanName);
+                    getBean(dep);
+                }
+            }
+
+            // Bean 的作用域为 singleton
+            if (mbd.isSingleton()) {
+                sharedInstance = getSingleton(beanName, new ObjectFactory<Object>() {
+                    @Override
+                    public Object getObject() throws BeansException {
+                        try {
+                            // 创建 Bean，见下方
+                            return createBean(beanName, mbd, args);
+                        }
+                        catch (BeansException ex) {
+                            // Explicitly remove instance from singleton cache: It might have been put there
+                            // eagerly by the creation process, to allow for circular reference resolution.
+                            // Also remove any beans that received a temporary reference to the bean.
+                            destroySingleton(beanName);
+                            throw ex;
+                        }
+                    }
+                });
+                bean = getObjectForBeanInstance(sharedInstance, name, beanName, mbd);
+            }
+            // Bean 的作用域为 prototype
+            else if (mbd.isPrototype()) {
+                // It's a prototype -> create a new instance.
+                Object prototypeInstance = null;
+                try {
+                    beforePrototypeCreation(beanName);
+                    prototypeInstance = createBean(beanName, mbd, args);
+                }
+                finally {
+                    afterPrototypeCreation(beanName);
+                }
+                bean = getObjectForBeanInstance(prototypeInstance, name, beanName, mbd);
+            }
+
+            else {
+                String scopeName = mbd.getScope();
+                final Scope scope = this.scopes.get(scopeName);
+                if (scope == null) {
+                    throw new IllegalStateException("No Scope registered for scope name '" + scopeName + "'");
+                }
+                try {
+                    Object scopedInstance = scope.get(beanName, new ObjectFactory<Object>() {
+                        @Override
+                        public Object getObject() throws BeansException {
+                            beforePrototypeCreation(beanName);
+                            try {
+                                return createBean(beanName, mbd, args);
+                            }
+                            finally {
+                                afterPrototypeCreation(beanName);
+                            }
+                        }
+                    });
+                    bean = getObjectForBeanInstance(scopedInstance, name, beanName, mbd);
+                }
+                catch (IllegalStateException ex) {
+                    throw new BeanCreationException(beanName,
+                            "Scope '" + scopeName + "' is not active for the current thread; consider " +
+                            "defining a scoped proxy for this bean if you intend to refer to it from a singleton",
+                            ex);
+                }
+            }
+        }
+        catch (BeansException ex) {
+            cleanupAfterBeanCreationFailure(beanName);
+            throw ex;
+        }
+    }
+
+    // Check if required type matches the type of the actual bean instance.
+    if (requiredType != null && bean != null && !requiredType.isInstance(bean)) {
+        try {
+            return getTypeConverter().convertIfNecessary(bean, requiredType);
+        }
+        catch (TypeMismatchException ex) {
+            if (logger.isDebugEnabled()) {
+                logger.debug("Failed to convert bean '" + name + "' to required type '" +
+                        ClassUtils.getQualifiedName(requiredType) + "'", ex);
+            }
+            throw new BeanNotOfRequiredTypeException(name, requiredType, bean.getClass());
+        }
+    }
+    return (T) bean;
+}
+```
+
+下面来看看`createBean()`方法：
+
+```java
+// AbstractAutowireCapableBeanFactory.java
+protected Object createBean(String beanName, RootBeanDefinition mbd, Object[] args) throws BeanCreationException {
+    if (logger.isDebugEnabled()) {
+        logger.debug("Creating instance of bean '" + beanName + "'");
+    }
+    RootBeanDefinition mbdToUse = mbd;
+
+    // Make sure bean class is actually resolved at this point, and
+    // clone the bean definition in case of a dynamically resolved Class
+    // which cannot be stored in the shared merged bean definition.
+    Class<?> resolvedClass = resolveBeanClass(mbd, beanName);
+    if (resolvedClass != null && !mbd.hasBeanClass() && mbd.getBeanClassName() != null) {
+        mbdToUse = new RootBeanDefinition(mbd);
+        mbdToUse.setBeanClass(resolvedClass);
+    }
+
+    // Prepare method overrides.
+    try {
+        mbdToUse.prepareMethodOverrides();
+    }
+    catch (BeanDefinitionValidationException ex) {
+        throw new BeanDefinitionStoreException(mbdToUse.getResourceDescription(),
+                beanName, "Validation of method overrides failed", ex);
+    }
+
+    try {
+        // Give BeanPostProcessors a chance to return a proxy instead of the target bean instance.
+        Object bean = resolveBeforeInstantiation(beanName, mbdToUse);
+        if (bean != null) {
+            return bean;
+        }
+    }
+    catch (Throwable ex) {
+        throw new BeanCreationException(mbdToUse.getResourceDescription(), beanName,
+                "BeanPostProcessor before instantiation of bean failed", ex);
+    }
+    // doCreateBean 真正初始化 Bean 的方法，见下方
+    Object beanInstance = doCreateBean(beanName, mbdToUse, args);
+    if (logger.isDebugEnabled()) {
+        logger.debug("Finished creating instance of bean '" + beanName + "'");
+    }
+    return beanInstance;
+}
+```
+
+`doCreateBean()`方法才真正开始初始化 Bean，如下：
+
+```java
+// AbstractAutowireCapableBeanFactory.java
+protected Object doCreateBean(final String beanName, final RootBeanDefinition mbd, final Object[] args)
+        throws BeanCreationException {
+
+    // Instantiate the bean.
+    BeanWrapper instanceWrapper = null;
+    if (mbd.isSingleton()) {
+        instanceWrapper = this.factoryBeanInstanceCache.remove(beanName);
+    }
+    if (instanceWrapper == null) {
+        // 执行 Bean 的构造函数，对应 Bean 生命周期的第 1 步
+        instanceWrapper = createBeanInstance(beanName, mbd, args);
+    }
+    final Object bean = (instanceWrapper != null ? instanceWrapper.getWrappedInstance() : null);
+    Class<?> beanType = (instanceWrapper != null ? instanceWrapper.getWrappedClass() : null);
+    mbd.resolvedTargetType = beanType;
+
+    // Allow post-processors to modify the merged bean definition.
+    synchronized (mbd.postProcessingLock) {
+        if (!mbd.postProcessed) {
+            try {
+                applyMergedBeanDefinitionPostProcessors(mbd, beanType, beanName);
+            }
+            catch (Throwable ex) {
+                throw new BeanCreationException(mbd.getResourceDescription(), beanName,
+                        "Post-processing of merged bean definition failed", ex);
+            }
+            mbd.postProcessed = true;
+        }
+    }
+
+    // Eagerly cache singletons to be able to resolve circular references
+    // even when triggered by lifecycle interfaces like BeanFactoryAware.
+    boolean earlySingletonExposure = (mbd.isSingleton() && this.allowCircularReferences &&
+            isSingletonCurrentlyInCreation(beanName));
+    if (earlySingletonExposure) {
+        if (logger.isDebugEnabled()) {
+            logger.debug("Eagerly caching bean '" + beanName +
+                    "' to allow for resolving potential circular references");
+        }
+        addSingletonFactory(beanName, new ObjectFactory<Object>() {
+            @Override
+            public Object getObject() throws BeansException {
+                return getEarlyBeanReference(beanName, mbd, bean);
+            }
+        });
+    }
+
+    // Initialize the bean instance.
+    Object exposedObject = bean;
+    try {
+        // 属性赋值，对应 Bean 生命周期的第 2 步
+        populateBean(beanName, mbd, instanceWrapper);
+        if (exposedObject != null) {
+            // 对应 Bean 生命周期的初始化阶段，见下方
+            exposedObject = initializeBean(beanName, exposedObject, mbd);
+        }
+    }
+    catch (Throwable ex) {
+        if (ex instanceof BeanCreationException && beanName.equals(((BeanCreationException) ex).getBeanName())) {
+            throw (BeanCreationException) ex;
+        }
+        else {
+            throw new BeanCreationException(
+                    mbd.getResourceDescription(), beanName, "Initialization of bean failed", ex);
+        }
+    }
+
+    if (earlySingletonExposure) {
+        Object earlySingletonReference = getSingleton(beanName, false);
+        if (earlySingletonReference != null) {
+            if (exposedObject == bean) {
+                exposedObject = earlySingletonReference;
+            }
+            else if (!this.allowRawInjectionDespiteWrapping && hasDependentBean(beanName)) {
+                String[] dependentBeans = getDependentBeans(beanName);
+                Set<String> actualDependentBeans = new LinkedHashSet<String>(dependentBeans.length);
+                for (String dependentBean : dependentBeans) {
+                    if (!removeSingletonIfCreatedForTypeCheckOnly(dependentBean)) {
+                        actualDependentBeans.add(dependentBean);
+                    }
+                }
+                if (!actualDependentBeans.isEmpty()) {
+                    throw new BeanCurrentlyInCreationException(beanName,
+                            "Bean with name '" + beanName + "' has been injected into other beans [" +
+                            StringUtils.collectionToCommaDelimitedString(actualDependentBeans) +
+                            "] in its raw version as part of a circular reference, but has eventually been " +
+                            "wrapped. This means that said other beans do not use the final version of the " +
+                            "bean. This is often the result of over-eager type matching - consider using " +
+                            "'getBeanNamesOfType' with the 'allowEagerInit' flag turned off, for example.");
+                }
+            }
+        }
+    }
+
+    // Register bean as disposable.
+    try {
+        registerDisposableBeanIfNecessary(beanName, bean, mbd);
+    }
+    catch (BeanDefinitionValidationException ex) {
+        throw new BeanCreationException(
+                mbd.getResourceDescription(), beanName, "Invalid destruction signature", ex);
+    }
+
+    return exposedObject;
+}
+```
+
+`initializeBean()`对应 Bean 生命周期的初始化阶段，如下：
+
+```java
+// AbstractAutowireCapableBeanFactory.java
+protected Object initializeBean(final String beanName, final Object bean, RootBeanDefinition mbd) {
+    if (System.getSecurityManager() != null) {
+        AccessController.doPrivileged(new PrivilegedAction<Object>() {
+            @Override
+            public Object run() {
+                invokeAwareMethods(beanName, bean);
+                return null;
+            }
+        }, getAccessControlContext());
+    }
+    else {
+        // 调用 Bean 实现 *.Aware 接口的方法，对应 Bean 生命周期的第 3、4、5 步
+        invokeAwareMethods(beanName, bean);
+    }
+
+    Object wrappedBean = bean;
+    if (mbd == null || !mbd.isSynthetic()) {
+        // 调用 Bean 实现 BeanPostProcessor 接口的前置处理方法，对应 Bean 生命周期的第 6 步
+        wrappedBean = applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);
+    }
+
+    try {
+        // 调用 Bean 实现 InitializingBean 接口的方法，对应 Bean 生命周期的第 7 步
+        // 调用 Bean 自定义的 init 方法，对应 Bean 生命周期的第 8 步
+        invokeInitMethods(beanName, wrappedBean, mbd);
+    }
+    catch (Throwable ex) {
+        throw new BeanCreationException(
+                (mbd != null ? mbd.getResourceDescription() : null),
+                beanName, "Invocation of init method failed", ex);
+    }
+
+    if (mbd == null || !mbd.isSynthetic()) {
+        // 调用 Bean 实现 BeanPostProcessor 接口的后置处理方法，对应 Bean 生命周期的第 9 步
+        wrappedBean = applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);
+    }
+    return wrappedBean;
+}
+```
+
+至此，Bean 生命周期对应的源码已经介绍到第 9 步 (和 **[Demo](./Spring-IoC.html#demo)** 部分中输出的步骤一致)，后续只剩下使用和销毁，这里就不过多赘述
+
 ### <font color=#1FA774>参考文章</font>
 
 - **[Spring Bean生命周期，好像人的一生](https://juejin.cn/post/7075168883744718856)**
+- **[Spring IOC 容器源码分析](https://javadoop.com/post/spring-ioc)**
