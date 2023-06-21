@@ -134,73 +134,83 @@
 
 ### <font color=#9933FF>BIO</font>
 
-下面给的例子其实就是多线程的 Socket 服务端模式，对于每一个客户端的连接请求都会分配一个线程去处理。单独分析一个线程的情况，就是一个 BIO
+Java 中的 BIO 模型是同步且阻塞的，服务器是多线程的 Socket 模式，会为每一个客户端的连接请求都会分配一个线程去处理，如下图所示：
+
+![1](https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230622/0125301687368330RZuKE41.svg)
+
+Java BIO 的缺陷在于需要为每个连接分配一个线程，而线程的创建、管理、销毁都需要一定的开销，虽然可以使用线程池减少这种开销，但如果连接量过大，使用线程池也难顶～～更具体地：
+
+- 每个连接都需要创建独立的线程，与对应的客户端进行数据读写操作
+- 当并发数较大时，需要创建大量的线程来处理连接，系统资源占用较大 
+- 建立连接后，如果当前线程暂时没有数据可读，则线程会阻塞在 Read 操作上，造成线程资源浪费
 
 **<font color='red'>适用场景：</font>**连接数目比较小且固定的架构，对服务器资源要求较高，但程序简单
 
 ```java
 // 服务端
 public class SocketServer {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
+        ExecutorService threadPool = Executors.newCachedThreadPool();
         ServerSocket serverSocket = new ServerSocket(8888);
         while (true) {
-            System.out.println("等待连接 ...");
+            System.out.println("线程 " + Thread.currentThread().getName() + " 等待连接 ...");
             // 阻塞方法
             Socket socket = serverSocket.accept();
-            System.out.println("有客户端连接 ...");
+            System.out.println("有客户端连接，从线程池分配线程处理该连接");
             // 多线程处理
-            new Thread(() -> {
+            threadPool.execute(() -> {
                 try {
                     handler(socket);
                 } catch (IOException | InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
-            }).start();
-
+            });
         }
     }
     private static void handler(Socket socket) throws IOException, InterruptedException {
-        System.out.println("Thread id = " + Thread.currentThread().getId());
         byte[] bytes = new byte[1024];
-        System.out.println("准备 read ...");
-        // 接受客户端的数据，阻塞方法，没有数据可读时就阻塞
-        int read = socket.getInputStream().read(bytes);
-        System.out.println("read 完毕 ...");
-        if (read != -1) {
-            System.out.println("接收客户端的数据：" + new String(bytes, 0, read));
-            System.out.println("Thread id = " + Thread.currentThread().getId());
+        InputStream inputStream = socket.getInputStream();
+        while (true) {
+            System.out.println("线程 " + Thread.currentThread().getName() + " 准备 read ...");
+            // 接受客户端的数据，阻塞方法，没有数据可读时就阻塞
+            int read = inputStream.read(bytes);
+            if (read != -1) {
+                System.out.println("接收客户端的数据：" + new String(bytes, 0, read));
+            }
+            socket.getOutputStream().write("I get it".getBytes());
+            socket.getOutputStream().flush();
         }
-        // 当服务端未准备好数据时，客户端一直处于阻塞等待
-        Scanner in = new Scanner(System.in);
-        String info = in.next();
-        socket.getOutputStream().write(info.getBytes());
-        socket.getOutputStream().flush();
     }
 }
 // 客户端
 public class SocketClient {
     public static void main(String[] args) throws IOException, InterruptedException {
         Socket socket = new Socket("127.0.0.1", 8888);
-        // 向服务端发送数据
-        socket.getOutputStream().write("Hello Serve".getBytes());
-        socket.getOutputStream().flush();
-        System.out.println("向服务端发送数据结束");
-        byte[] bytes = new byte[1024];
-        // 接收服务端回传的数据
-        int read = socket.getInputStream().read(bytes);
-        if (read != -1) {
-            System.out.println("接收服务端的数据：" + new String(bytes, 0, read));
+        Scanner in = new Scanner(System.in);
+        while (true) {
+            String send = in.next();
+            // 向服务端发送数据
+            socket.getOutputStream().write(send.getBytes());
+            socket.getOutputStream().flush();
+            System.out.println("向服务端发送：" + send);
+            byte[] bytes = new byte[1024];
+            // 接收服务端回传的数据
+            int read = socket.getInputStream().read(bytes);
+            if (read != -1) {
+                System.out.println("接收服务端的数据：" + new String(bytes, 0, read));
+            }
         }
-        socket.close();
     }
 }
 ```
 
 ### <font color=#9933FF>NIO</font>
 
+由于 Java NIO 内容较多，这里重开一篇文章专门总结：**[Java NIO](./Java-NIO.html)**
+
 Java 中的 NIO 就是非阻塞的 I/O 多路复用。服务端实现一个线程就可以管理多个客户端连接，客户端的连接都会注册到**多路复用器 selector** 中，多路复用器轮询到连接有 I/O 请求就进行处理
 
-在 Java 多线程的服务端模式下，BIO 是一旦有客户端连接就在服务端为它分配一个线程，而 NIO 是先将所有客户端连接注册到 selector 中，当 selector 中的连接有 I/O 请求时才去为它分配线程
+在 Java 多线程的服务端模式下，BIO 是一旦有客户端连接就在服务端为它分配一个线程；而 NIO 是将所有客户端连接注册到 selector 中，一个线程可以管理多个连接
 
 ![9](https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20230313/2347101678722430e5vw3D9.svg)
 
