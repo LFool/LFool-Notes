@@ -192,7 +192,7 @@ public ThreadPoolExecutor(int corePoolSize,
     this.maximumPoolSize = maximumPoolSize;               // 线程池最大线程数
     this.workQueue = workQueue;                           // 任务队列
     this.keepAliveTime = unit.toNanos(keepAliveTime);     // 当线程数大于核心线程数时，多余空闲线程存活的最长时间
-    this.threadFactory = threadFactory;                   // 线程工厂，用来创建咸亨，一般默认即可
+    this.threadFactory = threadFactory;                   // 线程工厂，用来创建线程，一般默认即可
     this.handler = handler;                               // 饱和策略
 }
 ```
