@@ -317,21 +317,27 @@ span.cm-strikethrough { text-decoration: line-through; }
     --p-spacing: 0.8rem; /*段间距*/
     --text-size: 12px;
 }/*
- * Copyright (C) 2018 Drake, Inc.
+ * MIT License
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Copyright (c) 2023 劉強東 https://github.com/liangjingkanji
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
  *
- * GitHub https://github.com/liangjingkanji/DrakeTyporaTheme
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  */
 @import url();
 @include-when-export url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -422,6 +428,14 @@ p {
 }
 
 /*mermaid*/
+[id^=mermaidChart] .cluster rect {
+    fill: var(--table-n2-bg-color) !important;
+    stroke: var(--table-border-color) !important;
+}
+[id^=mermaidChart] .clusters span.nodeLabel {
+    color: var(--text-color) !important;
+    line-height: 1.8rem;
+}
 [mermaid-type="journey"] line {
     stroke: #7a7a7a !important;
 }
@@ -522,7 +536,8 @@ pre.md-fences-advanced.md-focus .md-fences-adv-panel {
     fill: var(--bg-color) !important;
 }
 .md-diagram-panel-preview .edgeLabel span { /*条件文字*/
-    color: var(--text-color);
+    color: var(--text-color) !important;
+    background: var(--bg-color) !important;
 }
 .md-diagram-panel-preview .node rect,
 .md-diagram-panel-preview .node circle,
@@ -1084,6 +1099,9 @@ footer {
 }
 
 /*sidebar*/
+.file-library-node.file-tree-node.file-node-root {
+    font-size: 1.1rem;
+}
 .file-node-content:hover .file-node-icon,
 .file-node-content:hover .file-node-open-state {
     visibility: visible;
@@ -1462,6 +1480,6 @@ a.ty-link {
 </style><title>HTTP-缓存策略</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='http-缓存策略'><span>HTTP 缓存策略</span></h1><p><span>当使用浏览器访问一个 Web 资源时，为了提高访问效率，往往会在浏览器和服务器之间增加本地缓存</span></p><p><span>对于首次访问，会将服务器响应的数据缓存到本地；对于后续的访问，会根据缓存策略决定是否直接使用本地缓存。简化的流程如下图所示：</span></p><p><img src="https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230526/0700211685055621d1lOGz1.svg" referrerpolicy="no-referrer" alt="1"></p><p><strong><font color='red'><span>注意：</span></font></strong><span>缓存策略完全是根据服务器响应消息的头信息来决定滴！！</span></p><h3 id='与缓存有关的消息头字段'><font color=#1FA774><span>与缓存有关的消息头字段</span></font></h3><p><span>先给出与缓存有关的消息头字段的一些说明：</span></p><p><img src="https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230526/0731241685057484ZZ8guB2.svg" referrerpolicy="no-referrer" alt="2"></p><h3 id='强制缓存'><font color=#1FA774><span>强制缓存</span></font></h3><p><span>顾名思义，强制缓存不需要服务器的参与，浏览器可以自己决策是否使用缓存，决策规则如下：</span></p><ul><li><p><span>如果本地缓存中不存在要请求的资源，浏览器会直接将请求发送到服务器，完成首次资源请求，根据服务器响应的消息保存相关信息</span></p></li><li><p><span>如果本地缓存中存在要请求的资源，先判断缓存是否过期，如果没有过期直接使用本地缓存，如果过期就需要根据下面要介绍的协商缓存进行处理</span></p></li></ul><p><span>在响应消息中，Expires 是根据 Last-Modified 和 max-age 计算出来的，max-age 表示存活多少秒后过期，而 Last-Modified 最后的修改时间</span></p><p><span>如果一个请求直接强制使用缓存，那么该请求会显示</span><code>200 OK (from disk cache)</code><span>，如下所示：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style="text-rendering: auto;"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Request URL: http://192.168.124.13:8080/index.html</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Request Method: GET</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Status Code: 200 OK (from disk cache)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Remote Address: 192.168.124.13:8080</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Referrer Policy: strict-origin-when-cross-origin</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 95px;"></div><div class="CodeMirror-gutters" style="display: none; height: 95px;"></div></div></div></pre><h3 id='协商缓存'><font color=#1FA774><span>协商缓存</span></font></h3><p><span>顾名思义，协商缓存是浏览器和服务器共同协商是否使用本地缓存，浏览器负责提供本地缓存的信息，如：最后修改时间和唯一标识，添加在请求消息头中，服务器收到消息后来决策是否允许浏览器使用本地缓存</span></p><p><span>If-Modified-Since 和 If-None-Match 是在浏览器第一次发送请求到服务器时，从服务器的响应消息保存。如果浏览器发现本地缓存中不存在要请求的资源，会直接将请求发送到服务器</span></p><p><span>协商缓存基于两种消息头字段实现：</span></p><ul><li><p><strong><span>第一种：</span></strong><span>请求头中的 If-Modified-Since 和响应头中的 Last-Modified</span></p></li><li><p><strong><span>第二种：</span></strong><span>请求头中的 If-None-Match 和响应头中的 Etag</span></p></li></ul><p><span>对于第一种，如果 If-Modified-Since 时间小于 Last-Modified，表示本地缓存中是旧数据，不可以使用本地缓存中的数据，否则可以使用缓存</span></p><p><span>对于第二种，如果 If-None-Match 和 Etag 不相等，表示本地缓存中是旧数据，不可以使用本地缓存中的数据，否则可以使用缓存</span></p><p><span>如果一个请求消息头中同时包含 If-Modified-Since 和 If-None-Match 字段，那么 If-None-Match 优先级更高。先判断 If-None-Match，如果不匹配直接无法使用缓存，如果匹配，再根据 If-Modified-Since 判断</span></p><p><strong><font color='red'><span>问题：</span></font></strong><span>为什么 Etag 的优先级更高？？</span></p><p><span>Etag 是服务器中资源的唯一标识，它可以解决一些 Last-Modified 难以解决的问题</span></p><ul><li><p><span>可能存在文件没有被修改，但修改时间却发生了改变的情况</span></p></li><li><p><span>Last-Modified 的精度是秒，对于秒以内的变化，Last-Modified 无法感知；但 Etag 却可以保证秒以内多次修改都可以被感知</span></p></li></ul><p><strong><font color='red'><span>强制缓存和协商缓存区别：</span></font></strong><span>强制缓存不需要将请求发送给服务器，浏览器自己可以决策；协商缓存需要将请求先发送给服务器，由服务器决策，如果可以使用缓存会响应一个 </span><strong><a href='./HTTP-状态码.html#3xx'><span>304</span></a></strong><span> 的消息，表示缓存重定向</span></p><h3 id='总流程图'><font color=#1FA774><span>总流程图</span></font></h3><p><span>下面给出缓存策略的总体流程图：</span></p><p><img src="https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230526/0841121685061672KvZqRS3.svg" referrerpolicy="no-referrer" alt="3"></p><p><strong><font color='red'><span>注意：</span></font></strong></p><ul><li><p><span>使用 F5 刷新网页时，跳过强制缓存，但会检查协商缓存</span></p></li><li><p><span>使用 ctrl + F5 刷新页面时，直接从服务器加载，跳过强制缓存和协商缓存</span></p></li></ul><h3 id='参考文章'><font color=#1FA774><span>参考文章</span></font></h3><ul><li><p><strong><a href='https://xiaolincoding.com/network/2_http/http_interview.html#http-缓存技术'><span>HTTP 缓存技术</span></a></strong></p></li><li><p><strong><a href='https://mp.weixin.qq.com/s/Ui7Q9k4faiD5mv_LfB4Rrw'><span>彻底弄懂浏览器缓存策略</span></a></strong></p></li><li><p><strong><a href='https://juejin.cn/post/6960988505816186894'><span>Cache-Control在请求头和响应头里的区别</span></a></strong></p></li><li><p><strong><a href='https://xie.infoq.cn/article/70b359ab1210efb6f5b253e24'><span>为什么我的缓存设置在 chrome 中不生效</span></a></strong></p></li><li><p><strong><a href='https://www.cnblogs.com/jimaww/p/10234074.html'><span>Cache-Control和Expires无效的原因</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><h1 id='http-缓存策略'><span>HTTP 缓存策略</span></h1><p><span>当使用浏览器访问一个 Web 资源时，为了提高访问效率，往往会在浏览器和服务器之间增加本地缓存</span></p><p><span>对于首次访问，会将服务器响应的数据缓存到本地；对于后续的访问，会根据缓存策略决定是否直接使用本地缓存。简化的流程如下图所示：</span></p><p><img src="https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230526/0700211685055621d1lOGz1.svg" referrerpolicy="no-referrer" alt="1"></p><p><strong><font color='red'><span>注意：</span></font></strong><span>缓存策略完全是根据服务器响应消息的头信息来决定滴！！</span></p><h3 id='与缓存有关的消息头字段'><font color=#1FA774><span>与缓存有关的消息头字段</span></font></h3><p><span>先给出与缓存有关的消息头字段的一些说明：</span></p><p><img src="https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230526/0731241685057484ZZ8guB2.svg" referrerpolicy="no-referrer" alt="2"></p><h3 id='强制缓存'><font color=#1FA774><span>强制缓存</span></font></h3><p><span>顾名思义，强制缓存不需要服务器的参与，浏览器可以自己决策是否使用缓存，决策规则如下：</span></p><ul><li><p><span>如果本地缓存中不存在要请求的资源，浏览器会直接将请求发送到服务器，完成首次资源请求，根据服务器响应的消息保存相关信息</span></p></li><li><p><span>如果本地缓存中存在要请求的资源，先判断缓存是否过期，如果没有过期直接使用本地缓存，如果过期就需要根据下面要介绍的协商缓存进行处理</span></p></li></ul><p><span>在响应消息中，Expires 是根据 Last-Modified 和 max-age 计算出来的，max-age 表示存活多少秒后过期，而 Last-Modified 表示最后的修改时间</span></p><p><span>如果一个请求直接强制使用缓存，那么该请求会显示</span><code>200 OK (from disk cache)</code><span>，如下所示：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 7.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style="text-rendering: auto;"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Request URL: http://192.168.124.13:8080/index.html</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Request Method: GET</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Status Code: 200 OK (from disk cache)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Remote Address: 192.168.124.13:8080</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Referrer Policy: strict-origin-when-cross-origin</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 95px;"></div><div class="CodeMirror-gutters" style="display: none; height: 95px;"></div></div></div></pre><h3 id='协商缓存'><font color=#1FA774><span>协商缓存</span></font></h3><p><span>顾名思义，协商缓存是浏览器和服务器共同协商是否使用本地缓存，浏览器负责提供本地缓存的信息，如：最后修改时间和唯一标识，添加在请求消息头中，服务器收到消息后来决策是否允许浏览器使用本地缓存</span></p><p><span>If-Modified-Since 和 If-None-Match 是在浏览器第一次发送请求到服务器时，从服务器的响应消息保存。如果浏览器发现本地缓存中不存在要请求的资源，会直接将请求发送到服务器</span></p><p><span>协商缓存基于两种消息头字段实现：</span></p><ul><li><p><strong><span>第一种：</span></strong><span>请求头中的 If-Modified-Since 和响应头中的 Last-Modified</span></p></li><li><p><strong><span>第二种：</span></strong><span>请求头中的 If-None-Match 和响应头中的 Etag</span></p></li></ul><p><span>对于第一种，如果 If-Modified-Since 时间小于 Last-Modified，表示本地缓存中是旧数据，不可以使用本地缓存中的数据，否则可以使用缓存</span></p><p><span>对于第二种，如果 If-None-Match 和 Etag 不相等，表示本地缓存中是旧数据，不可以使用本地缓存中的数据，否则可以使用缓存</span></p><p><span>如果一个请求消息头中同时包含 If-Modified-Since 和 If-None-Match 字段，那么 If-None-Match 优先级更高。先判断 If-None-Match，如果不匹配直接无法使用缓存，如果匹配，再根据 If-Modified-Since 判断</span></p><p><strong><font color='red'><span>问题：</span></font></strong><span>为什么 Etag 的优先级更高？？</span></p><p><span>Etag 是服务器中资源的唯一标识，它可以解决一些 Last-Modified 难以解决的问题</span></p><ul><li><p><span>可能存在文件没有被修改，但修改时间却发生了改变的情况</span></p></li><li><p><span>Last-Modified 的精度是秒，对于秒以内的变化，Last-Modified 无法感知；但 Etag 却可以保证秒以内多次修改都可以被感知</span></p></li></ul><p><strong><font color='red'><span>强制缓存和协商缓存区别：</span></font></strong><span>强制缓存不需要将请求发送给服务器，浏览器自己可以决策；协商缓存需要将请求先发送给服务器，由服务器决策，如果可以使用缓存会响应一个 </span><strong><a href='./HTTP-状态码.html#3xx'><span>304</span></a></strong><span> 的消息，表示缓存重定向</span></p><h3 id='总流程图'><font color=#1FA774><span>总流程图</span></font></h3><p><span>下面给出缓存策略的总体流程图：</span></p><p><img src="https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230526/0841121685061672KvZqRS3.svg" referrerpolicy="no-referrer" alt="3"></p><p><strong><font color='red'><span>注意：</span></font></strong></p><ul><li><p><span>使用 F5 刷新网页时，跳过强制缓存，但会检查协商缓存</span></p></li><li><p><span>使用 ctrl + F5 刷新页面时，直接从服务器加载，跳过强制缓存和协商缓存</span></p></li></ul><h3 id='参考文章'><font color=#1FA774><span>参考文章</span></font></h3><ul><li><p><strong><a href='https://xiaolincoding.com/network/2_http/http_interview.html#http-缓存技术'><span>HTTP 缓存技术</span></a></strong></p></li><li><p><strong><a href='https://mp.weixin.qq.com/s/Ui7Q9k4faiD5mv_LfB4Rrw'><span>彻底弄懂浏览器缓存策略</span></a></strong></p></li><li><p><strong><a href='https://juejin.cn/post/6960988505816186894'><span>Cache-Control在请求头和响应头里的区别</span></a></strong></p></li><li><p><strong><a href='https://xie.infoq.cn/article/70b359ab1210efb6f5b253e24'><span>为什么我的缓存设置在 chrome 中不生效</span></a></strong></p></li><li><p><strong><a href='https://www.cnblogs.com/jimaww/p/10234074.html'><span>Cache-Control和Expires无效的原因</span></a></strong></p></li></ul></div></div>
 </body>
 </html>
