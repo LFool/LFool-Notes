@@ -64,7 +64,7 @@
 
 **<font color='red'>缺陷一：</font>首次请求数据不在 Cache 中**
 
-- 可以提前将热点数据放入 Cache 中年
+- 可以提前将热点数据放入 Cache 中
 
 **<font color='red'>缺陷二：</font>写操作频繁会导致 Cache 中数据频繁被删，会影响命中率？**
 
