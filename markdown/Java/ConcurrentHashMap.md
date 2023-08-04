@@ -925,3 +925,4 @@ public V get(Object key) {
 - **[ConcurrentHashMap是如何实现线程安全的](https://blog.csdn.net/qq_41737716/article/details/90549847)**
 - **[ConcurrentHashMap的sizeCtl含义纠正](https://blog.csdn.net/Unknownfuture/article/details/105350537)**
 - **[深入浅出ConcurrentHashMap1.8](https://www.jianshu.com/p/c0642afe03e0)**
+- **[ConcurrentHashMap原理分析(二)-扩容](https://www.cnblogs.com/gunduzi/p/13651664.html)**
