@@ -83,4 +83,4 @@ Broker 刷盘有两种方式，同步刷盘和异步刷盘
 ### <font color=1FA774>参考文章</font>
 
 - **[RocketMQ如何保证消息不丢失? 如何快速处理积压消息？](https://blog.csdn.net/qq_45076180/article/details/113828472)**
-- **[[面试官再问我如何保证 RocketMQ 不丢失消息,这回我笑了！](https://www.cnblogs.com/goodAndyxublog/p/12563813.html)](https://www.cnblogs.com/goodAndyxublog/p/12563813.html)**
+- **[面试官再问我如何保证 RocketMQ 不丢失消息,这回我笑了！](https://www.cnblogs.com/goodAndyxublog/p/12563813.html)**
