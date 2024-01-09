@@ -228,14 +228,16 @@ mjx-container { break-inside: avoid; }
 
 /*快速自定义配置*/
 :root {
-    --monospace: "JetBrains Mono", "Fira Code", "Cascadia Code", Menlo, "Ubuntu Mono", Consolas, HYZhengYuan; /*代码字体*/
+    --monospace: "Iosevka Curly", "JetBrains Mono", "Fira Code", "Cascadia Code", Menlo, "Ubuntu Mono", Consolas, HYZhengYuan; /*代码字体*/
     --text-font: var(--monospace); /*正文字体*/
     --title-font: var(--monospace); /*标题字体*/
     --latex-font: var(--monospace); /*LaTeX字体(不含英语)*/
     --text-line-height: 1.6; /*正文行间距*/
     --code-line-height: 1.6; /*代码块行间距*/
     --p-spacing: 0.8rem; /*段间距*/
-    --text-size: 12px;
+    --file-tree-text-size: 1.1rem; /*文件树大小*/
+    --toc-text-size: 1rem; /*大纲大小*/
+    --text-size: 14px; /*字体大小 推荐配置: 应用设置-外观-字体大小*/
 }/*
  * MIT License
  *
@@ -351,6 +353,10 @@ p {
 [id^=mermaidChart] .cluster rect {
     fill: var(--table-n2-bg-color) !important;
     stroke: var(--table-border-color) !important;
+}
+[id^=mermaidChart] .grid .tick text,
+[id^=mermaidChart] .titleText {
+    fill: var(--text-color) !important;
 }
 [id^=mermaidChart] .clusters span.nodeLabel {
     color: var(--text-color) !important;
@@ -526,7 +532,7 @@ blockquote {
     border-left: none;
 }
 
-#write strong {
+strong {
     color: var(--strong-color);
     font-weight: bold;
 }
@@ -692,7 +698,7 @@ li {
     margin: 0.5em 0;
 }
 
-hr {
+/* hr {
     height: 2px;
     padding: 0;
     margin: 16px 0;
@@ -700,6 +706,18 @@ hr {
     border: 0 none;
     overflow: hidden;
     box-sizing: content-box;
+} */
+
+hr {
+    border: 0;
+    border-top: 1px solid #eaecef;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
 }
 
 body > h2:first-child {
@@ -1020,7 +1038,7 @@ footer {
 
 /*sidebar*/
 .file-library-node.file-tree-node.file-node-root {
-    font-size: 1.1rem;
+    font-size: var(--file-tree-text-size);
 }
 .file-node-content:hover .file-node-icon,
 .file-node-content:hover .file-node-open-state {
@@ -1056,7 +1074,7 @@ footer {
 }
 
 .outline-item {
-    font-size: 1rem;
+    font-size: var(--toc-text-size);
 }
 
 /*footnotes mark*/
@@ -1394,6 +1412,9 @@ a.ty-link {
 }
 .cm-s-inner .CodeMirror-linenumber {
     color: #787878;
+}
+.cm-s-inner .cm-header, .cm-s-inner.cm-header {
+    font-weight: normal;
 }
 
  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
