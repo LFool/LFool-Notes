@@ -16,15 +16,21 @@
 > <summary><font color='red'><b>如果文章对你有帮助，可以请作者喝杯速溶咖啡 -> Click Here!!!</b></font> <img src="https://cdn.jsdelivr.net/gh/LFool/new-image-hosting@master/20230430/00271416827856345XY7K0coffee.svg" alt="wx" /></summary>
 > <iframe src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220420/1540281650440428oY7cvU2.svg" height="400" frameborder="0" scrolling="no"></iframe>
 >  </details>
-> **更新时间：**2023-09-14 13:38:37
+> **更新时间：**2024-01-09 22:03:59
 >    
-> 截止目前，文章总数：**<font color='red'>262</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
+> 截止目前，文章总数：**<font color='red'>263</font>** 😊 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv" style="color:red; font-weight:bold"></span> 次</span>
 >
 > 记录本人总结～～ 持续更新......
 
+## Golang
+
+- [Go-基础数据类型](./go/Go-基础数据类型.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+
+---
+
 ## RocketMQ
 
-- [浅记 RocketMQ 消息丢失问题](./rocketmq/浅记RocketMQ消息丢失问题.html) <img src="https://cdn.jsdelivr.net/gh/LFool/image-hosting@master/20220119/05043716425398771642539877247kvVIXA.svg"/>
+- [浅记 RocketMQ 消息丢失问题](./rocketmq/浅记RocketMQ消息丢失问题.html)
 
 ---
 
