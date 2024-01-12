@@ -172,6 +172,6 @@ strconv.FormatComplex(c complex128, fmt byte, prec, bitSize int) string      // 
 
 同理，在上述五种方法中，有些方法中有参数`base`和`bitSize`，其中`base`表示传入数值的进制数，`bitSize`表示传入数值的位数
 
-举个例子，`val := strconv.FormatInt(123, 8)`表示将八进制值为`123`的的整数转换为字符串`"173"`
+举个例子，`val := strconv.FormatInt(123, 8)`表示将八进制值为`123`的整数转换为字符串`"173"`
 
 值得注意的是，在`FormatFloat()`方法中多了两个参数，分别为`fmt`表示转换成字符串的格式、`prec`表示转换成字符串的精度，即保留小数的位数
