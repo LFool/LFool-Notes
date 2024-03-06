@@ -89,7 +89,7 @@ public void backtrack(int[] nums) {
 
 ```java
 int[] nums = {1, 2, 3};
-boolean[] used[] = new boolean[nums.length];
+boolean[] used = new boolean[nums.length];
 List<Integer> path = new ArrayList<>();
 List<List<Integer>> result = new ArrayList<>();
 public void backtrack(int[] nums) {
